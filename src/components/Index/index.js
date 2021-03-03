@@ -25,8 +25,20 @@ const Index = () => (
 
     <div className="index-presentation1">
       <img src={wfindex} alt="presentation1" className="index-presentation1-img" />
-      <p className="index-presentation1-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, cumque similique! Eaque modi illum tempora, necessitatibus voluptate quas corporis maxime magni vero itaque optio voluptatem recusandae, quibusdam ullam nesciunt molestiae? Facilis totam tempore voluptate ullam, deserunt asperiores praesentium harum quam nobis placeat magni fugiat possimus veritatis. Labore velit consectetur nostrum fugit animi eius, est, perspiciatis eum tempora corporis explicabo consequatur Amet perferendis corrupti aliquam ipsum est quas nam dolorum ducimus quasi nemo explicabo qui facilis, blanditiis, tenetur cupiditate accusantium. Reiciendis distinctio autem suscipit architecto aperiam animi magnam fuga totam ab? Aperiam enim sint quae error, voluptatibus tempore dolores quas totam placeat ipsum neque facilis nostrum quidem dolore minima reprehenderit incidunt expedita labore adipisci aspernatur distinctio explicabo eos sed! Id, ad. Dolore incidunt sapiente facilis quam ab, fugit molestias quo vitae voluptate, blanditiis corrupti voluptas? Iure explicabo molestiae illum alias culpa quae sapiente cumque. Velit soluta voluptas explicabo rem molestias id!
-      </p>
+      <span className="index-presentation1-span">
+        <h2 className="index-presentation1-span-h2">Lorem ipsum dolor sit amet</h2>
+        <p className="index-presentation1-span-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, cumque similique! Eaque modi illum tempora, necessitatibus voluptate quas corporis maxime magni vero itaque optio voluptatem recusandae, quibusdam ullam nesciunt molestiae? Facilis totam tempore voluptate ullam, deserunt asperiores praesentium harum quam nobis placeat magni fugiat possimus veritatis. Labore velit consectetur nostrum fugit animi eius, est, perspiciatis eum tempora corporis explicabo consequatur Amet perferendis corrupti aliquam ipsum est quas nam dolorum ducimus quasi nemo explicabo qui facilis, blanditiis, tenetur cupiditate accusantium. Reiciendis distinctio autem suscipit architecto aperiam animi magnam fuga totam ab? Aperiam enim sint quae error, voluptatibus tempore dolores quas totam placeat ipsum neque facilis nostrum quidem dolore minima reprehenderit incidunt expedita labore adipisci aspernatur distinctio explicabo eos sed! Id, ad. Dolore incidunt sapiente facilis quam ab, fugit molestias quo vitae voluptate, blanditiis corrupti voluptas? Iure explicabo molestiae illum alias culpa quae sapiente cumque. Velit soluta voluptas explicabo rem molestias id!
+        </p>
+      </span>
+    </div>
+
+    <div className="index-presentation2">
+      <span className="index-presentation2-span">
+        <h2 className="index-presentation2-span-h2">Lorem ipsum dolor sit amet</h2>
+        <p className="index-presentation2-span-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, cumque similique! Eaque modi illum tempora, necessitatibus voluptate quas corporis maxime magni vero itaque optio voluptatem recusandae, quibusdam ullam nesciunt molestiae? Facilis totam tempore voluptate ullam, deserunt asperiores praesentium harum quam nobis placeat magni fugiat possimus veritatis. Labore velit consectetur nostrum fugit animi eius, est, perspiciatis eum tempora corporis explicabo consequatur Amet perferendis corrupti aliquam ipsum est quas nam dolorum ducimus quasi nemo explicabo qui facilis, blanditiis, tenetur cupiditate accusantium. Reiciendis distinctio autem suscipit architecto aperiam animi magnam fuga totam ab? Aperiam enim sint quae error, voluptatibus tempore dolores quas totam placeat ipsum neque facilis nostrum quidem dolore minima reprehenderit incidunt expedita labore adipisci aspernatur distinctio explicabo eos sed! Id, ad. Dolore incidunt sapiente facilis quam ab, fugit molestias quo vitae voluptate, blanditiis corrupti voluptas? Iure explicabo molestiae illum alias culpa quae sapiente cumque. Velit soluta voluptas explicabo rem molestias id!
+        </p>
+      </span>
+      <img src={wfindex} alt="presentation2" className="index-presentation2-img" />
     </div>
 
   </div>

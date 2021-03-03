@@ -5,10 +5,12 @@ import React from 'react';
 import './styles.scss';
 // import Menu from 'src/components/Menu';
 // import Content from 'src/components/Content';
+import Index from 'src/components/Index';
 
 // == Composant
 const App = () => (
   <div className="app">
+    <Index />
     {/* <Menu />
     <Content /> */}
   </div>
