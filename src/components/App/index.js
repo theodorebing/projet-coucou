@@ -2,12 +2,18 @@
 import React from 'react';
 
 // == Import
-import './styles.css';
-import IndexLoginForm from 'src/components/Form/IndexLoginForm'
+import './styles.scss';
+// import Menu from 'src/components/Menu';
+// import Content from 'src/components/Content';
+import Index from 'src/components/Index';
 
 // == Composant
 const App = () => (
-  <IndexLoginForm/>
+  <div className="app">
+    <Index />
+    {/* <Menu />
+    <Content /> */}
+  </div>
 );
 
 // == Export
