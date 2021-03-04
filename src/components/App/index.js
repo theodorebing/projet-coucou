@@ -12,8 +12,7 @@ const App = () => (
   <div className="app">
     <Index />
     {/* <Menu />
-    <Content />
-    <Footer/> */}
+    <Content /> */}
   </div>
 );
 

@@ -5,6 +5,7 @@ import React from 'react';
 import './styles.scss';
 // import logo from 'src/assets/Logo-Coucou-transparent.png';
 import wfindex from 'src/assets/images/WFIndex.png';
+import Footer from 'src/components/Index/Footer';
 import IndexLoginForm from 'src/components/Index/IndexLoginForm';
 
 // == Composant
@@ -43,7 +44,7 @@ const Index = () => (
       </span>
       <img src={wfindex} alt="presentation2" className="index-img index-shadow" />
     </div>
-
+    <Footer />
   </div>
 );
 
