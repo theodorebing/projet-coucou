@@ -1,19 +1,13 @@
 // == Import npm
 import React from 'react';
+import Help from '../Help';
 
 // == Import
-import './styles.scss';
-// import Menu from 'src/components/Menu';
-// import Content from 'src/components/Content';
-import Index from 'src/components/Index';
+import './style.scss';
 
 // == Composant
 const App = () => (
-  <div className="app">
-    <Index />
-    {/* <Menu />
-    <Content /> */}
-  </div>
+  <Help />
 );
 
 // == Export

@@ -1,0 +1,30 @@
+@use 'src/styles/vars';
+.instruction-section {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 5rem;
+
+  &-text {
+    &-title {
+      color: vars.$main-color;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-img {
+    margin-left: 2rem;
+    margin-right: 0;
+    max-width: 600px;
+  }
+}
+
+.instruction-section.reverse {
+  flex-direction: row-reverse;
+
+  .instruction-section-img {
+    margin-left:0;
+    margin-right: 2rem;
+    max-width: 600px;
+  }
+}
