@@ -1,0 +1,36 @@
+@use 'src/styles/vars';
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+    &-titre {
+    color: vars.$main-color;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  &-text {
+    max-width: 1200px;
+    &-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    &-content {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-img {
+    margin-left: 2rem;
+    margin-right: 0;
+    max-width: 600px;
+  }
+}
+
+
+
