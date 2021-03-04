@@ -1,15 +1,14 @@
 @use 'src/styles/vars';
 
 .footer{
-  position: fixed;
+  position: static;
   bottom: 40px;
   padding-top: 55px;
   height: 100px;
   width: 100%;
-  border-top: 1px solid vars.$border-color;
   ul{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     li{
       text-transform: uppercase;
       letter-spacing: 2.5px;
