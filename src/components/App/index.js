@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import Help from '../Help';
 
 // == Import
 import './styles.scss';

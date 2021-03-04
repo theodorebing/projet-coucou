@@ -3,7 +3,7 @@ import React from 'react';
 import logo from 'src/assets/Logo-Coucou-transparent.png';
 
 // == Import
-import './styles.scss';
+import './style.scss';
 
 // == Composant
 const Menu = () => (

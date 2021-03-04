@@ -1,0 +1,89 @@
+@use 'src/styles/vars';
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+
+    &-titre {
+    color: vars.$main-color;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  &-text {
+    max-width: 1200px;
+
+    &-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &__input {
+
+        border-radius: 5px;
+        border: 1px solid grey;
+        height: 40px;
+        padding-left: 5px;
+        margin-bottom: 2rem;
+
+        &-label {
+          margin-bottom: 1rem;
+        }
+      }
+
+      &__text-area {
+
+        border-radius: 5px;
+        border: 1px solid grey;
+        padding-left: 5px;
+        margin-bottom: 2rem;
+        height: 150px;
+
+        &-label {
+          margin-bottom: 1rem;
+        }
+
+      }
+
+      &__input, &__button {
+        width: 50%;
+      }
+
+      &__button {
+        border: 1px solid vars.$main-color;
+        border-radius: 5px;
+        background-color: white;
+        height: 40px;
+        font-size: 20px;
+
+        &:hover {
+          background-color: vars.$main-color;
+          color: white;
+          transition: all 0.4s ease;
+        }
+      }
+
+      
+    }
+  }
+
+  &-img {
+    margin-left: 2rem;
+    margin-right: 0;
+    max-width: 600px;
+  }
+}
+
+
+
