@@ -27,20 +27,6 @@
         font-size: 1rem;
         font-family: vars.$font-button;
       }
-
-    }
-    &-form {
-      width: 500px;
-      height: 400px;
-      background-color: vars.$white-color;
-      border: none;
-      border-radius: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      &-input {
-      }
     }
   }
 
