@@ -13,6 +13,7 @@ const App = () => (
     <Index />
     {/* <Menu />
     <Content /> */}
+    <Footer/>
   </div>
 );
 
