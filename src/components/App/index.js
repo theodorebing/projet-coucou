@@ -3,11 +3,21 @@ import React from 'react';
 import Help from '../Help';
 
 // == Import
-import './style.scss';
+import './styles.scss';
+import Menu from 'src/components/Menu';
+// import Content from 'src/components/Content';
+import Index from 'src/components/Index';
+import WelcomePage from '../WelcomePage';
 
 // == Composant
 const App = () => (
-  <Help />
+  <div className="app">
+    <Menu />
+    <WelcomePage/>
+    {/* 
+      <Index />
+    <Content /> */}
+  </div>
 );
 
 // == Export

@@ -6,6 +6,7 @@ import './styles.scss';
 // import logo from 'src/assets/Logo-Coucou-transparent.png';
 import wfindex from 'src/assets/images/WFIndex.png';
 import Footer from 'src/components/Index/Footer';
+import IndexLoginForm from 'src/components/Index/IndexLoginForm';
 
 // == Composant
 const Index = () => (
@@ -19,9 +20,11 @@ const Index = () => (
         </p>
       </div>
 
-      <form action="submit" className="index-connexion-form index-shadow">
+      {/* <form action="submit" className="index-connexion-form index-shadow">
         <input type="text" className="index-connexion-form-input" />
-      </form>
+      </form> */}
+
+      <IndexLoginForm />
     </div>
 
     <div className="index-presentation1">
