@@ -2,40 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-
-const IndexLoginForm = ({value,
+const IndexLoginForm = ({
+  value,
   type,
   name,
   email,
   password,
-  placeholder,}) => {
-  return (
-    <div className='indexloginform'>
-    <form method='post' className='form'>
-     <input
-        id='mail'
+  placeholder,
+}) => (
+  <div className="indexloginform">
+    <form method="post" className="form">
+      <input
+        id="mail"
         value={value}
-        type='mail'
+        type="mail"
         className="indexloginform-input"
-        placeholder='identifiant'
+        placeholder="identifiant"
         name={name}
       />
-       <input
-        id='password'
+      <input
+        id="password"
         value={value}
-        type='password'
+        type="password"
         className="indexloginform-input"
-        placeholder='mot de passe'
+        placeholder="mot de passe"
         name={name}
       />
-      <button type='submit' className="indexloginform-button-login" type='submit'>Connexion</button>
-      <span className='indexloginform-link'><a href="#">Mot de passe oublié ?</a></span>
-      <button className="indexloginform-button-signin" type='submit'>Créer son compte</button>
-      </form>
-    </div>
-    
-  );
-}
+      <button type="submit" className="indexloginform-button-login" type="submit">Connexion</button>
+      <span className="indexloginform-link"><a href="#">Mot de passe oublié ?</a></span>
+      <button className="indexloginform-button-signin" type="submit">Créer son compte</button>
+    </form>
+  </div>
+
+);
 
 IndexLoginForm.propTypes = {
   email: PropTypes.string.isRequired,
