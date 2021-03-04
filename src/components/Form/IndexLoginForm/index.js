@@ -28,9 +28,9 @@ const IndexLoginForm = ({value,
         placeholder='mot de passe'
         name={name}
       />
-      <button type='submit' className="indexloginform-button-login" type='submit'>Connexion</button>
+      <button type='submit' className="indexloginform-button-login" >Connexion</button>
       <span className='indexloginform-link'><a href="#">Mot de passe oublié ?</a></span>
-      <button className="indexloginform-button-signin" type='submit'>Créer son compte</button>
+      <button className="indexloginform-button-signin">Créer son compte</button>
       </form>
     </div>
     
