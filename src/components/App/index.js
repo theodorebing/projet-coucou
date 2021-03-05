@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import Help from '../Help';
+import PropTypes from 'prop-types';
 
 // == Import
 import './styles.scss';
@@ -10,14 +10,30 @@ import Index from 'src/components/Index';
 import WelcomePage from '../WelcomePage';
 
 // == Composant
-const App = () => (
+const App = ({ isLogged }) => (
   <div className="app">
-    {/* <Menu /> */}
-    {/* <WelcomePage /> */}
+    {isLogged && (
+    <>
+      <Menu />
+      <WelcomePage />
+    </>
+    )}
+    {!isLogged && (
+
     <Index />
+    )}
+
     {/* <Content /> */}
   </div>
 );
+
+App.propTypes = {
+  isLogged: PropTypes.bool,
+};
+
+App.defaultProps = {
+  isLogged: false,
+};
 
 // == Export
 export default App;
