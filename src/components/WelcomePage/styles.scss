@@ -4,11 +4,13 @@
   position: absolute;
   left: 40%;
   top: 20%;
-}
-h1 {
+
+  h1 {
   margin: 5px;
   text-align: center;
   color: vars.$grey-color;
+  }
+
 }
 
 .form__family {
@@ -21,13 +23,20 @@ h1 {
   height: 100%;
   display: flex;
   flex-direction: column;
-  }
+  align-items: center;
+
+
   h2 {
     margin: 5px;
     text-align: center;
     color: vars.$grey-color;
   }
-  
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
     input {
     width: 100%;
     padding: .7em;
@@ -36,14 +45,13 @@ h1 {
     border: 1px solid vars.$border-color;
     border-radius: .3em;
     height: 2.5em;
-  }
+    }
 
     button {
     text-transform: uppercase;
     letter-spacing: 2.5px;
     color: vars.$grey-color;
     margin: 1rem;
-    margin-left:13px;
     width: 15rem;
     background-color: white;
     padding: 0.8rem 1.5rem;
@@ -57,3 +65,5 @@ h1 {
     cursor: pointer;
     outline: none;
   }
+  }
+}
