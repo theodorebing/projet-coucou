@@ -1,8 +1,9 @@
 @use 'src/styles/vars';
 
 .menu{
-
-  width: 10%;
+  position: fixed;
+  text-align: center;
+  width: 15%;
   height: 100vh;
   border-right: 0.3px solid vars.$border-color;
   box-shadow: 10px 0px 50px rgba(0, 0, 0, 0.1);
@@ -90,6 +91,7 @@
     &-list {
       display: flex;
       flex-direction: column;
+      align-items: center;
   }
     color: vars.$grey-color;
     margin: 0.5rem;

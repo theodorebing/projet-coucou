@@ -12,11 +12,10 @@ import WelcomePage from '../WelcomePage';
 // == Composant
 const App = () => (
   <div className="app">
-    <Menu />
-    <WelcomePage/>
-    {/* 
-      <Index />
-    <Content /> */}
+    {/* <Menu /> */}
+    {/* <WelcomePage /> */}
+    <Index />
+    {/* <Content /> */}
   </div>
 );
 
