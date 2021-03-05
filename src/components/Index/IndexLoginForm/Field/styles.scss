@@ -1,0 +1,17 @@
+@use 'src/styles/vars';
+
+.indexloginform {
+
+  &-input {
+    width: 100%;
+    padding: .7em;
+    font-size: 1em;
+    border: 1px solid vars.$border-color;
+    border-radius: .3em;
+    height: 2.5em;
+    background-color: rgba(255, 255, 255, 0.829);
+  }
+}
+
+
+

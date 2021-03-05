@@ -10,11 +10,19 @@ import Index from 'src/components/Index';
 import WelcomePage from '../WelcomePage';
 
 // == Composant
-const App = () => (
+const App = ({ isLogged }) => (
   <div className="app">
-    {/* <Menu /> */}
-    {/* <WelcomePage /> */}
+    {isLogged && (
+    <>
+      <Menu />
+      <WelcomePage />
+    </>
+    )}
+    {!isLogged && (
+
     <Index />
+    )}
+
     {/* <Content /> */}
   </div>
 );

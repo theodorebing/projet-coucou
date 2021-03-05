@@ -3,10 +3,9 @@ import React from 'react';
 
 // == Import
 import './styles.scss';
-// import logo from 'src/assets/Logo-Coucou-transparent.png';
 import wfindex from 'src/assets/images/WFIndex.png';
 import Footer from 'src/components/Index/Footer';
-import IndexLoginForm from 'src/components/Index/IndexLoginForm';
+import IndexLoginForm from 'src/containers/IndexLoginForm';
 
 // == Composant
 const Index = () => (
@@ -14,16 +13,10 @@ const Index = () => (
 
     <div className="index-connexion">
       <div className="index-connexion-div">
-        {/* <img src={logo} alt="Logo" className="index-logo" /> */}
         <span className="index-connexion-div-logo index-text-shadow">Coucou !</span>
         <p className="index-connexion-div-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus ex itaque consequuntur commodi eum error temporibus, ipsam rerum atque aspernatur accusamus dolorem, aperiam iure non, placeat mollitia laudantium molestias blanditiis!
         </p>
       </div>
-
-      {/* <form action="submit" className="index-connexion-form index-shadow">
-        <input type="text" className="index-connexion-form-input" />
-      </form> */}
-
       <IndexLoginForm />
     </div>
 
