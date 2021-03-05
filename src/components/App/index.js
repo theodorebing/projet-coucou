@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import Help from '../Help';
+import PropTypes from 'prop-types';
 
 // == Import
 import './styles.scss';
@@ -26,6 +26,14 @@ const App = ({ isLogged }) => (
     {/* <Content /> */}
   </div>
 );
+
+App.propTypes = {
+  isLogged: PropTypes.bool,
+};
+
+App.defaultProps = {
+  isLogged: false,
+};
 
 // == Export
 export default App;
