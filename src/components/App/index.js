@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // == Import
 import './styles.scss';
-import Menu from 'src/components/Menu';
+import Menu from 'src/containers/Menu';
 // import Content from 'src/components/Content';
 import Index from 'src/components/Index';
 import WelcomePage from '../WelcomePage';
@@ -13,14 +13,14 @@ import WelcomePage from '../WelcomePage';
 const App = ({ isLogged }) => (
   <div className="app">
     {isLogged && (
-    <>
-      <Menu />
-      <WelcomePage />
-    </>
+      <>
+        <Menu />
+        <WelcomePage />
+      </>
     )}
     {!isLogged && (
 
-    <Index />
+      <Index />
     )}
 
     {/* <Content /> */}

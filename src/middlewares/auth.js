@@ -12,7 +12,7 @@ export default (store) => (next) => (action) => {
         password: store.getState().auth.password,
       })
         .then((result) => {
-          store.dispatch(setIsLogged(result.data.logged, result.data.pseudo));
+          store.dispatch(setIsLogged(result.data.logged));
         });
 
       return next(action);
