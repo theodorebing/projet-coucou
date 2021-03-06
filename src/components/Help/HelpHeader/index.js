@@ -11,6 +11,7 @@ const HelpHeader = () => (
   <header className="help-header">
     <h1 className="help-header-title">Aide</h1>
     <nav className="help-header-nav">
+      <NavLink to={`/`} className="help-header-nav-content" activeClassName="menu-button-onPage" exact>Retour Accueil</NavLink>
       <NavLink to={`/help/Faq`} className="help-header-nav-content" activeClassName="menu-button-onPage" exact>FAQ</NavLink>
       <NavLink to={`/help`} className="help-header-nav-content" activeClassName="menu-button-onPage" exact>A propos</NavLink>
       <NavLink to={`/help/NewFeatures`} className="help-header-nav-content" activeClassName="menu-button-onPage">Fonctionnalités à venir</NavLink>

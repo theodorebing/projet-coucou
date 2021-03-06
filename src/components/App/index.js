@@ -93,7 +93,6 @@ const App = ({ isLogged }) => (
         </>
       )}
 
-
     </Switch>
 
     {/* <Content /> */}
