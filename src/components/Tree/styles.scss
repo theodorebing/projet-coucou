@@ -1,6 +1,6 @@
 @use 'src/styles/vars';
 
-.faq-section {
+.tree-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +16,7 @@
   &-text {
     max-width: 1200px;
     &-title {
-      text-align: left;
+      text-align: center;
       margin-bottom: 2rem;
     }
 
