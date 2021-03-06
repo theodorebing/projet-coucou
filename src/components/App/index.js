@@ -8,19 +8,22 @@ import Menu from 'src/components/Menu';
 // import Content from 'src/components/Content';
 import Index from 'src/components/Index';
 import WelcomePage from '../WelcomePage';
+import Help from '../Help';
 
 // == Composant
 const App = ({ isLogged }) => (
   <div className="app">
     {isLogged && (
-    <>
-      <Menu />
-      <WelcomePage />
-    </>
+      <>
+        <Menu />
+        <WelcomePage />
+
+      </>
     )}
     {!isLogged && (
 
-    <Index />
+      // <Index />
+      <Help />
     )}
 
     {/* <Content /> */}
