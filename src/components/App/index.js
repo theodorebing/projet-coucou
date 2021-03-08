@@ -22,50 +22,47 @@ import Stories from '../Stories';
 import Help from '../Help';
 
 // == Composant
-const App = ({ isLogged }) => {
-  console.log('isLogged', isLogged);
-
-  return (
-    <div className="app">
-      <Switch>
-        <Route path="/help" exact>
-          {isLogged && (
-          <Menu />
-          )}
-          <Help />
-        </Route>
-        <Route path="/help/UserManual" exact>
-          {isLogged && (
-          <Menu />
-          )}
-          <UserManual />
-        </Route>
-        <Route path="/help/Faq" exact>
-          {isLogged && (
-          <Menu />
-          )}
-          <Faq />
-        </Route>
-        <Route path="/help/NewFeatures" exact>
-          {isLogged && (
-          <Menu />
-          )}
-          <NewFeatures />
-        </Route>
-        <Route path="/help/Contact" exact>
-          {isLogged && (
-          <Menu />
-          )}
-          <Contact />
-        </Route>
-        <Route path="/help/LegalTerms" exact>
-          {isLogged && (
-          <Menu />
-          )}
-          <LegalTerms />
-        </Route>
-
+const App = ({ isLogged }) => (
+  <div className="app">
+    <Switch>
+      <Route path="/help" exact>
         {isLogged && (
+          <Menu />
+        )}
+        <Help />
+      </Route>
+      <Route path="/help/UserManual" exact>
+        {isLogged && (
+          <Menu />
+        )}
+        <UserManual />
+      </Route>
+      <Route path="/help/Faq" exact>
+        {isLogged && (
+          <Menu />
+        )}
+        <Faq />
+      </Route>
+      <Route path="/help/NewFeatures" exact>
+        {isLogged && (
+          <Menu />
+        )}
+        <NewFeatures />
+      </Route>
+      <Route path="/help/Contact" exact>
+        {isLogged && (
+          <Menu />
+        )}
+        <Contact />
+      </Route>
+      <Route path="/help/LegalTerms" exact>
+        {isLogged && (
+          <Menu />
+        )}
+        <LegalTerms />
+      </Route>
+
+      {isLogged && (
         <>
           <Menu />
           <Route path="/" exact>
@@ -84,17 +81,19 @@ const App = ({ isLogged }) => {
             <Stories />
           </Route>
         </>
-        )}
-
-      </Switch>
-      {!isLogged && (
-      <>
-        <Index />
-      </>
       )}
-    </div>
-  );
-};
+
+      {!isLogged && (
+        <>
+          <Route path="/">
+            <Index />
+          </Route>
+        </>
+      )}
+
+    </Switch>
+  </div>
+);
 
 App.propTypes = {
   isLogged: PropTypes.bool,
