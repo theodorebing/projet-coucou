@@ -1,5 +1,6 @@
 import {
   SEND_FIELD_VALUE,
+  CHECK_CONNECTION,
   setIsLogged,
 } from 'src/actions/auth';
 import axios from 'src/api';
@@ -11,6 +12,13 @@ export default (store) => (next) => (action) => {
         email: store.getState().auth.email,
         password: store.getState().auth.password,
       })
+        .then((result) => {
+          store.dispatch(setIsLogged(result.data.logged));
+        });
+
+      return next(action);
+    case CHECK_CONNECTION:
+      axios.get('api/v1/welcome')
         .then((result) => {
           store.dispatch(setIsLogged(result.data.logged));
         });
