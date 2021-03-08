@@ -16,7 +16,7 @@ const Field = ({
   const inputId = `field-${name}`;
   return (
 
-    <div className="Field">
+    <div className="field">
       <input
         id={inputId}
         value={value}
