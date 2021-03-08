@@ -7,7 +7,7 @@ import {
 const initialState = {
   email: '',
   password: '',
-  isLogged: true,
+  isLogged: false,
 };
 
 export default (state = initialState, action = {}) => {
