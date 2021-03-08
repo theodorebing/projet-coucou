@@ -1,14 +1,12 @@
-// == Import npm
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import logo from 'src/assets/Logo-Coucou-transparent.png';
-
-// == Import
 import './style.scss';
+import PropTypes from 'prop-types';
 
 // == Composant
-const Menu = () => (
+const Menu = ({ handleLogout }) => (
   <div className="menu">
     <div className="menu-header">
       <div className="menu-logo-div">
@@ -16,7 +14,7 @@ const Menu = () => (
         <span className="menu-logo-text">Coucou !</span>
       </div>
       <div className="menu-username"> Geneviève <br /> Grandchamp-Larrieux </div>
-      <button type="button" className="menu-littleButton menu-littleButton-disconnect"> Me déconnecter </button>
+      <button type="button" className="menu-littleButton menu-littleButton-disconnect" onClick={handleLogout}> Me déconnecter </button>
     </div>
 
     <div className="menu-button-list">
@@ -35,6 +33,10 @@ const Menu = () => (
 
   </div>
 );
+
+Menu.propTypes = {
+  handleLogout: PropTypes.func.isRequired,
+};
 
 // == Export
 export default Menu;
