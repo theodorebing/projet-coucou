@@ -39,13 +39,14 @@ const IndexLoginForm = ({
           value={password}
         />
         <div className="buttons-div">
-          <div className="buttons-div-signin">
-            <button type="submit" className="indexloginform-button-signin button">Créer son compte</button>
-          </div>
 
           <div className="buttons-div-login">
             <button type="submit" className="indexloginform-button-login button">Connexion</button>
             <span className="indexloginform-link"><a href="#">Mot de passe oublié ?</a></span>
+          </div>
+
+          <div className="buttons-div-signin">
+            <button type="submit" className="indexloginform-button-signin button">Créer son compte</button>
           </div>
         </div>
       </form>
