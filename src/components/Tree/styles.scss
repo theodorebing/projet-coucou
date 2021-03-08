@@ -32,5 +32,9 @@
   }
 }
 
-
-
+.rd3t-node > circle {
+  cursor: pointer;
+  fill: orange;
+  stroke: #000;
+  stroke-width: 2;
+}
