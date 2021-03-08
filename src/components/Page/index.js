@@ -6,7 +6,7 @@ import './style.scss';
 
 const Page = ({ children }) => (
   <main className="page">
-    <Menu />
+    {/* <Menu /> */}
     {children}
   </main>
 );

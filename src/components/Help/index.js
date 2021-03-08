@@ -1,35 +1,31 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
 import React from 'react';
+
 // import PropTypes from 'prop-types';
 // import { Redirect } from 'react-router-dom';
 
 // == Import : local
 // Composants
 import Page from 'src/components/Page';
-import Header from './Header';
+// import Header from './Header';
 import About from './About';
-import UserManual from './UserManual';
-import Faq from './FAQ';
-import NewFeatures from './NewFeatures';
+
 
 // Style
-import './style.scss';
-import Contact from './Contact';
+import './styles.scss';
+
 
 
 // == Composant
-function Help() {
-
+const Help = () => {
   return (
     <Page>
       <div className="help">
-        <Header />
-        {/* <About titre="A propos" /> */}
-        {/* <UserManual /> */}
-        {/* <Faq /> */}
-        {/* <NewFeatures /> */}
-        <Contact />
+        {/* {isLogged && (
+          <Header />
+        )} */}
+        <About />
       </div>
     </Page>
   );

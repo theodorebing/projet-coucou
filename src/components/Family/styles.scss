@@ -1,12 +1,10 @@
 @use 'src/styles/vars';
 
-.about-section {
+.family-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  margin-left: 15%;
 
     &-titre {
     color: vars.$main-color;

@@ -1,9 +1,10 @@
 @use 'src/styles/vars';
 
 .help-header {
-  max-width: 90%;
+  max-width: 100%;
   margin: 0 auto;
   margin-bottom: 5rem;
+  margin-left: 15%;
 
   &-title {
     text-align: center;

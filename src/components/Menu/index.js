@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import logo from 'src/assets/Logo-Coucou-transparent.png';
 import './style.scss';
 import PropTypes from 'prop-types';
@@ -16,17 +18,17 @@ const Menu = ({ handleLogout }) => (
     </div>
 
     <div className="menu-button-list">
-      <button type="button" className="menu-button menu-button-onPage"> Mon profil </button>
+      <button type="button" className="menu-button"><NavLink to={`/profile`} activeClassName="menu-button-onPage">Mon profil</NavLink> </button>
 
-      <button type="button" className="menu-button"> Ma famille </button>
+      <button type="button" className="menu-button"> <NavLink to={`/family`} activeClassName="menu-button-onPage">Ma famille</NavLink>  </button>
 
-      <button type="button" className="menu-button"> Arbre </button>
+      <button type="button" className="menu-button"> <NavLink to={`/tree`} activeClassName="menu-button-onPage">Arbre</NavLink> </button>
 
-      <button type="button" className="menu-button"> Histoires </button>
+      <button type="button" className="menu-button"> <NavLink to={`/stories`} activeClassName="menu-button-onPage">Histoires</NavLink> </button>
     </div>
 
     <div className="menu-button-help">
-      <button type="button" className="menu-littleButton menu-littleButton-help"> Aide </button>
+      <button type="button" className="menu-littleButton menu-littleButton-help"> <NavLink to={`/help`} activeClassName="menu-button-onPage">Aide</NavLink> </button>
     </div>
 
   </div>
