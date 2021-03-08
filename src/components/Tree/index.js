@@ -1,28 +1,66 @@
-// == Import : npm
-import React from 'react';
+import React from "react";
+import Tree from "react-d3-tree";
 
-import img from 'src/assets/images/campagne_tranquille.jpg';
+const debugData = [
+  {
+    name: "1",
+    children: [
+      {
+        name: "2"
+      },
+      {
+        name: "2"
+      },
+      {
+        name: "2"
+      },
+      {
+        name: "2"
+      }
+    ]
+  }
+];
 
-// == Import : local
-import './styles.scss';
-
-// == Composant
-const Tree = () => {
-  return (
-    <section className="tree-section">
-      <h1 className="tree-section-titre">Arbre</h1>
-      <div className="tree-section-text">
-        <h2 className="tree-section-text-title">PAGE TEST ARBRE</h2>
-        <p className="tree-section-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, id. Officia dolores nesciunt assumenda! Nesciunt non quidem animi laborum voluptatibus laudantium sapiente neque, provident repellendus quasi inventore facere, veritatis expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quae deleniti optio natus asperiores perspiciatis reprehenderit omnis facilis repellendus, non dolore expedita blanditiis atque at aperiam saepe earum magnam quos, recusandae sed doloremque ad maxime assumenda. Error maxime minus voluptatum velit enim, molestiae aliquid praesentium sunt iusto qui aliquam aperiam tempora, eveniet animi itaque omnis consequuntur hic est quae eos asperiores natus deserunt! Voluptates commodi aspernatur minus voluptas, quod numquam, atque fuga sit laborum est aut nam illo tenetur odio iste repellat accusantium, fugit id! Facere harum, sit incidunt fugit, et eius molestias, esse quas ratione perferendis ducimus cupiditate minus.</p>
-      </div>
-      <img className="tree-section-img" src={img} alt="img section une" />
-    </section>
-  )
+const containerStyles = {
+  width: '100%',
+  height: '100vh',
 }
+const renderRectSvgNode = ({ nodeDatum, toggleNode }) => (
+  <g>
+    <rect width="50" height="50" x="-25" onClick={toggleNode} />
+      {nodeDatum.name}
+    {nodeDatum.attributes?.department && (
+      <text fill="black" x="20" dy="20" strokeWidth="1">
+        Department: {nodeDatum.attributes?.department}
+      </text>
+    )}
+  </g>
+);
 
-  ;
+export default class CenteredTree extends React.PureComponent {
+  state = {}
 
+  componentDidMount() {
+    const dimensions = this.treeContainer.getBoundingClientRect();
+    this.setState({
+      translate: {
+        x: dimensions.width / 2,
+        y: dimensions.height / 2
+      }
+    });
+  }
 
-
-// == Export
-export default Tree;
+  render() {
+    return (
+      <div style={containerStyles} ref={tc => (this.treeContainer = tc)}>
+        <Tree
+          pathFunc={'step'}
+          data={debugData} 
+          translate={this.state.translate} 
+          orientation={'vertical'}
+          renderCustomNodeElement={renderRectSvgNode}
+        />
+      </div>
+    );
+  }
+}
