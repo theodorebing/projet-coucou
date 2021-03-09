@@ -10,21 +10,17 @@ const IndexLoginForm = ({
   changeField,
   handleLogin,
   isLogged,
+  openSignUpForm,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleLogin();
   };
 
-  console.log('isLogged', isLogged);
-
   return (
 
-    <div className="indexloginform">
-      {isLogged && (
-        <p>Vous êtes connecté.e!</p>
-      )}
-      <form method="post" className="form index-shadow" onSubmit={handleSubmit}>
+    <div className="indexloginform index-shadow">
+      <form method="post" className="form" onSubmit={handleSubmit}>
         <Field
           name="email"
           placeholder="Adresse e-mail"
@@ -44,12 +40,12 @@ const IndexLoginForm = ({
             <button type="submit" className="indexloginform-button-login button">Connexion</button>
             <span className="indexloginform-link"><a href="#">Mot de passe oublié ?</a></span>
           </div>
-
-          <div className="buttons-div-signin">
-            <button type="submit" className="indexloginform-button-signin button">Créer son compte</button>
-          </div>
         </div>
       </form>
+      <div className="buttons-div-signup">
+        <button type="submit" className="indexloginform-button-signup button" onClick={openSignUpForm}>Créer son compte</button>
+      </div>
+
     </div>
 
   );
@@ -60,6 +56,7 @@ IndexLoginForm.propTypes = {
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
+  openSignUpForm: PropTypes.func.isRequired,
   isLogged: PropTypes.bool,
 };
 IndexLoginForm.defaultProps = {
