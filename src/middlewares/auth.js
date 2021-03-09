@@ -1,7 +1,7 @@
 import {
   SEND_FIELD_VALUE,
   CHECK_CONNECTION,
-  LOGOUT,
+  SEND_LOGOUT,
   setIsLogged,
   logout,
 } from 'src/actions/auth';
@@ -27,13 +27,13 @@ export default (store) => (next) => (action) => {
 
       return next(action);
 
-      // case LOGOUT:
-      //   axios.get('api/v1/logout')
-      //     .then((result) => {
-      //       store.dispatch(logout(result.data.logged));
-      //     });
+    case SEND_LOGOUT:
+      axios.get('api/v1/logout')
+        .then((result) => {
+          store.dispatch(logout(result.data.logged));
+        });
 
-      //   return next(action);
+      return next(action);
 
     default:
       return next(action);

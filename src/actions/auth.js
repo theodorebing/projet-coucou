@@ -26,6 +26,12 @@ export const logout = (isLogged) => ({
   isLogged,
 });
 
+export const SEND_LOGOUT = 'SEND_LOGOUT';
+
+export const sendLogout = () => ({
+  type: SEND_LOGOUT,
+});
+
 export const CHECK_CONNECTION = 'CHECK_CONNECTION';
 
 export const checkConnection = () => ({
