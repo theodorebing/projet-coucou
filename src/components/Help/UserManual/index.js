@@ -3,12 +3,8 @@
 import React from 'react';
 import HelpHeader from '../HelpHeader';
 
-// import PropTypes from 'prop-types';
-// import { Redirect } from 'react-router-dom';
-
 // == Import : local
 // Composants
-import Page from 'src/components/Page';
 import Header from './Header';
 import Instructions from './Instructions';
 
@@ -31,21 +27,6 @@ function UserManual() {
     </>
   );
 }
-
-// Recipe.propTypes = {
-// recipe: PropTypes.shape({
-//   title: PropTypes.string.isRequired,
-//   thumbnail: PropTypes.string.isRequired,
-//   author: PropTypes.string.isRequired,
-//   difficulty: PropTypes.string.isRequired,
-//   ingredients: PropTypes.array.isRequired,
-//   instructions: PropTypes.array.isRequired,
-// }),
-// };
-
-// Recipe.defaultProps = {
-//   recipe: null,
-// };
 
 // == Export
 export default UserManual;

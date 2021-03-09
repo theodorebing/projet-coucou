@@ -5,7 +5,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 
 // == Import
-import './styles.scss';
+// import './styles.scss';
 // import Content from 'src/components/Content';
 import Index from 'src/components/Index';
 import WelcomePage from '../WelcomePage';
