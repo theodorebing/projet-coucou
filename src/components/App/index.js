@@ -10,7 +10,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Index from 'src/components/Index';
 import WelcomePage from '../WelcomePage';
 import About from '../Help/About';
-import Menu from 'src/components/Menu';
+import Menu from 'src/containers/Menu';
 import UserManual from '../Help/UserManual';
 import Faq from '../Help/FAQ';
 import NewFeatures from '../Help/NewFeatures';
