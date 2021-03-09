@@ -3,11 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-
 // == Import
 // import './styles.scss';
 // import Content from 'src/components/Content';
 import Index from 'src/components/Index';
+import Menu from 'src/containers/Menu';
 import WelcomePage from '../WelcomePage';
 import About from '../Help/About';
 import Menu from 'src/containers/Menu';
@@ -21,7 +21,6 @@ import Tree from '../Tree';
 import Family from '../Family';
 import Stories from '../Stories';
 import Help from '../Help';
-
 
 // == Composant
 const App = ({ isLogged }) => (
@@ -87,7 +86,7 @@ const App = ({ isLogged }) => (
 
       {!isLogged && (
         <>
-          <Route path="/" >
+          <Route path="/">
             <Index />
           </Route>
         </>
