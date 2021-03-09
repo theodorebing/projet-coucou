@@ -2,6 +2,7 @@ import {
   SET_FIELD_VALUE,
   SET_ISLOGGED,
   LOGOUT,
+  CHECK_CONNECTION,
 } from 'src/actions/auth';
 
 const initialState = {
@@ -28,6 +29,10 @@ export default (state = initialState, action = {}) => {
         isLogged: !state.isLogged,
         email: '',
         password: '',
+      };
+    case CHECK_CONNECTION:
+      return {
+        ...state,
       };
     default:
       return state;

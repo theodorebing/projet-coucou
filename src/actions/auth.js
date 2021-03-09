@@ -25,3 +25,9 @@ export const logout = (isLogged) => ({
   type: LOGOUT,
   isLogged,
 });
+
+export const CHECK_CONNECTION = 'CHECK_CONNECTION';
+
+export const checkConnection = () => ({
+  type: CHECK_CONNECTION,
+});
