@@ -8,12 +8,12 @@ const SignUpForm = ({
   email,
   password,
   changeField,
-  handleLogin,
+  handleSignup,
   openSignUpForm,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    handleLogin();
+    handleSignup();
   };
 
   return (
@@ -52,7 +52,7 @@ SignUpForm.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
-  handleLogin: PropTypes.func.isRequired,
+  handleSignup: PropTypes.func.isRequired,
   openSignUpForm: PropTypes.func.isRequired,
 };
 SignUpForm.defaultProps = {

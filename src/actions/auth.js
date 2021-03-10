@@ -44,3 +44,9 @@ export const openSignUpForm = (activeSignUpForm) => ({
   type: OPEN_SIGNUP_FORM,
   activeSignUpForm,
 });
+
+export const SEND_FIELD_VALUE_SIGNUP = 'SEND_FIELD_VALUE_SIGNUP';
+
+export const sendFieldValueSignup = () => ({
+  type: SEND_FIELD_VALUE_SIGNUP,
+});

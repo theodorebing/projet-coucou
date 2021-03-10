@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SignUpForm from 'src/components/Index/SignUpForm';
-import { openSignUpForm } from 'src/actions/auth';
+import { setFieldValue, sendFieldValueSignup, openSignUpForm } from 'src/actions/auth';
 
 const mapStateToProps = (state) => ({
   email: state.auth.email,
@@ -8,7 +8,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  changeField: (value, name) => dispatch(setFieldValue(value, name)),
   openSignUpForm: () => dispatch(openSignUpForm()),
+  handleSignup: () => dispatch(sendFieldValueSignup()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);

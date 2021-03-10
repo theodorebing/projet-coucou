@@ -1,5 +1,6 @@
 import {
   SEND_FIELD_VALUE,
+  SEND_FIELD_VALUE_SIGNUP,
   CHECK_CONNECTION,
   SEND_LOGOUT,
   setIsLogged,
@@ -17,14 +18,13 @@ export default (store) => (next) => (action) => {
         .then((result) => {
           store.dispatch(setIsLogged(result.data.logged));
         });
-
       return next(action);
+
     case CHECK_CONNECTION:
       axios.get('api/v1/welcome')
         .then((result) => {
           store.dispatch(setIsLogged(result.data.logged));
         });
-
       return next(action);
 
     case SEND_LOGOUT:
@@ -32,9 +32,14 @@ export default (store) => (next) => (action) => {
         .then((result) => {
           store.dispatch(logout(result.data.logged));
         });
-
       return next(action);
 
+    case SEND_FIELD_VALUE_SIGNUP:
+      axios.post('api/v1/inscription', {
+        email: store.getState().auth.email,
+        password: store.getState().auth.password,
+      });
+      return next(action);
     default:
       return next(action);
   }
