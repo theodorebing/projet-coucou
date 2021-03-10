@@ -3,7 +3,7 @@
 .menu{
   position: fixed;
   text-align: center;
-  width: 10%;
+  // width: 10%;
   min-width: 200px;
   height: 100vh;
   border-right: 0.3px solid vars.$border-color;
@@ -14,6 +14,11 @@
   justify-content: space-between;
   background-color: vars.$white-color;
 
+  &-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   &-logo {
     width: 3rem;
     padding: 5px;
@@ -40,7 +45,7 @@
     font-family: vars.$font-coucou;
     color: vars.$grey-color;
     font-size: 1.3em;
-    margin: 1em 0 0.5em;
+    margin: 1rem 1rem 0.5em;
   }
 
   &-littleButton {
