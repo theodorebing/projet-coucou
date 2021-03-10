@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-import Field from './Field';
+import Field from 'src/components/Field';
 
 const IndexLoginForm = ({
   email,
@@ -55,10 +55,8 @@ IndexLoginForm.propTypes = {
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
   openSignUpForm: PropTypes.func.isRequired,
-  activeSignUpForm: PropTypes.bool,
 };
 IndexLoginForm.defaultProps = {
-  activeSignUpForm: true,
 };
 
 export default IndexLoginForm;
