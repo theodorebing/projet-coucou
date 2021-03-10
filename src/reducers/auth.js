@@ -5,9 +5,14 @@ import {
 } from 'src/actions/auth';
 
 const initialState = {
-  email: '',
-  password: '',
-  isLogged: false,
+  email: 'toto',
+  password: 'toto',
+  isLogged: true,
+  pseudo: "toto",
+  favorites: "toto",
+  familyName: "toto",
+  firstName: "toto",
+  description: "toto"
 };
 
 export default (state = initialState, action = {}) => {
