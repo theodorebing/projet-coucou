@@ -20,6 +20,7 @@ const IndexLoginForm = ({
 
     <div className="indexloginform index-shadow">
       <form method="post" className="form" onSubmit={handleSubmit}>
+        <h3 className="indexloginform-title">Connectez-vous!</h3>
         <Field
           name="email"
           placeholder="Adresse e-mail"

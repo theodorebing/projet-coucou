@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SignUpForm from 'src/components/Index/SignUpForm';
-import { setFieldValue, sendFieldValue, openSignUpForm } from 'src/actions/auth';
+import { openSignUpForm } from 'src/actions/auth';
 
 const mapStateToProps = (state) => ({
   email: state.auth.email,

@@ -19,8 +19,9 @@ const SignUpForm = ({
   return (
 
     <div className="indexsignupform index-shadow">
-      <h3 className="signup-title">Inscrivez-vous!</h3>
+
       <form method="post" className="form" onSubmit={handleSubmit}>
+        <h3 className="indexsignupform-title">Inscrivez-vous!</h3>
         <Field
           name="email"
           placeholder="Adresse e-mail"
