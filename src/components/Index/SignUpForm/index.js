@@ -2,14 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-import Field from './Field';
+import Field from '../IndexLoginForm/Field';
 
-const IndexLoginForm = ({
+const SignUpForm = ({
   email,
   password,
   changeField,
   handleLogin,
-  openSignUpForm,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -18,7 +17,8 @@ const IndexLoginForm = ({
 
   return (
 
-    <div className="indexloginform index-shadow">
+    <div className="indexsignupform index-shadow">
+      <h3 className="signup-title">Inscrivez-vous!</h3>
       <form method="post" className="form" onSubmit={handleSubmit}>
         <Field
           name="email"
@@ -35,30 +35,24 @@ const IndexLoginForm = ({
         />
         <div className="buttons-div">
 
-          <div className="buttons-div-login">
-            <button type="submit" className="indexloginform-button-login button">Connexion</button>
-            <span className="indexloginform-link"><a href="#">Mot de passe oublié ?</a></span>
+          <div className="buttons-div-signup">
+            <button type="submit" className="indexsignupform-button-signup button">Connexion</button>
+            <span className="indexsignupform-link"><a href="#">Mot de passe oublié ?</a></span>
           </div>
         </div>
       </form>
-      <div className="buttons-div-signup">
-        <button type="submit" className="indexloginform-button-signup button" onClick={openSignUpForm}>Créer son compte</button>
-      </div>
     </div>
 
   );
 };
 
-IndexLoginForm.propTypes = {
+SignUpForm.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
-  openSignUpForm: PropTypes.func.isRequired,
-  activeSignUpForm: PropTypes.bool,
 };
-IndexLoginForm.defaultProps = {
-  activeSignUpForm: true,
+SignUpForm.defaultProps = {
 };
 
-export default IndexLoginForm;
+export default SignUpForm;

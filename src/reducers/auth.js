@@ -3,12 +3,14 @@ import {
   SET_ISLOGGED,
   LOGOUT,
   CHECK_CONNECTION,
+  OPEN_SIGNUP_FORM,
 } from 'src/actions/auth';
 
 const initialState = {
   email: '',
   password: '',
   isLogged: false,
+  activeSignUpForm: false,
 };
 
 export default (state = initialState, action = {}) => {
@@ -36,5 +38,10 @@ export default (state = initialState, action = {}) => {
       };
     default:
       return state;
+    case OPEN_SIGNUP_FORM:
+      return {
+        ...state,
+        activeSignUpForm: !state.activeSignUpForm,
+      };
   }
 };

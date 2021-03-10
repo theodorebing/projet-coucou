@@ -37,3 +37,10 @@ export const CHECK_CONNECTION = 'CHECK_CONNECTION';
 export const checkConnection = () => ({
   type: CHECK_CONNECTION,
 });
+
+export const OPEN_SIGNUP_FORM = 'OPEN_SIGNUP_FORM';
+
+export const openSignUpForm = (activeSignUpForm) => ({
+  type: OPEN_SIGNUP_FORM,
+  activeSignUpForm,
+});
