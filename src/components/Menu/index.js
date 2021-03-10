@@ -1,6 +1,8 @@
 // == import
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {
+  NavLink, Route, Switch, Redirect,
+} from 'react-router-dom';
 import logo from 'src/assets/Logo-Coucou-transparent.png';
 import './style.scss';
 import PropTypes from 'prop-types';
@@ -9,10 +11,12 @@ import PropTypes from 'prop-types';
 const Menu = ({ handleLogout }) => (
   <div className="menu">
     <div className="menu-header">
-      <div className="menu-logo-div">
-        <img src={logo} alt="Logo" className="menu-logo" />
-        <span className="menu-logo-text">Coucou !</span>
-      </div>
+      <NavLink to="/">
+        <div className="menu-logo-div">
+          <img src={logo} alt="Logo" className="menu-logo" />
+          <span className="menu-logo-text">Coucou !</span>
+        </div>
+      </NavLink>
       <div className="menu-username"> Geneviève <br /> Grandchamp-Larrieux </div>
       <button type="button" className="menu-littleButton menu-littleButton-disconnect" onClick={handleLogout}> Me déconnecter </button>
     </div>
