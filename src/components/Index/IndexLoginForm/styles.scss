@@ -13,7 +13,9 @@
   flex-direction: column;
   align-items: center;
   &-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    color: vars.$grey-color;
+    font-family: vars.$font-button;
   }
 
   .form {
