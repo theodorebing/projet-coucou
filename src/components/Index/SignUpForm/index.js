@@ -4,23 +4,24 @@ import './styles.scss';
 
 import Field from 'src/components/Field';
 
-const IndexLoginForm = ({
+const SignUpForm = ({
   email,
   password,
   changeField,
-  handleLogin,
+  handleSignup,
   openSignUpForm,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    handleLogin();
+    handleSignup();
   };
 
   return (
 
-    <div className="indexloginform index-shadow">
+    <div className="indexsignupform index-shadow">
+
       <form method="post" className="form" onSubmit={handleSubmit}>
-        <h3 className="indexloginform-title">Connectez-vous!</h3>
+        <h3 className="indexsignupform-title">Inscrivez-vous!</h3>
         <Field
           name="email"
           placeholder="Adresse e-mail"
@@ -36,28 +37,25 @@ const IndexLoginForm = ({
         />
         <div className="buttons-div">
 
-          <div className="buttons-div-login">
-            <button type="submit" className="indexloginform-button-login button">Connexion</button>
-            <span className="indexloginform-link"><a href="#">Mot de passe oublié ?</a></span>
+          <div className="buttons-div-signup">
+            <button type="submit" className="indexsignupform-button-signup button">Valider l'inscription</button>
           </div>
         </div>
       </form>
-      <div className="buttons-div-signup">
-        <button type="submit" className="indexloginform-button-signup button" onClick={openSignUpForm}>Créer son compte</button>
-      </div>
+      <span className="indexsignupform-link"><a href="#" onClick={openSignUpForm}>Retour à la connexion</a></span>
     </div>
 
   );
 };
 
-IndexLoginForm.propTypes = {
+SignUpForm.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
-  handleLogin: PropTypes.func.isRequired,
+  handleSignup: PropTypes.func.isRequired,
   openSignUpForm: PropTypes.func.isRequired,
 };
-IndexLoginForm.defaultProps = {
+SignUpForm.defaultProps = {
 };
 
-export default IndexLoginForm;
+export default SignUpForm;
