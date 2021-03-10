@@ -1,11 +1,11 @@
+// == import
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
 import logo from 'src/assets/Logo-Coucou-transparent.png';
 import './style.scss';
 import PropTypes from 'prop-types';
 
-// == Composant
+// == Menu component
 const Menu = ({ handleLogout }) => (
   <div className="menu">
     <div className="menu-header">
