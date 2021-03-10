@@ -21,7 +21,7 @@ export default (store) => (next) => (action) => {
       return next(action);
 
     case CHECK_CONNECTION:
-      axios.get('api/v1/welcome')
+      axios.get('api/v1/account')
         .then((result) => {
           store.dispatch(setIsLogged(result.data.logged));
         });
