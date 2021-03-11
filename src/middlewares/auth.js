@@ -6,6 +6,7 @@ import {
   setIsLogged,
   logout,
 } from 'src/actions/auth';
+import { setFamilyIdOk } from 'src/actions/family';
 import axios from 'src/api';
 
 export default (store) => (next) => (action) => {
@@ -23,7 +24,9 @@ export default (store) => (next) => (action) => {
     case CHECK_CONNECTION:
       axios.get('api/v1/account')
         .then((result) => {
+          console.log('result account', result.data);
           store.dispatch(setIsLogged(result.data.logged));
+          store.dispatch(setFamilyIdOk(result.data.familyId));
         });
       return next(action);
 

@@ -12,6 +12,8 @@ export default (store) => (next) => (action) => {
         code: familyCode,
       })
         .then((result) => {
+          // console.log(result.data.familyId);
+          console.log('result join', result.data);
           store.dispatch(setFamilyIdOk(result.data.familyId));
         });
       return next(action);

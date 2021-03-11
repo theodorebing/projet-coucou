@@ -1,18 +1,20 @@
 // == Import
 import React, { useEffect } from 'react';
 import {
-  NavLink,
+  NavLink, Redirect,
 } from 'react-router-dom';
 import logo from 'src/assets/Logo-Coucou-transparent.png';
 import './style.scss';
 import PropTypes from 'prop-types';
 
 // == Menu component
-const Menu = ({ handleLogout, email, checkConnection }) => {
+const Menu = ({
+  handleLogout, email, checkConnection, familyId,
+}) => {
   useEffect(() => {
     checkConnection();
   }, []);
-
+  console.log('familyId', familyId);
   return (
     <div className="menu">
       <div className="menu-header">
@@ -29,11 +31,21 @@ const Menu = ({ handleLogout, email, checkConnection }) => {
       <div className="menu-button-list">
         <button type="button" className="menu-button"><NavLink to="/profile" activeClassName="menu-button-onPage">Mon profil</NavLink> </button>
 
-        <button type="button" className="menu-button"> <NavLink to="/family" activeClassName="menu-button-onPage">Ma famille</NavLink>  </button>
+        {(typeof familyId === 'number') && (
+        <>
+          <button type="button" className="menu-button">
+            <NavLink to="/family" activeClassName="menu-button-onPage">Ma famille</NavLink>
+          </button>
 
-        <button type="button" className="menu-button"> <NavLink to="/tree" activeClassName="menu-button-onPage">Arbre</NavLink> </button>
+          <button type="button" className="menu-button">
+            <NavLink to="/tree" activeClassName="menu-button-onPage">Arbre</NavLink>
+          </button>
 
-        <button type="button" className="menu-button"> <NavLink to="/stories" activeClassName="menu-button-onPage">Histoires</NavLink> </button>
+          <button type="button" className="menu-button">
+            <NavLink to="/stories" activeClassName="menu-button-onPage">Histoires</NavLink>
+          </button>
+        </>
+        )}
       </div>
 
       <div className="menu-button-help">

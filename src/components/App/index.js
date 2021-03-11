@@ -9,7 +9,6 @@ import './styles.scss';
 import Index from 'src/containers/Index';
 import Menu from 'src/containers/Menu';
 import WelcomePage from '../WelcomePage';
-import About from '../Help/About';
 import UserManual from '../Help/UserManual';
 import Faq from '../Help/FAQ';
 import NewFeatures from '../Help/NewFeatures';
@@ -22,11 +21,12 @@ import Stories from '../Stories';
 import Help from '../Help';
 
 // == Composant
-const App = ({ isLogged, checkConnection, familyIdOk }) => {
+const App = ({ isLogged, checkConnection, familyId }) => {
   useEffect(() => {
     checkConnection();
   }, []);
 
+  console.log('familyId', familyId);
   return (
     <div className="app">
       <Switch>
@@ -70,7 +70,7 @@ const App = ({ isLogged, checkConnection, familyIdOk }) => {
         {isLogged && (
         <>
           <Menu />
-            {!familyIdOk && (
+            {!familyId && (
               <>
                 <Route path="/" exact>
                   <WelcomePage />
@@ -80,12 +80,15 @@ const App = ({ isLogged, checkConnection, familyIdOk }) => {
                 </Route>
               </>
             )}
-            {familyIdOk && (
+            {familyId && (
               <>
+                <Route path="/" exact>
+                  {familyId ? <Redirect to="/tree" /> : <Tree />}
+                </Route>
                 <Route path="/profile" exact>
                   <Profile />
                 </Route>
-                <Route path="/" exact>
+                <Route path="/tree" exact>
                   <Tree />
                 </Route>
                 <Route path="/family" exact>
@@ -115,12 +118,12 @@ const App = ({ isLogged, checkConnection, familyIdOk }) => {
 App.propTypes = {
   isLogged: PropTypes.bool,
   checkConnection: PropTypes.func.isRequired,
-  familyIdOk: PropTypes.bool,
+  familyId: PropTypes.number,
 };
 
 App.defaultProps = {
   isLogged: false,
-  familyIdOk: true,
+  familyId: null,
 };
 
 // == Export

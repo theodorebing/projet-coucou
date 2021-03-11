@@ -4,7 +4,7 @@ import { checkConnection } from 'src/actions/auth';
 
 const mapStateToProps = (state) => ({
   isLogged: state.auth.isLogged,
-  familyIdOk: state.auth.familyIdOk,
+  familyId: state.family.familyId,
 });
 
 const mapDispatchToProps = (dispatch) => ({

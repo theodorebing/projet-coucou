@@ -6,7 +6,7 @@ export const sendCodeValue = () => ({
 
 export const SET_FAMILY_ID_OK = 'SET_FAMILY_ID_OK';
 
-export const setFamilyIdOk = (familyIdOk) => ({
+export const setFamilyIdOk = (familyId) => ({
   type: SET_FAMILY_ID_OK,
-  familyIdOk,
+  familyId,
 });

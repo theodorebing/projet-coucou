@@ -3,7 +3,7 @@ import { SET_FAMILY_ID_OK } from 'src/actions/family';
 
 const initialState = {
   code: '',
-  familyIdOk: false,
+  familyId: null,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -17,7 +17,7 @@ const reducer = (state = initialState, action = {}) => {
     case SET_FAMILY_ID_OK:
       return {
         ...state,
-        familyIdOk: !state.familyIdOk,
+        familyId: action.familyId,
       };
     default:
       return state;
