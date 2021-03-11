@@ -4,7 +4,10 @@ import Tree from "react-d3-tree";
 
 const debugData = [
   {
-    name: {
+    name: "",
+    id: 1,
+    hidden: true,
+    children: [{
       name: "1",
       place_of_birth: 'Tourcoin',
     person_UUID: '1477788895',
@@ -12,9 +15,11 @@ const debugData = [
     photo: 'url...',
     last_name: 'coucou',
     first_name: 'coucou',
-    last_known_location: 'Tourcoin'
-    },
-    
+    last_known_location: 'Tourcoin'}, 
+    {name: "",
+        id: 2,
+        no_parent: true,
+        hidden: true,
     children: [
       {
         name: "1",
@@ -24,7 +29,7 @@ const debugData = [
       photo: 'url...',
       last_name: 'coucou',
       first_name: 'coucou',
-      last_known_location: 'Tourcoin'
+      last_known_location: 'Tourcoin',
       },
       {
         name: "2",
@@ -54,12 +59,16 @@ const debugData = [
         last_name: 'coucou',
         first_name: 'coucou',
         last_known_location: 'Tourcoin'
-      }
+      }]},
+      {
+        name: "M",
+        id: 10,
+        no_parent: true,
+        children: [
 
-    ],
-    
-  }
-];
+        ],
+        }],
+    }];
 
 const containerStyles = {
   width: '100%',
@@ -104,7 +113,6 @@ export default class CenteredTree extends React.PureComponent {
     return (
       <div style={containerStyles} ref={tc => (this.treeContainer = tc)}>
         <Tree
-
           nodeSize={nodeSize}
           pathFunc={'step'}
           data={debugData}

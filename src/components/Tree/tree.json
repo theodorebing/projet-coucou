@@ -1,0 +1,177 @@
+	
+[
+  {
+    "keys": [
+      "p",
+      "r",
+      "t",
+      "f"
+    ],
+    "length": 4,
+    "_fields": [
+      {
+        "identity": {
+          "low": 42,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "first_name": "mel",
+          "person_UUID": "12347895"
+        }
+      },
+      [
+        {
+          "identity": {
+            "low": 23,
+            "high": 0
+          },
+          "start": {
+            "low": 42,
+            "high": 0
+          },
+          "end": {
+            "low": 40,
+            "high": 0
+          },
+          "type": "DAUGHTER_OF",
+          "properties": {}
+        }
+      ],
+      {
+        "identity": {
+          "low": 40,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "place_of_birth": "Tourcoin",
+          "person_UUID": "1",
+          "date_of_birth": "18/02/2021",
+          "photo": "url...",
+          "last_name": "co",
+          "first_name": "co",
+          "last_known_location": "Tourcoin"
+        }
+      },
+      {
+        "identity": {
+          "low": 41,
+          "high": 0
+        },
+        "labels": [
+          "Family"
+        ],
+        "properties": {
+          "family_UUID": "2122",
+          "designation": "fr"
+        }
+      }
+    ],
+    "_fieldLookup": {
+      "p": 0,
+      "r": 1,
+      "t": 2,
+      "f": 3
+    }
+  },
+  {
+    "keys": [
+      "p",
+      "r",
+      "t",
+      "f"
+    ],
+    "length": 4,
+    "_fields": [
+      {
+        "identity": {
+          "low": 43,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "first_name": "cori",
+          "person_UUID": "15488615"
+        }
+      },
+      [
+        {
+          "identity": {
+            "low": 24,
+            "high": 0
+          },
+          "start": {
+            "low": 43,
+            "high": 0
+          },
+          "end": {
+            "low": 42,
+            "high": 0
+          },
+          "type": "DAUGHTER_OF",
+          "properties": {}
+        },
+        {
+          "identity": {
+            "low": 23,
+            "high": 0
+          },
+          "start": {
+            "low": 42,
+            "high": 0
+          },
+          "end": {
+            "low": 40,
+            "high": 0
+          },
+          "type": "DAUGHTER_OF",
+          "properties": {}
+        }
+      ],
+      {
+        "identity": {
+          "low": 40,
+          "high": 0
+        },
+        "labels": [
+          "Person"
+        ],
+        "properties": {
+          "place_of_birth": "Tourcoin",
+          "person_UUID": "1",
+          "date_of_birth": "18/02/2021",
+          "photo": "url...",
+          "last_name": "co",
+          "first_name": "co",
+          "last_known_location": "Tourcoin"
+        }
+      },
+      {
+        "identity": {
+          "low": 41,
+          "high": 0
+        },
+        "labels": [
+          "Family"
+        ],
+        "properties": {
+          "family_UUID": "2122",
+          "designation": "fr"
+        }
+      }
+    ],
+    "_fieldLookup": {
+      "p": 0,
+      "r": 1,
+      "t": 2,
+      "f": 3
+    }
+  }
+]
