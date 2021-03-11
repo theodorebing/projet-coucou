@@ -3,6 +3,7 @@ import React from "react";
 import Tree from "react-d3-tree";
 import orgChart from './data'
 import './styles.scss';
+import avatar from "src/components/Tree/iconfinder-11-avatar-2754576_120520.png"
 
 
 const foreignObjectProps = { width: 500, height: 500, x: -100, y: -20 };
@@ -12,7 +13,7 @@ const renderForeignObjectNode = ({ nodeDatum }) => {
       <foreignObject {...foreignObjectProps} >
         <span className='name__person'>{nodeDatum.first_name ? `${nodeDatum.first_name}` : ''}</span>
         <figure className='figure'>
-          <img className='picture__person' src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-11-avatar-2754576_120520.png"
+          <img className='picture__person' src={avatar}
           />
           <figcaption className='figcaption'>
             <ul className='information__person'>
