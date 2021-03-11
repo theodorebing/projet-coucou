@@ -24,7 +24,7 @@ const ProfileForm = ({
 
   return (
     <>
-      <h2 className="profile-container-title">Coucou ! {firstName} {familyName}</h2>
+      <h1 className="profile-container-innerElements-titre">Coucou {email}!</h1>
       <form method="post" className="profile-container-innerElements-form" onSubmit={handleSubmit}>
 
         <Field
@@ -80,7 +80,7 @@ const ProfileForm = ({
         />
 
         <div className="profile-container-innerElements-validate">
-          <button type="submit" className="profile-container-innerElements-validate-button">Validez vos changements</button>
+          <button type="submit" className="profile-container-innerElements-form-validate-button">Validez vos changements</button>
         </div>
       </form>
     </>

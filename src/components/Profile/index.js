@@ -8,10 +8,10 @@ import ProfileForm from 'src/containers/Profile';
 import './styles.scss';
 
 // == Composant
-const Profile = () => {
+const Profile = ({ email }) => {
+  console.log(email)
   return (
     <section className="profile">
-      <h1 className="profile-titre">Profile</h1>
       <div className="profile-container">
         <img className="profile-container-img" src={img} alt="img section une" />
         <div className="profile-container-innerElements">
@@ -20,6 +20,7 @@ const Profile = () => {
 
         </div>
       </div>
+
     </section>
   )
 }
