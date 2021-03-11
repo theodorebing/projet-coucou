@@ -1,95 +1,27 @@
 
 import React from "react";
 import Tree from "react-d3-tree";
+import orgChart from './data'
+import './styles.scss';
 
-const debugData = [
-  {
-    name: "",
-    id: 1,
-    hidden: true,
-    children: [{
-      name: "1",
-      place_of_birth: 'Tourcoin',
-    person_UUID: '1477788895',
-    date_of_birth: '18/02/2021',
-    photo: 'url...',
-    last_name: 'coucou',
-    first_name: 'coucou',
-    last_known_location: 'Tourcoin'}, 
-    {name: "",
-        id: 2,
-        no_parent: true,
-        hidden: true,
-    children: [
-      {
-        name: "1",
-        place_of_birth: 'Tourcoin',
-      person_UUID: '1477788895',
-      date_of_birth: '18/02/2021',
-      photo: 'url...',
-      last_name: 'coucou',
-      first_name: 'coucou',
-      last_known_location: 'Tourcoin',
-      },
-      {
-        name: "2",
-        place_of_birth: 'Tourcoin',
-        person_UUID: '1477788895',
-        date_of_birth: '18/02/2021',
-        photo: 'url...',
-        last_name: 'coucou',
-        first_name: 'coucou',
-        last_known_location: 'Tourcoin'
-      },
-      {
-        name: "3",
-        place_of_birth: 'Tourcoin',
-        person_UUID: '1477788895',
-        date_of_birth: '18/02/2021',
-        photo: 'url...',
-        last_name: 'coucou',
-        first_name: 'coucou',
-        last_known_location: 'Tourcoin'
-      },
-      {
-        name: "4", place_of_birth: 'Tourcoin',
-        person_UUID: '1477788895',
-        date_of_birth: '18/02/2021',
-        photo: 'url...',
-        last_name: 'coucou',
-        first_name: 'coucou',
-        last_known_location: 'Tourcoin'
-      }]},
-      {
-        name: "M",
-        id: 10,
-        no_parent: true,
-        children: [
 
-        ],
-        }],
-    }];
-
-const containerStyles = {
-  width: '100%',
-  height: '100vh',
-}
-const foreignObjectProps = { width: 250, height: 250, x: -100, y: -20 };
-const renderForeignObjectNode = ({ nodeDatum, toggleNode, }) => {
-
+const foreignObjectProps = { width: 500, height: 500, x: -100, y: -20 };
+const renderForeignObjectNode = ({ nodeDatum }) => {
   return (
     <g>
-      <foreignObject {...foreignObjectProps} >    
-       <ul className='information__person'>
-         <li>{nodeDatum.last_name ? `Nom: ${nodeDatum.last_name}` : ''}</li>
-         <li>{nodeDatum.first_name ? `Prénom: ${nodeDatum.first_name}` : ''}</li>
-         <li>{nodeDatum.date_of_birth ? `Anniversaire: ${nodeDatum.date_of_birth}` : ''}</li>
-         <li>{nodeDatum.last_known_location ? `Habite à: ${nodeDatum.last_known_location}` : ''}</li>
-       </ul>
-        <img src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-11-avatar-2754576_120520.png"
-          height='200'
-          width='200'
-        />
+      <foreignObject {...foreignObjectProps} >
+        <span className='name__person'>{nodeDatum.first_name ? `${nodeDatum.first_name}` : ''}</span>
+        <figure className='figure'>
+          <img className='picture__person' src="https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-11-avatar-2754576_120520.png"
+          />
+          <figcaption className='figcaption'>
+            <ul className='information__person'>
+              <li>{nodeDatum.first_name ? ` ${nodeDatum.first_name} ${nodeDatum.last_name}` : ''}</li>
+              <li>{nodeDatum.place_of_birth ? `Née à: ${nodeDatum.place_of_birth}` : ''}</li>
+              <li>{nodeDatum.date_of_birth ? `Anniversaire le: ${nodeDatum.date_of_birth}` : ''}</li>
+            </ul>
+          </figcaption>
+        </figure>
       </foreignObject>
     </g>
   )
@@ -108,14 +40,22 @@ export default class CenteredTree extends React.PureComponent {
     });
   }
   render() {
-    const nodeSize = { x: 400, y: 400 };
+    const containerStyles = {
+      width: '90%',
+      height: '200%',
+      right: '2px',
+      position: 'absolute',
+      bottom: '-100px'
+    }
+    const nodeSize = { x: 250, y: 250 }
 
     return (
       <div style={containerStyles} ref={tc => (this.treeContainer = tc)}>
         <Tree
+          zoomable={false}
           nodeSize={nodeSize}
           pathFunc={'step'}
-          data={debugData}
+          data={orgChart}
           translate={this.state.translate}
           orientation={'vertical'}
           renderCustomNodeElement={(rd3tProps) =>
