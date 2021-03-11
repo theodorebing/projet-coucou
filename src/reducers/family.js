@@ -1,7 +1,9 @@
 import { SET_FIELD_VALUE } from 'src/actions/auth';
+import { SET_FAMILY_ID_OK } from 'src/actions/family';
 
 const initialState = {
   code: '',
+  familyIdOk: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -10,6 +12,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.name]: action.value,
+      };
+
+    case SET_FAMILY_ID_OK:
+      return {
+        ...state,
+        familyIdOk: !state.familyIdOk,
       };
     default:
       return state;
