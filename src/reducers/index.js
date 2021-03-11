@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import auth from './auth';
-import joinFamily from './joinFamily';
+import family from './family';
 
 export default combineReducers({
   auth,
-  joinFamily,
+  family,
 });
