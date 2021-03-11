@@ -9,6 +9,7 @@ import {
 const initialState = {
   email: '',
   password: '',
+  code: '',
   isLogged: false,
   activeSignUpForm: false,
 };
