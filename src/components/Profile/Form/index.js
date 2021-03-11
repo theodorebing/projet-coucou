@@ -33,6 +33,7 @@ const ProfileForm = ({
           className="profile-container-innerElements-familyName"
           onChange={changeField}
           value={familyName}
+          label="Nom"
         />
 
         <Field
@@ -42,6 +43,7 @@ const ProfileForm = ({
           className="profile-container-innerElements-firstName"
           onChange={changeField}
           value={firstName}
+          label="Prénom"
         />
 
         <Field
@@ -51,6 +53,7 @@ const ProfileForm = ({
           className="profile-container-innerElements-pseudo"
           onChange={changeField}
           value={pseudo}
+          label="Pseudo"
         />
 
         <Field
@@ -60,6 +63,7 @@ const ProfileForm = ({
           className="profile-container-innerElements-email"
           onChange={changeField}
           value={email}
+          label="Email"
         />
 
         <Field
@@ -69,6 +73,7 @@ const ProfileForm = ({
           className="profile-container-innerElements-password"
           onChange={changeField}
           value={password}
+          label="Mot de passe"
         />
 
         <FieldArea
@@ -77,6 +82,7 @@ const ProfileForm = ({
           onChange={changeField}
           value={description}
           className="profile-container-innerElements-description"
+          label="Description"
         />
 
         <div className="profile-container-innerElements-validate">

@@ -9,6 +9,7 @@ const Field = ({
   placeholder,
   onChange,
   className,
+  label
 }) => {
   const handleChange = (evt) => {
     onChange(evt.target.value, name);
@@ -19,6 +20,7 @@ const Field = ({
   return (
 
     <div className="field">
+      <label htmlFor={inputId}>{label}</label>
       <input
         id={inputId}
         value={value}
@@ -27,6 +29,7 @@ const Field = ({
         className={className}
         placeholder={placeholder}
         name={name}
+        label={label}
       />
     </div>
 

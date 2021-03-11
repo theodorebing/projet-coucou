@@ -9,6 +9,7 @@ const FieldArea = ({
   placeholder,
   onChange,
   className,
+  label
 }) => {
   const handleChange = (evt) => {
     onChange(evt.target.value, name);
@@ -19,6 +20,7 @@ const FieldArea = ({
   return (
 
     <div className="field">
+      <label htmlFor={inputId}>{label}</label>
       <textarea
         id={inputId}
         value={value}
