@@ -1,6 +1,9 @@
 
 import React from "react";
 import Tree from "react-d3-tree";
+import {
+  NavLink,
+} from 'react-router-dom';
 import orgChart from './data'
 import './styles.scss';
 import avatar from "src/components/Tree/iconfinder-11-avatar-2754576_120520.png"
@@ -9,6 +12,7 @@ import avatar from "src/components/Tree/iconfinder-11-avatar-2754576_120520.png"
 const foreignObjectProps = { width: 500, height: 500, x: -100, y: -20 };
 const renderForeignObjectNode = ({ nodeDatum }) => {
   return (
+    <>
     <g>
       <foreignObject {...foreignObjectProps} >
         <span className='name__person'>{nodeDatum.first_name ? `${nodeDatum.first_name}` : ''}</span>
@@ -25,6 +29,7 @@ const renderForeignObjectNode = ({ nodeDatum }) => {
         </figure>
       </foreignObject>
     </g>
+    </>
   )
 };
 
@@ -44,9 +49,9 @@ export default class CenteredTree extends React.PureComponent {
     const containerStyles = {
       width: '90%',
       height: '200%',
-      right: '2px',
+      right: '4%',
       position: 'absolute',
-      bottom: '-100px'
+      bottom: '-100px',
     }
     const nodeSize = { x: 250, y: 250 }
 
@@ -63,6 +68,7 @@ export default class CenteredTree extends React.PureComponent {
             renderForeignObjectNode({ ...rd3tProps, foreignObjectProps })
           }
         />
+        <button type="button" className="add-person-button"> <NavLink to="/tree/addperson" activeClassName="menu-button-onPage">+</NavLink>  </button>
       </div>
     );
   }

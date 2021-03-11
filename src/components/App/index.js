@@ -20,6 +20,7 @@ import Tree from '../Tree';
 import Family from '../Family';
 import Stories from '../Stories';
 import Help from '../Help';
+import AddPersonTree from 'src/components/Tree/TreeForm/AddPersonTree';
 
 // == Composant
 const App = ({ isLogged, checkConnection }) => {
@@ -78,6 +79,9 @@ const App = ({ isLogged, checkConnection }) => {
           </Route>
           <Route path="/tree" exact>
             <Tree />
+            </Route>
+          <Route path="/tree/addperson" exact>
+            <AddPersonTree />
           </Route>
           <Route path="/family" exact>
             <Family />
