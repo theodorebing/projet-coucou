@@ -24,6 +24,7 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         isLogged: !action.isLogged,
+        email: action.email,
       };
     case LOGOUT:
       return {
@@ -35,6 +36,7 @@ export default (state = initialState, action = {}) => {
     case CHECK_CONNECTION:
       return {
         ...state,
+
       };
     default:
       return state;
