@@ -22,7 +22,7 @@ import Stories from '../Stories';
 import Help from '../Help';
 
 // == Composant
-const App = ({ isLogged, checkConnection }) => {
+const App = ({ isLogged, checkConnection, familyIdOk }) => {
   useEffect(() => {
     checkConnection();
   }, []);
@@ -70,21 +70,32 @@ const App = ({ isLogged, checkConnection }) => {
         {isLogged && (
         <>
           <Menu />
-          <Route path="/" exact>
-            <WelcomePage />
-          </Route>
-          <Route path="/profile" exact>
-            <Profile />
-          </Route>
-          <Route path="/tree" exact>
-            <Tree />
-          </Route>
-          <Route path="/family" exact>
-            <Family />
-          </Route>
-          <Route path="/stories" exact>
-            <Stories />
-          </Route>
+            {!familyIdOk && (
+              <>
+                <Route path="/" exact>
+                  <WelcomePage />
+                </Route>
+                <Route path="/profile" exact>
+                  <Profile />
+                </Route>
+              </>
+            )}
+            {familyIdOk && (
+              <>
+                <Route path="/profile" exact>
+                  <Profile />
+                </Route>
+                <Route path="/" exact>
+                  <Tree />
+                </Route>
+                <Route path="/family" exact>
+                  <Family />
+                </Route>
+                <Route path="/stories" exact>
+                  <Stories />
+                </Route>
+              </>
+            )};
         </>
         )}
 
@@ -104,10 +115,12 @@ const App = ({ isLogged, checkConnection }) => {
 App.propTypes = {
   isLogged: PropTypes.bool,
   checkConnection: PropTypes.func.isRequired,
+  familyIdOk: PropTypes.bool,
 };
 
 App.defaultProps = {
   isLogged: false,
+  familyIdOk: true,
 };
 
 // == Export
