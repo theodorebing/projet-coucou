@@ -24,7 +24,6 @@ export default (store) => (next) => (action) => {
     case CHECK_CONNECTION:
       axios.get('api/v1/account')
         .then((result) => {
-          console.log('result account', result.data);
           store.dispatch(setIsLogged(result.data.logged));
           store.dispatch(setFamilyIdOk(result.data.familyId));
         });

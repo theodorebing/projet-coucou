@@ -67,47 +67,47 @@ const App = ({ isLogged, checkConnection, familyId }) => {
           <LegalTerms />
         </Route>
 
-        {isLogged && (
-        <>
-          <Menu />
-            {!familyId && (
-              <>
-                <Route path="/" exact>
-                  <WelcomePage />
-                </Route>
-                <Route path="/profile" exact>
-                  <Profile />
-                </Route>
-              </>
-            )}
-            {familyId && (
-              <>
-                <Route path="/" exact>
-                  {familyId ? <Redirect to="/tree" /> : <Tree />}
-                </Route>
-                <Route path="/profile" exact>
-                  <Profile />
-                </Route>
-                <Route path="/tree" exact>
-                  <Tree />
-                </Route>
-                <Route path="/family" exact>
-                  <Family />
-                </Route>
-                <Route path="/stories" exact>
-                  <Stories />
-                </Route>
-              </>
-            )};
-        </>
-        )}
-
         {!isLogged && (
         <>
           <Route path="/">
             <Index />
           </Route>
         </>
+        )}
+
+        {isLogged && (
+          <>
+            <Menu />
+            {!familyId && (
+            <>
+              <Route path="/" exact>
+                <WelcomePage />
+              </Route>
+              <Route path="/profile" exact>
+                <Profile />
+              </Route>
+            </>
+            )}
+            {familyId && (
+            <>
+              <Route path="/" exact>
+                <Tree />
+              </Route>
+              <Route path="/profile" exact>
+                <Profile />
+              </Route>
+              <Route path="/tree" exact>
+                <Tree />
+              </Route>
+              <Route path="/family" exact>
+                <Family />
+              </Route>
+              <Route path="/stories" exact>
+                <Stories />
+              </Route>
+            </>
+            )};
+          </>
         )}
 
       </Switch>
