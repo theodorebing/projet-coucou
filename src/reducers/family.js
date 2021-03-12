@@ -1,4 +1,3 @@
-
 import { SET_FIELD_VALUE } from 'src/actions/auth';
 import { SET_FAMILY_ID_OK } from 'src/actions/family';
 
@@ -26,4 +25,3 @@ const reducer = (state = initialState, action = {}) => {
 };
 
 export default reducer;
-
