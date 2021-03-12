@@ -1,36 +1,17 @@
 @use 'src/styles/vars';
 
-.stories-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.stories {
 
-    &-titre {
-    color: vars.$main-color;
-    font-weight: bold;
-    font-size: 2rem;
-    margin-bottom: 3rem;
+  &-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  &-text {
-    max-width: 1200px;
-    &-title {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+  &-feed {
 
-    &-content {
-      margin-bottom: 2rem;
-    }
+
   }
 
-  &-img {
-    margin-left: 2rem;
-    margin-right: 0;
-    max-width: 600px;
-  }
 }
-
-
-
