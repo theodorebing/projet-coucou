@@ -1,12 +1,29 @@
-// const initialState = {
-//   familyData= []
-// };
 
-// const reducer = (state = initialState, action = {}) => {
-//   switch (action.type) {
-//     default:
-//       return state;
-//   }
-// };
+import { SET_FIELD_VALUE } from 'src/actions/auth';
+import { SET_FAMILY_ID_OK } from 'src/actions/family';
 
-// export default reducer;
+const initialState = {
+  code: '',
+  familyId: null,
+};
+
+const reducer = (state = initialState, action = {}) => {
+  switch (action.type) {
+    case SET_FIELD_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+
+    case SET_FAMILY_ID_OK:
+      return {
+        ...state,
+        familyId: action.familyId,
+      };
+    default:
+      return state;
+  }
+};
+
+export default reducer;
+

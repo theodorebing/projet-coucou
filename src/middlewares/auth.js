@@ -3,9 +3,11 @@ import {
   SEND_FIELD_VALUE_SIGNUP,
   CHECK_CONNECTION,
   SEND_LOGOUT,
+  checkConnection,
   setIsLogged,
   logout,
 } from 'src/actions/auth';
+import { setFamilyIdOk } from 'src/actions/family';
 import axios from 'src/api';
 
 export default (store) => (next) => (action) => {
@@ -23,7 +25,8 @@ export default (store) => (next) => (action) => {
     case CHECK_CONNECTION:
       axios.get('api/v1/account')
         .then((result) => {
-          store.dispatch(setIsLogged(result.data.logged));
+          store.dispatch(setIsLogged(result.data.logged, result.data.email));
+          store.dispatch(setFamilyIdOk(result.data.familyId));
         });
       return next(action);
 
