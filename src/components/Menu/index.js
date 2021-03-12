@@ -23,8 +23,8 @@ const Menu = ({
             <span className="menu-logo-text">Coucou !</span>
           </div>
         </NavLink>
+        <div className="menu-username"> {email} </div>
         <NavLink to="/">
-          <div className="menu-username"> {email} </div>
           <button type="button" className="menu-littleButton menu-littleButton-disconnect" onClick={handleLogout}> Me déconnecter </button>
         </NavLink>
       </div>
