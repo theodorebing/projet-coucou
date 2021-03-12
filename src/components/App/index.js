@@ -1,7 +1,7 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // == Import
 import './styles.scss';
@@ -25,8 +25,6 @@ const App = ({ isLogged, checkConnection, familyId }) => {
   useEffect(() => {
     checkConnection();
   }, []);
-
-  console.log('familyId', familyId);
   return (
     <div className="app">
       <Switch>

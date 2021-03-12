@@ -1,7 +1,7 @@
 // == Import
 import React, { useEffect } from 'react';
 import {
-  NavLink, Redirect,
+  NavLink,
 } from 'react-router-dom';
 import logo from 'src/assets/Logo-Coucou-transparent.png';
 import './style.scss';
@@ -14,7 +14,6 @@ const Menu = ({
   useEffect(() => {
     checkConnection();
   }, []);
-  console.log('familyId', familyId);
   return (
     <div className="menu">
       <div className="menu-header">
@@ -62,10 +61,12 @@ Menu.propTypes = {
   handleLogout: PropTypes.func.isRequired,
   checkConnection: PropTypes.func.isRequired,
   email: PropTypes.string,
+  familyId: PropTypes.number,
 };
 
 Menu.defaultProps = {
   email: '',
+  familyId: null,
 };
 
 // == Export
