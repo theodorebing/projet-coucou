@@ -19,6 +19,8 @@ import Tree from '../Tree';
 import Family from '../Family';
 import Stories from '../Stories';
 import Help from '../Help';
+import AddPersonTree from 'src/components/Tree/TreeForm/AddPersonTree'
+
 
 // == Composant
 const App = ({ isLogged, checkConnection, familyId }) => {
