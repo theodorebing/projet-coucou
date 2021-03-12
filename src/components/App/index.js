@@ -1,7 +1,7 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // == Import
 import './styles.scss';
@@ -9,7 +9,6 @@ import './styles.scss';
 import Index from 'src/containers/Index';
 import Menu from 'src/containers/Menu';
 import WelcomePage from '../WelcomePage';
-import About from '../Help/About';
 import UserManual from '../Help/UserManual';
 import Faq from '../Help/FAQ';
 import NewFeatures from '../Help/NewFeatures';
@@ -22,11 +21,10 @@ import Stories from '../Stories';
 import Help from '../Help';
 
 // == Composant
-const App = ({ isLogged, checkConnection }) => {
+const App = ({ isLogged, checkConnection, familyId }) => {
   useEffect(() => {
     checkConnection();
   }, []);
-
   return (
     <div className="app">
       <Switch>
@@ -67,33 +65,47 @@ const App = ({ isLogged, checkConnection }) => {
           <LegalTerms />
         </Route>
 
-        {isLogged && (
-        <>
-          <Menu />
-          <Route path="/" exact>
-            <WelcomePage />
-          </Route>
-          <Route path="/profile" exact>
-            <Profile />
-          </Route>
-          <Route path="/tree" exact>
-            <Tree />
-          </Route>
-          <Route path="/family" exact>
-            <Family />
-          </Route>
-          <Route path="/stories" exact>
-            <Stories />
-          </Route>
-        </>
-        )}
-
         {!isLogged && (
         <>
           <Route path="/">
             <Index />
           </Route>
         </>
+        )}
+
+        {isLogged && (
+          <>
+            <Menu />
+            {!familyId && (
+            <>
+              <Route path="/" exact>
+                <WelcomePage />
+              </Route>
+              <Route path="/profile" exact>
+                <Profile />
+              </Route>
+            </>
+            )}
+            {familyId && (
+            <>
+              <Route path="/" exact>
+                <Tree />
+              </Route>
+              <Route path="/profile" exact>
+                <Profile />
+              </Route>
+              <Route path="/tree" exact>
+                <Tree />
+              </Route>
+              <Route path="/family" exact>
+                <Family />
+              </Route>
+              <Route path="/stories" exact>
+                <Stories />
+              </Route>
+            </>
+            )};
+          </>
         )}
 
       </Switch>
@@ -104,10 +116,12 @@ const App = ({ isLogged, checkConnection }) => {
 App.propTypes = {
   isLogged: PropTypes.bool,
   checkConnection: PropTypes.func.isRequired,
+  familyId: PropTypes.number,
 };
 
 App.defaultProps = {
   isLogged: false,
+  familyId: null,
 };
 
 // == Export

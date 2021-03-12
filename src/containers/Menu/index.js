@@ -4,6 +4,7 @@ import { sendLogout, checkConnection } from 'src/actions/auth';
 
 const mapStateToProps = (state) => ({
   email: state.auth.email,
+  familyId: state.family.familyId,
 });
 
 const mapDispatchToProps = (dispatch) => ({

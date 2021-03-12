@@ -8,11 +8,12 @@ import './style.scss';
 import PropTypes from 'prop-types';
 
 // == Menu component
-const Menu = ({ handleLogout, email, checkConnection }) => {
+const Menu = ({
+  handleLogout, email, checkConnection, familyId,
+}) => {
   useEffect(() => {
     checkConnection();
   }, []);
-
   return (
     <div className="menu">
       <div className="menu-header">
@@ -22,18 +23,30 @@ const Menu = ({ handleLogout, email, checkConnection }) => {
             <span className="menu-logo-text">Coucou !</span>
           </div>
         </NavLink>
-        <div className="menu-username"> {email} </div>
-        <button type="button" className="menu-littleButton menu-littleButton-disconnect" onClick={handleLogout}> Me déconnecter </button>
+        <NavLink to="/">
+          <div className="menu-username"> {email} </div>
+          <button type="button" className="menu-littleButton menu-littleButton-disconnect" onClick={handleLogout}> Me déconnecter </button>
+        </NavLink>
       </div>
 
       <div className="menu-button-list">
         <button type="button" className="menu-button"><NavLink to="/profile" activeClassName="menu-button-onPage">Mon profil</NavLink> </button>
 
-        <button type="button" className="menu-button"> <NavLink to="/family" activeClassName="menu-button-onPage">Ma famille</NavLink>  </button>
+        {(typeof familyId === 'number') && (
+        <>
+          <button type="button" className="menu-button">
+            <NavLink to="/family" activeClassName="menu-button-onPage">Ma famille</NavLink>
+          </button>
 
-        <button type="button" className="menu-button"> <NavLink to="/tree" activeClassName="menu-button-onPage">Arbre</NavLink> </button>
+          <button type="button" className="menu-button">
+            <NavLink to="/tree" activeClassName="menu-button-onPage">Arbre</NavLink>
+          </button>
 
-        <button type="button" className="menu-button"> <NavLink to="/stories" activeClassName="menu-button-onPage">Histoires</NavLink> </button>
+          <button type="button" className="menu-button">
+            <NavLink to="/stories" activeClassName="menu-button-onPage">Histoires</NavLink>
+          </button>
+        </>
+        )}
       </div>
 
       <div className="menu-button-help">
@@ -48,10 +61,12 @@ Menu.propTypes = {
   handleLogout: PropTypes.func.isRequired,
   checkConnection: PropTypes.func.isRequired,
   email: PropTypes.string,
+  familyId: PropTypes.number,
 };
 
 Menu.defaultProps = {
   email: '',
+  familyId: null,
 };
 
 // == Export
