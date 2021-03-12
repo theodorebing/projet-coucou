@@ -9,12 +9,8 @@ import {
 const initialState = {
   email: '',
   password: '',
-<<<<<<< HEAD
   isLogged: false,
   activeSignUpForm: false,
-=======
-  isLogged: true,
->>>>>>> tree preparation
 };
 
 export default (state = initialState, action = {}) => {

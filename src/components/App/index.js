@@ -19,7 +19,6 @@ import Tree from '../Tree';
 import Family from '../Family';
 import Stories from '../Stories';
 import Help from '../Help';
-import AddPersonTree from 'src/components/Tree/TreeForm/AddPersonTree';
 
 // == Composant
 const App = ({ isLogged, checkConnection, familyId }) => {
@@ -66,7 +65,6 @@ const App = ({ isLogged, checkConnection, familyId }) => {
           <LegalTerms />
         </Route>
 
-
         {!isLogged && (
         <>
           <Route path="/">
@@ -98,6 +96,7 @@ const App = ({ isLogged, checkConnection, familyId }) => {
               </Route>
               <Route path="/tree" exact>
                 <Tree />
+              </Route>
               <Route path="/tree/addperson" exact>
             <AddPersonTree />
               </Route>
