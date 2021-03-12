@@ -3,6 +3,7 @@ import {
   SEND_FIELD_VALUE_SIGNUP,
   CHECK_CONNECTION,
   SEND_LOGOUT,
+  checkConnection,
   setIsLogged,
   logout,
 } from 'src/actions/auth';

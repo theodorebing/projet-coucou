@@ -14,9 +14,10 @@ export const sendFieldValue = () => ({
 
 export const SET_ISLOGGED = 'SET_ISLOGGED';
 
-export const setIsLogged = (isLogged) => ({
+export const setIsLogged = (isLogged, email) => ({
   type: SET_ISLOGGED,
   isLogged,
+  email,
 });
 
 export const LOGOUT = 'LOGOUT';
@@ -34,8 +35,9 @@ export const sendLogout = () => ({
 
 export const CHECK_CONNECTION = 'CHECK_CONNECTION';
 
-export const checkConnection = () => ({
+export const checkConnection = (email) => ({
   type: CHECK_CONNECTION,
+  email,
 });
 
 export const OPEN_SIGNUP_FORM = 'OPEN_SIGNUP_FORM';
