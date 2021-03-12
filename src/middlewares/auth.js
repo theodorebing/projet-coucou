@@ -3,6 +3,7 @@ import {
   SEND_FIELD_VALUE_SIGNUP,
   CHECK_CONNECTION,
   SEND_LOGOUT,
+  checkConnection,
   setIsLogged,
   logout,
 } from 'src/actions/auth';
@@ -23,7 +24,7 @@ export default (store) => (next) => (action) => {
     case CHECK_CONNECTION:
       axios.get('api/v1/account')
         .then((result) => {
-          store.dispatch(setIsLogged(result.data.logged));
+          store.dispatch(setIsLogged(result.data.logged, result.data.email));
         });
       return next(action);
 
