@@ -7,6 +7,7 @@ import {
 const initialState = {
   list: [],
   activeStoryDetails: false,
+  id: null,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -24,6 +25,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         activeStoryDetails: !state.activeStoryDetails,
+        id: action.id,
       };
     default:
       return state;

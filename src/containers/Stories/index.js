@@ -4,6 +4,7 @@ import { fetchStories } from 'src/actions/stories';
 
 const mapStateToProps = (state) => ({
   stories: state.stories.list,
+  activeStoryDetails: state.stories.activeStoryDetails,
 });
 
 const mapDispatchToProps = (dispatch) => ({

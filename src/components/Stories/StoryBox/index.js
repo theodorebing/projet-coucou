@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import StoryText from './StoryText';
+import StoryText from '../StoryText';
 
 import './styles.scss';
 
@@ -9,6 +9,7 @@ import './styles.scss';
 const StoryBox = ({
   title,
   text,
+  id,
   // location,
   // created_at,
   // starting_date,
@@ -16,10 +17,13 @@ const StoryBox = ({
   // updated_at,
   openStoryDetails,
 }) => (
-  <div className="storyBox" onClick={openStoryDetails}>
-    <h2 className="story-title">{title}</h2>
-    <StoryText text={text} />
-  </div>
+  <>
+    <div className="storyBox" onClick={openStoryDetails}>
+      <h2 className="story-title">{title}</h2>
+      <StoryText text={text} />
+    </div>
+  </>
+
 );
 
 StoryBox.propTypes = {

@@ -6,7 +6,7 @@ const mapStateToProps = () => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  openStoryDetails: () => dispatch(openStoryDetails()),
+  openStoryDetails: (id) => dispatch(openStoryDetails(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StoryBox);

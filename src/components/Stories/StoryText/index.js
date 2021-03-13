@@ -3,14 +3,11 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 
 // == Component
-const StoryText = ({ text }) => {
-  console.log('text in storyText', text);
-  return (
-    <div className="storyText">
-      {text}
-    </div>
-  );
-};
+const StoryText = ({ text }) => (
+  <div className="storyText">
+    {text}
+  </div>
+);
 
 StoryText.propTypes = {
   text: PropTypes.string,

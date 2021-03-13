@@ -7,7 +7,6 @@ export default (store) => (next) => (action) => {
     case FETCH_STORIES:
       axios.get(`${baseurl}family/stories`)
         .then((result) => {
-          console.log(result.data);
           store.dispatch(setStories(result.data));
         });
       return next(action);
