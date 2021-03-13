@@ -10,3 +10,10 @@ export const setStories = (stories) => ({
   type: SET_STORIES,
   stories,
 });
+
+export const OPEN_STORY_DETAILS = 'OPEN_STORY_DETAILS';
+
+export const openStoryDetails = (activeStoryDetails) => ({
+  type: OPEN_STORY_DETAILS,
+  activeStoryDetails,
+});

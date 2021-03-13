@@ -14,8 +14,9 @@ const StoryBox = ({
   // starting_date,
   // ending_date,
   // updated_at,
+  openStoryDetails,
 }) => (
-  <div className="storyBox">
+  <div className="storyBox" onClick={openStoryDetails}>
     <h2 className="story-title">{title}</h2>
     <StoryText text={text} />
   </div>
@@ -29,6 +30,7 @@ StoryBox.propTypes = {
   // starting_date: PropTypes.string,
   // ending_date: PropTypes.string,
   // updated_at: PropTypes.string,
+  openStoryDetails: PropTypes.func.isRequired,
 };
 
 StoryBox.defaultProps = {

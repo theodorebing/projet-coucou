@@ -1,10 +1,12 @@
 import {
   SET_STORIES,
   FETCH_STORIES,
+  OPEN_STORY_DETAILS,
 } from 'src/actions/stories';
 
 const initialState = {
   list: [],
+  activeStoryDetails: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -17,6 +19,11 @@ const reducer = (state = initialState, action = {}) => {
     case FETCH_STORIES:
       return {
         ...state,
+      };
+    case OPEN_STORY_DETAILS:
+      return {
+        ...state,
+        activeStoryDetails: !state.activeStoryDetails,
       };
     default:
       return state;

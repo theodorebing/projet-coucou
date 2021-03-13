@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import PlusButton from 'src/components/PlusButton';
 import FamilyNameTitle from 'src/components/FamilyNameTitle';
-import StoryBox from 'src/components/Stories/StoryBox';
+import StoryBox from 'src/containers/Stories/StoryBox';
 import './styles.scss';
 
 // == Composant
@@ -14,15 +14,18 @@ const Stories = ({ stories, fetchStories }) => {
     }, []));
   }
   return (
-    <div className="stories-div">
+    <div className="stories">
       <FamilyNameTitle />
-      {stories && (
-      <div className="stories-feed">
-        {stories.map((story) => (
-          <StoryBox key={story.id} {...story} />
-        ))}
+      <div className="stories-div">
+        {stories && (
+          <div className="stories-feed">
+            {stories.map((story) => (
+              <StoryBox key={story.id} {...story} />
+            ))}
+          </div>
+        )}
+
       </div>
-      )}
       <PlusButton />
     </div>
   );

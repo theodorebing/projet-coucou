@@ -4,10 +4,11 @@
 
   &-div {
   position: fixed;
-  bottom: 25px;
+  bottom: 0px;
+  left: 150px;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+  // flex-direction: row;
+  // align-items: flex-end;
   justify-content: center;
   width: 100%;
   }
