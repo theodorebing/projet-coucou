@@ -1,5 +1,6 @@
 import {
   SET_STORIES,
+  FETCH_STORIES,
 } from 'src/actions/stories';
 
 const initialState = {
@@ -12,6 +13,10 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.stories,
+      };
+    case FETCH_STORIES:
+      return {
+        ...state,
       };
     default:
       return state;

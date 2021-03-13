@@ -8,6 +8,7 @@ import './styles.scss';
 
 // == Composant
 const Stories = ({ stories, fetchStories }) => {
+  console.log('stories', stories);
   if (stories) {
     (useEffect(() => {
       fetchStories();
@@ -29,7 +30,7 @@ const Stories = ({ stories, fetchStories }) => {
 };
 
 Stories.propTypes = {
-  fetchStories: PropTypes.func,
+  fetchStories: PropTypes.func.isRequired,
   stories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -38,7 +39,6 @@ Stories.propTypes = {
 };
 
 Stories.defaultProps = {
-  fetchStories: null,
   stories: null,
 };
 

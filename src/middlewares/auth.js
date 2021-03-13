@@ -3,7 +3,6 @@ import {
   SEND_FIELD_VALUE_SIGNUP,
   CHECK_CONNECTION,
   SEND_LOGOUT,
-  checkConnection,
   setIsLogged,
   logout,
 } from 'src/actions/auth';
@@ -39,7 +38,7 @@ export default (store) => (next) => (action) => {
       return next(action);
 
     case SEND_FIELD_VALUE_SIGNUP:
-      axios.post(`${baseurl}inscription`, {
+      axios.post(`${baseurl}subscription`, {
         email: store.getState().auth.email,
         password: store.getState().auth.password,
       });
