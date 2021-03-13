@@ -1,13 +1,23 @@
 .storyBox {
-  width: 300px;
+  width: 400px;
+  margin: 1rem;
+  padding: 1rem;
   max-height: 39.9rem;
   overflow: hidden;
   text-overflow: ellipsis;
+  border: none;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.850);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  align-self: flex-start;
+}
+
+.fadingText {
+
 }
 
 .fade {
   position: relative;
-   /* exactly three lines */
   &:after {
     content: "";
     text-align: right;
@@ -15,7 +25,11 @@
     bottom: 0;
     right: 0;
     width: 70%;
-    height: 1.2em;
+    height: 1em;
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
   }
+}
+
+.story-title {
+  text-align: center;
 }

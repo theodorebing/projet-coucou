@@ -7,11 +7,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 200px;
   }
 
   &-feed {
-
-
+    margin: 1rem;
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 3;
+    flex-wrap: wrap;
   }
 
 }

@@ -3,18 +3,21 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 
 // == Component
-const StoryText = ({ story }) => (
-  <div className="storyText">
-    {story}
-  </div>
-);
+const StoryText = ({ text }) => {
+  console.log('text in storyText', text);
+  return (
+    <div className="storyText">
+      {text}
+    </div>
+  );
+};
 
 StoryText.propTypes = {
-  story: PropTypes.string,
+  text: PropTypes.string,
 };
 
 StoryText.defaultProps = {
-  story: '',
+  text: '',
 };
 
 // == Export

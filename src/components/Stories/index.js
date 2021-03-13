@@ -8,7 +8,6 @@ import './styles.scss';
 
 // == Composant
 const Stories = ({ stories, fetchStories }) => {
-  console.log('stories', stories);
   if (stories) {
     (useEffect(() => {
       fetchStories();

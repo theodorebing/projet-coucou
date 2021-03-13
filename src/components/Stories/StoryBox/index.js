@@ -9,39 +9,36 @@ import './styles.scss';
 const StoryBox = ({
   title,
   text,
-  location,
-  created_at,
-  starting_date,
-  ending_date,
-  updated_at,
-}) => {
-  console.log('stories in storyBox', title);
-
-  return (
-    <div className="storyBox fade">
-      <StoryText />
-    </div>
-  );
-};
+  // location,
+  // created_at,
+  // starting_date,
+  // ending_date,
+  // updated_at,
+}) => (
+  <div className="storyBox">
+    <h2 className="story-title">{title}</h2>
+    <StoryText text={text} />
+  </div>
+);
 
 StoryBox.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
-  location: PropTypes.string,
-  created_at: PropTypes.string,
-  starting_date: PropTypes.string,
-  ending_date: PropTypes.string,
-  updated_at: PropTypes.string,
+  // location: PropTypes.string,
+  // created_at: PropTypes.string,
+  // starting_date: PropTypes.string,
+  // ending_date: PropTypes.string,
+  // updated_at: PropTypes.string,
 };
 
 StoryBox.defaultProps = {
   title: '',
   text: '',
-  location: '',
-  created_at: '',
-  starting_date: '',
-  ending_date: '',
-  updated_at: '',
+  // location: '',
+  // created_at: '',
+  // starting_date: '',
+  // ending_date: '',
+  // updated_at: '',
 };
 
 // == Export
