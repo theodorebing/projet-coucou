@@ -18,8 +18,9 @@ const ProfileForm = ({
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log("form validé")
+
     handleValidate()
+    console.log("form validé")
   };
 
   return (

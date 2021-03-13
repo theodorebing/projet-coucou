@@ -1,11 +1,13 @@
 import {
   SET_FIELD_VALUE,
+  SEND_FIELD_VALUE,
   SET_ISLOGGED,
   LOGOUT,
 } from 'src/actions/auth';
 
+
 const initialState = {
-  email: 'toto',
+  email: 'toto@toto',
   password: 'toto',
   isLogged: true,
   pseudo: "toto",
@@ -18,6 +20,11 @@ const initialState = {
 export default (state = initialState, action = {}) => {
   switch (action.type) {
     case SET_FIELD_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+    case SEND_FIELD_VALUE:
       return {
         ...state,
         [action.name]: action.value,

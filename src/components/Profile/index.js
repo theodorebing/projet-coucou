@@ -8,8 +8,8 @@ import ProfileForm from 'src/containers/Profile';
 import './styles.scss';
 
 // == Composant
-const Profile = ({ email }) => {
-  console.log(email)
+const Profile = () => {
+
   return (
     <section className="profile">
       <div className="profile-container">
