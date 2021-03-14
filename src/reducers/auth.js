@@ -7,14 +7,9 @@ import {
 
 
 const initialState = {
-  email: 'toto@toto',
-  password: 'toto',
+  email: '',
+  password: '',
   isLogged: true,
-  pseudo: "toto",
-  favorites: "toto",
-  familyName: "toto",
-  firstName: "toto",
-  description: "toto"
 };
 
 export default (state = initialState, action = {}) => {

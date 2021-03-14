@@ -4,23 +4,23 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 import Field from './FieldInput';
-import FieldArea from './FieldArea';
+// import FieldArea from './FieldArea';
 
 const ProfileForm = ({
   email,
-  password,
   changeField,
-  familyName,
-  firstName,
-  pseudo,
-  description,
-  handleValidate,
+  // familyName,
+  // firstName,
+  familyId,
+  // pseudo,
+  // description,
+  // handleValidate,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    handleValidate()
-    console.log("form validé")
+    // handleValidate()
+    // console.log("form validé")
   };
 
   return (
@@ -28,7 +28,7 @@ const ProfileForm = ({
       <h1 className="profile-container-innerElements-titre">Coucou {email}!</h1>
       <form method="post" className="profile-container-innerElements-form" onSubmit={handleSubmit}>
 
-        <Field
+        {/* <Field
           name="familyName"
           placeholder="Votre nom"
           className="profile-container-innerElements-familyName"
@@ -55,6 +55,16 @@ const ProfileForm = ({
           onChange={changeField}
           value={pseudo}
           label="Pseudo"
+        /> */}
+
+        <Field
+          name="Code famille"
+          type="text"
+          placeholder="Le code de votre famille"
+          className="profile-container-innerElements-pseudo"
+          onChange={changeField}
+          value={familyId}
+          label="Code famille"
         />
 
         <Field
@@ -67,28 +77,18 @@ const ProfileForm = ({
           label="Email"
         />
 
-        <Field
-          name="password"
-          type="password"
-          placeholder="Votre nom"
-          className="profile-container-innerElements-password"
-          onChange={changeField}
-          value={password}
-          label="Mot de passe"
-        />
-
-        <FieldArea
+        {/* <FieldArea
           name="description"
           placeholder="Votre nom"
           onChange={changeField}
           value={description}
           className="profile-container-innerElements-description"
           label="Description"
-        />
+        /> */}
 
-        <div className="profile-container-innerElements-validate">
+        {/* <div className="profile-container-innerElements-validate">
           <button type="submit" className="profile-container-innerElements-form-validate-button">Validez vos changements</button>
-        </div>
+        </div> */}
       </form>
     </>
   );
