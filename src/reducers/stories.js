@@ -5,6 +5,7 @@ import {
   FETCH_STORY_DETAILS,
   OPEN_STORY_DETAILS,
   OPEN_ADD_STORY_FORM,
+  DELETE_STORY,
 } from 'src/actions/stories';
 import { SET_FIELD_VALUE } from 'src/actions/auth';
 
@@ -24,6 +25,7 @@ const initialState = {
   activeStoryDetails: false,
   activeAddStoryForm: false,
   id: null,
+  deleteStoryBool: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -72,6 +74,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.name]: action.value,
+      };
+    case DELETE_STORY:
+      return {
+        ...state,
+        deleteStoryBool: !state.deleteStoryBool,
       };
     default:
       return state;

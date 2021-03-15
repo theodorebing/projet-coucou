@@ -19,7 +19,6 @@ export default (store) => (next) => (action) => {
         });
       return next(action);
     case FETCH_STORY_DETAILS:
-      console.log('action', action);
       axios.get(`${baseurl}family/stories/${action.id}`)
         .then((result) => {
           store.dispatch(setStory(result.data,

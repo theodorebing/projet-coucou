@@ -14,7 +14,9 @@ const Stories = ({
 }) => {
   if (stories) {
     (useEffect(() => {
-      fetchStories();
+      setTimeout(() => {
+        fetchStories();
+      }, 500);
     }, []));
   }
   return (
@@ -24,12 +26,14 @@ const Stories = ({
       {!activeAddStoryForm && (
       <>
         <div className="stories-div">
-          {stories && (
-          <div className="stories-feed">
-            {stories.map((story) => (
-              <StoryBox key={story.id} {...story} />
-            ))}
-          </div>
+          {Object.keys(stories).length ? (
+            <div className="stories-feed">
+              {stories.map((story) => (
+                <StoryBox key={story.id} {...story} />
+              ))}
+            </div>
+          ) : (
+            <h2 className="stories-loading">Loading</h2>
           )}
 
         </div>

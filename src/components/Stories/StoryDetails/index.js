@@ -7,7 +7,7 @@ import axios from 'src/api';
 import baseurl from 'src/middlewares/baseurl';
 
 // == Component
-const StoryDetails = () => {
+const StoryDetails = ({ deleteStory, deleteStoryBool }) => {
   const [story, setStory] = useState({});
   const { storyId } = useParams();
   (useEffect(() => {
@@ -19,6 +19,11 @@ const StoryDetails = () => {
         // }, 2000);
       }
     });
+    if (deleteStoryBool === true) {
+      axios.delete(`${baseurl}family/stories/${storyId}`).then(() => {
+        deleteStory();
+      });
+    }
   }, []));
   return (
     <div className="storyDetails-page">
@@ -28,18 +33,18 @@ const StoryDetails = () => {
           <>
             <h2 className="storyDetails-title">{story.title}</h2>
             <p className="storyDetails-text">{story.text}</p>
-            <span className="storyDetails-createdAt storyDetails-date">{story.created_at}</span>
+            <span className="storyDetails-createdAt storyDetails-date">Date d'ajout: {story.created_at}</span>
             {/* {!story.updated_at &&
               (<span className="story-updatedAt storyDetails-date">{story.updated_at}</span>)}
             */}
-            <span className="storyDetails-startingDate storyDetails-date">{story.starting_date}</span>
-            <span className="storyDetails-endingDate storyDetails-date">{story.ending_date}</span>
-            <span className="storyDetails-location storyDetails-date">{story.location}</span>
+            <span className="storyDetails-startingDate storyDetails-date">Date de début de l'histoire: {story.starting_date}</span>
+            <span className="storyDetails-endingDate storyDetails-date">Date de fin de l'histoire: {story.ending_date}</span>
+            <span className="storyDetails-location storyDetails-date">Lieu(x) où se déroule l'histoire:  {story.location}</span>
             <div className="storyDetails-div-buttons">
               <button type="button" className="storyDetails-button">
                 Modifier
               </button>
-              <button type="button" className="storyDetails-button">
+              <button type="button" className="storyDetails-button" onClick={deleteStory}>
                 Supprimer l'histoire
               </button>
             </div>
@@ -63,10 +68,13 @@ StoryDetails.propTypes = {
     title: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
   }),
+  deleteStory: PropTypes.func.isRequired,
+  deleteStoryBool: PropTypes.bool,
 };
 
 StoryDetails.defaultProps = {
   story: null,
+  deleteStoryBool: false,
 };
 
 // == Export

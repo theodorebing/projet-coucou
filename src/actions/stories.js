@@ -44,3 +44,10 @@ export const ADD_STORY = 'ADD_STORY';
 export const addStory = () => ({
   type: ADD_STORY,
 });
+
+export const DELETE_STORY = 'DELETE_STORY';
+
+export const deleteStory = (deleteStoryBool) => ({
+  type: DELETE_STORY,
+  deleteStoryBool,
+});

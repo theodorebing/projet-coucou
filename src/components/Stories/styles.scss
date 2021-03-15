@@ -24,4 +24,12 @@
 
   }
 
+  &-loading {
+    text-align: center;
+    margin-top: 20rem;
+    font-family: vars.$font-coucou;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
 }
