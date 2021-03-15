@@ -8,26 +8,13 @@ export default (store) => (next) => (action) => {
   switch (action.type) {
     case SEND_FIELD_VALUE:
       try {
-        // axios.post('api/v1/connexion', {
-        //   email: store.getState().auth.email,
-        //   password: store.getState().auth.password,
-        // })
-        //   .then((result) => {
-        //     store.dispatch(setIsLogged(result.data.logged));
-        //   });
-        const data = {
-          email: 'toto@toto',
-          password: 'toto',
-          isLogged: true,
-          pseudo: "toto",
-          favorites: "toto",
-          familyName: "toto",
-          firstName: "toto",
-          familyId: 1234
-        }
-
-        store.dispatch(setIsLogged(data))
-
+        axios.post('api/v1/connexion', {
+          email: store.getState().auth.email,
+          password: store.getState().auth.password,
+        })
+          .then((result) => {
+            store.dispatch(setIsLogged(result.data.logged));
+          });
       } catch (error) {
         console.log(error);
       }
