@@ -1,6 +1,7 @@
 // == Import : npm
 import ReactFamilyTree from 'react-family-tree';
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 // import PinchZoomPan from './PinchZoomPan';
 import FamilyNode from './FamilyNode';
@@ -63,6 +64,7 @@ const Tree = () => {
         )}
       />
       {/* </PinchZoomPan> */}
+      <button type="button" className="add-person-button"> <NavLink to="/tree/addperson" activeClassName="menu-button-onPage">+</NavLink>  </button>
     </div>
   )
 
