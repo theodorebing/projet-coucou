@@ -1,15 +1,24 @@
 // == Import npm
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // == Import
 import './styles.scss';
 
 // == Composant
-const PlusButton = () => (
+const PlusButton = ({ openAddForm }) => (
   <div className="plusButton-div">
-    <button type="button" className="plusButton-button"> + </button>
+    <button type="button" className="plusButton-button" onClick={openAddForm}> + </button>
   </div>
 );
+
+PlusButton.propTypes = {
+  openAddForm: PropTypes.func.isRequired,
+};
+
+PlusButton.defaultProps = {
+
+};
 
 // == Export
 export default PlusButton;

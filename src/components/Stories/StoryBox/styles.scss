@@ -1,8 +1,11 @@
 @use 'src/styles/vars';
 
 .storyBox {
-  width: 22%;
-  margin: 1rem;
+  // width: 200px;
+  // margin: 1rem;
+  // display: inline-block;
+  // margin: 0 0 1em;
+  // width: 95%;
   padding: 1rem;
   max-height: 39.9rem;
   overflow: hidden;
@@ -11,14 +14,11 @@
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.850);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  align-self: flex-start;
+  // align-self: flex-start;
   cursor: pointer;
   outline: none;
 }
 
-.fadingText {
-
-}
 
 .fade {
   position: relative;
