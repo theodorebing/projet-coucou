@@ -9,6 +9,7 @@ import './styles.scss';
 import Index from 'src/containers/Index';
 import Menu from 'src/containers/Menu';
 import Stories from 'src/containers/Stories';
+import StoryDetails from 'src/containers/Stories/StoryDetails';
 import WelcomePage from '../WelcomePage';
 import UserManual from '../Help/UserManual';
 import Faq from '../Help/FAQ';
@@ -102,6 +103,9 @@ const App = ({ isLogged, checkConnection, familyId }) => {
               </Route>
               <Route path="/stories" exact>
                 <Stories />
+              </Route>
+              <Route path="/family/stories/:id">
+                <StoryDetails />
               </Route>
             </>
             )};
