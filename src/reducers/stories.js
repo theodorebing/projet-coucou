@@ -1,6 +1,8 @@
 import {
   SET_STORIES,
+  SET_STORY,
   FETCH_STORIES,
+  FETCH_STORY_DETAILS,
   OPEN_STORY_DETAILS,
   OPEN_ADD_STORY_FORM,
 } from 'src/actions/stories';
@@ -8,6 +10,17 @@ import { SET_FIELD_VALUE } from 'src/actions/auth';
 
 const initialState = {
   list: [],
+  story: [
+    {
+      id: null,
+      title: '',
+      text: '',
+      location: '',
+      startingDate: '',
+      endingDate: '',
+      createdAt: '',
+    },
+  ],
   activeStoryDetails: false,
   activeAddStoryForm: false,
   id: null,
@@ -20,7 +33,27 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         list: action.stories,
       };
+    case SET_STORY:
+      return {
+        ...state,
+        story: action.story,
+        // [
+        //   {
+        //     id: action.story.id,
+        //     title: action.story.title,
+        //     text: action.story.text,
+        //     location: action.story.location,
+        //     startingDate: action.story.starting_date,
+        //     endingDate: action.story.ending_date,
+        //     createdAt: action.story.created_at,
+        //   },
+        // ],
+      };
     case FETCH_STORIES:
+      return {
+        ...state,
+      };
+    case FETCH_STORY_DETAILS:
       return {
         ...state,
       };

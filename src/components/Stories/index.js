@@ -21,7 +21,6 @@ const Stories = ({
 
     <div className="stories">
       <FamilyNameTitle />
-
       {!activeAddStoryForm && (
       <>
         <div className="stories-div">

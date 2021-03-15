@@ -104,7 +104,7 @@ const App = ({ isLogged, checkConnection, familyId }) => {
               <Route path="/stories" exact>
                 <Stories />
               </Route>
-              <Route path="/family/stories/:id">
+              <Route path="/family/stories/:storyId">
                 <StoryDetails />
               </Route>
             </>
