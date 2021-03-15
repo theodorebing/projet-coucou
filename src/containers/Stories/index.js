@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Stories from 'src/components/Stories';
-import { fetchStories, addStory, openAddStoryForm } from 'src/actions/stories';
+import { fetchStories, openAddStoryForm } from 'src/actions/stories';
 
 const mapStateToProps = (state) => ({
   stories: state.stories.list,
@@ -10,7 +10,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchStories: () => dispatch(fetchStories()),
-  addStory: () => dispatch(addStory()),
   openAddStoryForm: () => dispatch(openAddStoryForm()),
 });
 

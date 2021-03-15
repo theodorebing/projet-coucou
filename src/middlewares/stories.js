@@ -1,4 +1,6 @@
-import { FETCH_STORIES, setStories, ADD_STORY } from 'src/actions/stories';
+import {
+  FETCH_STORIES, fetchStories, setStories, ADD_STORY, openAddStoryForm,
+} from 'src/actions/stories';
 import axios from 'src/api';
 import baseurl from './baseurl';
 
@@ -11,9 +13,16 @@ export default (store) => (next) => (action) => {
         });
       return next(action);
     case ADD_STORY:
-      axios.post(`${baseurl}family/stories`)
-        .then((result) => {
-          setStories(result.data);
+      axios.post(`${baseurl}family/stories`, {
+        title: store.getState().stories.title,
+        text: store.getState().stories.text,
+        location: store.getState().stories.location,
+        startingDate: store.getState().stories.startingDate,
+        endingDate: store.getState().stories.endingDate,
+      })
+        .then(() => {
+          store.dispatch(fetchStories());
+          store.dispatch(openAddStoryForm());
         });
       return next(action);
     default:

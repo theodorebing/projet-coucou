@@ -4,6 +4,7 @@ import {
   OPEN_STORY_DETAILS,
   OPEN_ADD_STORY_FORM,
 } from 'src/actions/stories';
+import { SET_FIELD_VALUE } from 'src/actions/auth';
 
 const initialState = {
   list: [],
@@ -33,6 +34,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         activeAddStoryForm: !state.activeAddStoryForm,
+      };
+    case SET_FIELD_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
       };
     default:
       return state;
