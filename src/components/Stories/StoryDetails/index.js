@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import FamilyNameTitle from 'src/components/FamilyNameTitle';
 import axios from 'src/api';
 import baseurl from 'src/middlewares/baseurl';
 
 // == Component
-const StoryDetails = ({ deleteStory, deleteStoryBool }) => {
+const StoryDetails = () => {
   const [story, setStory] = useState({});
   const { storyId } = useParams();
+  const history = useHistory();
+  const handleClick = () => {
+    setTimeout(() => {
+      history.push('/stories');
+    }, 2000);
+  };
+  const deleteStory = () => {
+    axios.delete(`${baseurl}family/stories/${storyId}`);
+    handleClick();
+  };
+
   (useEffect(() => {
     // fetchStoryDetails();
     axios.get(`${baseurl}family/stories/${storyId}`).then((result) => {
@@ -19,11 +30,6 @@ const StoryDetails = ({ deleteStory, deleteStoryBool }) => {
         // }, 2000);
       }
     });
-    if (deleteStoryBool === true) {
-      axios.delete(`${baseurl}family/stories/${storyId}`).then(() => {
-        deleteStory();
-      });
-    }
   }, []));
   return (
     <div className="storyDetails-page">
@@ -54,7 +60,7 @@ const StoryDetails = ({ deleteStory, deleteStoryBool }) => {
 
           </>
         ) : (
-          <h2 className="story-title">loading</h2>
+          <h2 className="story-title">Loading</h2>
         )}
 
       </div>
