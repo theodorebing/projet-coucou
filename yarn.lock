@@ -5152,6 +5152,11 @@ pify@^4.0.1:
   resolved "https://registry.npmjs.org/pify/-/pify-4.0.1.tgz"
   integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
 
+pinch-zoom-pan@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/pinch-zoom-pan/-/pinch-zoom-pan-3.0.0.tgz#a444d45d15ccbe2eb5aa1e0b063c69ec4e2181c5"
+  integrity sha512-VU/8a+Ke5utGgw1wvF+n67WHO+FW2Wu3m/oNsRErcUeLrDOOp0nhHhLTbXwyRiXwKgXb+7UW791KANcD/APRPg==
+
 pinkie-promise@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/pinkie-promise/-/pinkie-promise-2.0.1.tgz"
@@ -5947,6 +5952,13 @@ react-dom@^17.0.1:
     object-assign "^4.1.1"
     scheduler "^0.20.1"
 
+react-family-tree@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-family-tree/-/react-family-tree-2.0.2.tgz#c9d6536e6a4fcfba24537449ff56d8959b49421f"
+  integrity sha512-/O09KCYk9WaAeCE73eZiNFz3gzFFCoT9Fb0JQ8Or8GHW8Qh8PGPPaY3FSypBFZho/bnHKlUsrgnV2PVbg6pN/g==
+  dependencies:
+    relatives-tree "2.0.x"
+
 react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -6148,6 +6160,11 @@ relateurl@^0.2.7:
   version "0.2.7"
   resolved "https://registry.npmjs.org/relateurl/-/relateurl-0.2.7.tgz"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
+
+relatives-tree@2.0.x:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/relatives-tree/-/relatives-tree-2.0.2.tgz#f2c654804b18377e4f96262b6be457f996258b54"
+  integrity sha512-829zhDeJ3x8k2Ew1jW8mvVBbCBGhlx25E92rdUe8ftMsJuPuYrHUNXDlJLjFZPqbDb4r4tjLiptCv2rnnORZsA==
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"

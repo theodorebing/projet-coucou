@@ -1,23 +1,73 @@
 // == Import : npm
-import React from 'react';
+import ReactFamilyTree from 'react-family-tree';
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+// import PinchZoomPan from './PinchZoomPan';
+import FamilyNode from './FamilyNode';
+import data from './data.json'
 
-import img from 'src/assets/images/campagne_tranquille.jpg';
 
 // == Import : local
 import './styles.scss';
 
+
+
 // == Composant
 const Tree = () => {
+  const [tree, setTree] = useState([])
+  const loadTree = async () => {
+    // test on an external API before connecting our API back
+    try {
+      const response = await axios.get('https://api.le-systeme-solaire.net/rest/bodies/');
+      setTree(response.data.bodies[0].id);
+      console.log(response.data.bodies[0].id)
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    loadTree();
+  }, []);
+  const WIDTH = 200;
+  const HEIGHT = 200;
   return (
-    <section className="tree-section">
-      <h1 className="tree-section-titre">Arbre</h1>
-      <div className="tree-section-text">
-        <h2 className="tree-section-text-title">PAGE TEST ARBRE</h2>
-        <p className="tree-section-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, id. Officia dolores nesciunt assumenda! Nesciunt non quidem animi laborum voluptatibus laudantium sapiente neque, provident repellendus quasi inventore facere, veritatis expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quae deleniti optio natus asperiores perspiciatis reprehenderit omnis facilis repellendus, non dolore expedita blanditiis atque at aperiam saepe earum magnam quos, recusandae sed doloremque ad maxime assumenda. Error maxime minus voluptatum velit enim, molestiae aliquid praesentium sunt iusto qui aliquam aperiam tempora, eveniet animi itaque omnis consequuntur hic est quae eos asperiores natus deserunt! Voluptates commodi aspernatur minus voluptas, quod numquam, atque fuga sit laborum est aut nam illo tenetur odio iste repellat accusantium, fugit id! Facere harum, sit incidunt fugit, et eius molestias, esse quas ratione perferendis ducimus cupiditate minus.</p>
-      </div>
-      <img className="tree-section-img" src={img} alt="img section une" />
-    </section>
+    <div className='tree'>
+      {/* <PinchZoomPan
+          min={0.5}
+          max={2.5}
+          captureWheel
+          // className={styles.wrapper}
+        > */}
+      <ReactFamilyTree
+        nodes={data}
+        rootId={data[0].id}
+        width={WIDTH}
+        height={HEIGHT}
+        renderNode={(node) => (
+          <FamilyNode
+            key={node.id}
+            node={node}
+            style={{
+              height: "100%",
+              width: "100%",
+              position: "absolute",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: WIDTH,
+              height: HEIGHT,
+              transform: `translate(${node.left * (WIDTH / 2)}px, ${node.top * (HEIGHT / 2)}px)`,
+            }}
+          />
+        )}
+      />
+      {/* </PinchZoomPan> */}
+      <button type="button" className="add-person-button"> <NavLink to="/tree/addperson" activeClassName="menu-button-onPage">+</NavLink>  </button>
+    </div>
   )
+
 }
 
   ;
