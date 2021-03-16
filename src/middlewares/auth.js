@@ -38,7 +38,7 @@ export default (store) => (next) => (action) => {
       return next(action);
 
     case SEND_FIELD_VALUE_SIGNUP:
-      axios.post('api/v1/inscription', {
+      axios.post('api/v1/subscription', {
         email: store.getState().auth.email,
         password: store.getState().auth.password,
       });
