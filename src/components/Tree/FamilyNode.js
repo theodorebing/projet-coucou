@@ -1,5 +1,5 @@
 import React from 'react';
-import avatar from "./avatar.png"
+import avatar from "src/assets/images/avatar.png"
 
 const FamilyNode = ({node, style}) => {
   return (
