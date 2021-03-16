@@ -5,11 +5,10 @@ import {
   LOGOUT,
 } from 'src/actions/auth';
 
-
 const initialState = {
   email: '',
   password: '',
-  isLogged: true,
+  isLogged: false,
 };
 
 export default (state = initialState, action = {}) => {
