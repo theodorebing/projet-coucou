@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './styles.scss';
-import PropTypes from 'prop-types';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import FamilyNameTitle from 'src/components/FamilyNameTitle';
 import axios from 'src/api';
@@ -22,7 +21,6 @@ const StoryDetails = () => {
   };
 
   (useEffect(() => {
-    // fetchStoryDetails();
     axios.get(`${baseurl}family/stories/${storyId}`).then((result) => {
       if (result && result.data) {
         // setTimeout(() => {
@@ -67,20 +65,6 @@ const StoryDetails = () => {
 
     </div>
   );
-};
-
-StoryDetails.propTypes = {
-  story: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-  }),
-  deleteStory: PropTypes.func.isRequired,
-  deleteStoryBool: PropTypes.bool,
-};
-
-StoryDetails.defaultProps = {
-  story: null,
-  deleteStoryBool: false,
 };
 
 // == Export
