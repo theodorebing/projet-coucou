@@ -1,0 +1,9 @@
+@use 'src/styles/vars';
+
+.familyNameTitle {
+  font-family: vars.$font-coucou;
+  font-size: 3rem;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 3rem 0 2rem;
+}

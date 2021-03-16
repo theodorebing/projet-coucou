@@ -1,28 +1,68 @@
-// == Import : npm
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-import img from 'src/assets/images/campagne_tranquille.jpg';
+import PlusButton from 'src/components/PlusButton';
+import FamilyNameTitle from 'src/components/FamilyNameTitle';
+import StoryBox from 'src/containers/Stories/StoryBox';
+import AddStoryForm from 'src/containers/Stories/AddStoryForm';
 
-// == Import : local
 import './styles.scss';
 
 // == Composant
-const Stories = () => {
+const Stories = ({
+  stories, fetchStories, openAddStoryForm, activeAddStoryForm,
+}) => {
+  if (stories) {
+    (useEffect(() => {
+      setTimeout(() => {
+        fetchStories();
+      }, 500);
+    }, []));
+  }
   return (
-    <section className="stories-section">
-      <h1 className="stories-section-titre">Histoires</h1>
-      <div className="stories-section-text">
-        <h2 className="stories-section-text-title">PAGE TEST HISTOIRES</h2>
-        <p className="stories-section-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, id. Officia dolores nesciunt assumenda! Nesciunt non quidem animi laborum voluptatibus laudantium sapiente neque, provident repellendus quasi inventore facere, veritatis expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quae deleniti optio natus asperiores perspiciatis reprehenderit omnis facilis repellendus, non dolore expedita blanditiis atque at aperiam saepe earum magnam quos, recusandae sed doloremque ad maxime assumenda. Error maxime minus voluptatum velit enim, molestiae aliquid praesentium sunt iusto qui aliquam aperiam tempora, eveniet animi itaque omnis consequuntur hic est quae eos asperiores natus deserunt! Voluptates commodi aspernatur minus voluptas, quod numquam, atque fuga sit laborum est aut nam illo tenetur odio iste repellat accusantium, fugit id! Facere harum, sit incidunt fugit, et eius molestias, esse quas ratione perferendis ducimus cupiditate minus.</p>
-      </div>
-      <img className="stories-section-img" src={img} alt="img section une" />
-    </section>
-  )
-}
 
-  ;
+    <div className="stories">
+      <FamilyNameTitle />
+      {!activeAddStoryForm && (
+      <>
+        <div className="stories-div">
+          {Object.keys(stories).length ? (
+            <div className="stories-feed">
+              {stories.map((story) => (
+                <StoryBox key={story.id} {...story} />
+              ))}
+            </div>
+          ) : (
+            <h2 className="stories-loading">Loading</h2>
+          )}
 
+        </div>
+        <PlusButton openAddForm={openAddStoryForm} />
+      </>
+      )}
+      {activeAddStoryForm && (
+        <AddStoryForm />
+      )}
+    </div>
 
+  );
+};
+
+Stories.propTypes = {
+  fetchStories: PropTypes.func.isRequired,
+  stories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }),
+  ),
+  activeAddStoryForm: PropTypes.bool,
+  openAddStoryForm: PropTypes.func.isRequired,
+};
+
+Stories.defaultProps = {
+  stories: null,
+  activeAddStoryForm: false,
+};
 
 // == Export
 export default Stories;

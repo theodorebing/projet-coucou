@@ -4,13 +4,14 @@ import {
   setFamilyIdOk,
 } from 'src/actions/family';
 import axios from 'src/api';
+import baseurl from './baseurl';
 
 export default (store) => (next) => (action) => {
   const familyCode = store.getState().family.code;
   const familyNameCreated = store.getState().family.designation;
   switch (action.type) {
     case SEND_CODE_VALUE:
-      axios.post('api/v1/account/join', {
+      axios.post(`${baseurl}account/join`, {
         code: familyCode,
       })
         .then((result) => {
@@ -18,11 +19,11 @@ export default (store) => (next) => (action) => {
         });
       return next(action);
     case SEND_FAMILY_NAME_VALUE:
-      axios.post('api/v1/account', {
+      axios.post(`${baseurl}account`, {
         designation: familyNameCreated,
       })
         .then(() => {
-          axios.get('api/v1/account').then((result) => {
+          axios.get(`${baseurl}account`).then((result) => {
             store.dispatch(setFamilyIdOk(result.data.familyId));
           });
         });

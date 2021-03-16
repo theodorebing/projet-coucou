@@ -8,6 +8,8 @@ import './styles.scss';
 // import Content from 'src/components/Content';
 import Index from 'src/containers/Index';
 import Menu from 'src/containers/Menu';
+import Stories from 'src/containers/Stories';
+import StoryDetails from 'src/containers/Stories/StoryDetails';
 import WelcomePage from '../WelcomePage';
 import UserManual from '../Help/UserManual';
 import Faq from '../Help/FAQ';
@@ -17,7 +19,6 @@ import LegalTerms from '../Help/LegalTerms';
 import Profile from '../Profile';
 import Tree from '../Tree';
 import Family from '../Family';
-import Stories from '../Stories';
 import Help from '../Help';
 import AddPersonTree from 'src/components/Tree/TreeForm/AddPersonTree'
 // == Composant
@@ -105,6 +106,9 @@ const App = ({ isLogged, checkConnection, familyId }) => {
               </Route>
               <Route path="/stories" exact>
                 <Stories />
+              </Route>
+              <Route path="/stories/:storyId">
+                <StoryDetails />
               </Route>
             </>
             )};
