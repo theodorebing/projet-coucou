@@ -29,6 +29,7 @@ const AddStoryForm = ({
           value={title}
         />
         <Field
+          className="addStoryForm-textField"
           name="text"
           type="text"
           placeholder="Texte"
@@ -65,11 +66,22 @@ const AddStoryForm = ({
 };
 
 AddStoryForm.propTypes = {
-
+  handleAddStory: PropTypes.func.isRequired,
+  changeField: PropTypes.func.isRequired,
+  openAddStoryForm: PropTypes.func.isRequired,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  location: PropTypes.string,
+  startingDate: PropTypes.string,
+  endingDate: PropTypes.string,
 };
 
 AddStoryForm.defaultProps = {
-
+  title: '',
+  text: '',
+  location: '',
+  startingDate: '',
+  endingDate: '',
 };
 
 // == Export
