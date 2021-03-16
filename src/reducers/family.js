@@ -4,6 +4,7 @@ import { SET_FAMILY_ID_OK } from 'src/actions/family';
 const initialState = {
   code: '',
   familyId: null,
+  designation: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
