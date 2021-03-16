@@ -11,9 +11,7 @@ const StoryDetails = () => {
   const { storyId } = useParams();
   const history = useHistory();
   const handleClick = () => {
-    setTimeout(() => {
-      history.push('/stories');
-    }, 2000);
+    history.push('/stories');
   };
   const deleteStory = () => {
     axios.delete(`${baseurl}family/stories/${storyId}`);

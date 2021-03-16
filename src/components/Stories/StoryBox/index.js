@@ -17,7 +17,7 @@ const StoryBox = ({
   // updated_at,
 }) => (
   <>
-    <Link to={`/family/stories/${id}`}>
+    <Link to={`/stories/${id}`}>
       <div className="storyBox">
         <h2 className="story-title">{title}</h2>
         <StoryText text={text} />
