@@ -30,29 +30,41 @@ const Menu = ({
       </div>
 
       <div className="menu-button-list">
-        <button type="button" className="menu-button"><NavLink to="/profile" activeClassName="menu-button-onPage">Mon profil</NavLink> </button>
+        <NavLink to="/profile" activeClassName="menu-button-onPage">
+          <button type="button" className="menu-button">Mon profil</button>
+        </NavLink>
 
         {(typeof familyId === 'number') && (
         <>
-          <button type="button" className="menu-button">
-            <NavLink to="/family" activeClassName="menu-button-onPage">Ma famille</NavLink>
-          </button>
+          <NavLink to="/family" activeClassName="menu-button-onPage">
+            <button type="button" className="menu-button">
+              Ma famille
+            </button>
+          </NavLink>
 
-          <button type="button" className="menu-button">
-            <NavLink to="/tree" activeClassName="menu-button-onPage">Arbre</NavLink>
-          </button>
+          <NavLink to="/tree" activeClassName="menu-button-onPage">
+            <button type="button" className="menu-button">
+              Arbre
+            </button>
+          </NavLink>
 
-          <button type="button" className="menu-button">
-            <NavLink to="/stories" activeClassName="menu-button-onPage">Histoires</NavLink>
-          </button>
+          <NavLink to="/stories" activeClassName="menu-button-onPage">
+            <button type="button" className="menu-button">
+              Histoires
+            </button>
+          </NavLink>
         </>
         )}
       </div>
 
       <div className="menu-button-help">
-        <button type="button" className="menu-littleButton menu-littleButton-help"> <NavLink to="/help" activeClassName="menu-button-onPage">Aide</NavLink> </button>
-      </div>
 
+        <NavLink to="/help" activeClassName="menu-button-onPage">
+          <button type="button" className="menu-littleButton menu-littleButton-help">
+            Aide
+          </button>
+        </NavLink>
+      </div>
     </div>
   );
 };

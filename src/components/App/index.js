@@ -30,39 +30,27 @@ const App = ({ isLogged, checkConnection, familyId }) => {
     <div className="app">
       <Switch>
         <Route path="/help" exact>
-          {isLogged && (
           <Menu />
-          )}
           <Help />
         </Route>
         <Route path="/help/UserManual" exact>
-          {isLogged && (
           <Menu />
-          )}
           <UserManual />
         </Route>
         <Route path="/help/Faq" exact>
-          {isLogged && (
           <Menu />
-          )}
           <Faq />
         </Route>
         <Route path="/help/NewFeatures" exact>
-          {isLogged && (
           <Menu />
-          )}
           <NewFeatures />
         </Route>
         <Route path="/help/Contact" exact>
-          {isLogged && (
           <Menu />
-          )}
           <Contact />
         </Route>
         <Route path="/help/LegalTerms" exact>
-          {isLogged && (
           <Menu />
-          )}
           <LegalTerms />
         </Route>
 
