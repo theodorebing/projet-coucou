@@ -25,7 +25,7 @@ export default (store) => (next) => (action) => {
     case CHECK_CONNECTION:
       axios.get(`${baseurl}account`)
         .then((result) => {
-          store.dispatch(setIsLogged(result.data.logged, result.data.email));
+          store.dispatch(setIsLogged(result.data.logged, result.data.email, result.data.name));
           store.dispatch(setFamilyIdOk(result.data.familyId));
         });
       return next(action);

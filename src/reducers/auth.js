@@ -9,6 +9,7 @@ import {
 const initialState = {
   email: '',
   password: '',
+  name: '',
   isLogged: false,
   activeSignUpForm: false,
 };
@@ -25,6 +26,7 @@ export default (state = initialState, action = {}) => {
         ...state,
         isLogged: !action.isLogged,
         email: action.email,
+        name: action.name,
       };
     case LOGOUT:
       return {
@@ -36,7 +38,6 @@ export default (state = initialState, action = {}) => {
     case CHECK_CONNECTION:
       return {
         ...state,
-
       };
     default:
       return state;
