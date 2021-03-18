@@ -14,10 +14,11 @@ export const sendFieldValue = () => ({
 
 export const SET_ISLOGGED = 'SET_ISLOGGED';
 
-export const setIsLogged = (isLogged, email) => ({
+export const setIsLogged = (isLogged, email, name) => ({
   type: SET_ISLOGGED,
   isLogged,
   email,
+  name,
 });
 
 export const LOGOUT = 'LOGOUT';

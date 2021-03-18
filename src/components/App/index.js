@@ -10,17 +10,17 @@ import Index from 'src/containers/Index';
 import Menu from 'src/containers/Menu';
 import Stories from 'src/containers/Stories';
 import StoryDetails from 'src/containers/Stories/StoryDetails';
+import Profile from 'src/containers/Profile';
+import AddPersonTree from 'src/components/Tree/TreeForm/AddPersonTree';
 import WelcomePage from '../WelcomePage';
 import UserManual from '../Help/UserManual';
 import Faq from '../Help/FAQ';
 import NewFeatures from '../Help/NewFeatures';
 import Contact from '../Help/Contact';
 import LegalTerms from '../Help/LegalTerms';
-import Profile from '../Profile';
 import Tree from '../Tree';
 import Family from '../Family';
 import Help from '../Help';
-import AddPersonTree from 'src/components/Tree/TreeForm/AddPersonTree'
 // == Composant
 const App = ({ isLogged, checkConnection, familyId }) => {
   useEffect(() => {
@@ -99,7 +99,7 @@ const App = ({ isLogged, checkConnection, familyId }) => {
                 <Tree />
               </Route>
               <Route path="/tree/addperson" exact>
-            <AddPersonTree />
+                <AddPersonTree />
               </Route>
               <Route path="/family" exact>
                 <Family />
