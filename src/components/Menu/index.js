@@ -23,7 +23,7 @@ const Menu = ({
             <span className="menu-logo-text">Coucou !</span>
           </div>
         </NavLink>
-        <div className="menu-username"> {email} </div>
+        {/* <div className="menu-username"> {email} </div> */}
         {isLogged && (
           <NavLink to="/">
             <button type="button" className="menu-littleButton menu-littleButton-disconnect" onClick={handleLogout}> Me déconnecter </button>
