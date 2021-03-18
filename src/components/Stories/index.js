@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import PropTypes from 'prop-types';
 
 import PlusButton from 'src/components/PlusButton';
@@ -24,27 +25,33 @@ const Stories = ({
     <div className="stories">
       <FamilyNameTitle />
       {!activeAddStoryForm && (
-      <>
-        <div className="stories-div">
-          {Object.keys(stories).length ? (
-            <div className="stories-feed">
-              {stories.map((story) => (
-                <StoryBox key={story.id} {...story} />
-              ))}
-            </div>
-          ) : (
-            <h2 className="stories-loading">Loading</h2>
-          )}
+        <>
+          <div className="stories-div">
+            {Object.keys(stories).length ? (
 
-        </div>
-        <PlusButton openAddForm={openAddStoryForm} />
-      </>
+              <div className="stories-feed">
+                <ResponsiveMasonry
+                  columnsCountBreakPoints={{ 700: 1, 1200: 2, 1800: 3 }}
+                >
+                  <Masonry columnsCount={3}>
+                    {stories.map((story) => (
+                      <StoryBox key={story.id} {...story} />
+                    ))}
+                  </Masonry>
+                </ResponsiveMasonry>
+              </div>
+            ) : (
+              <h2 className="stories-loading">Loading</h2>
+            )}
+
+          </div>
+          <PlusButton openAddForm={openAddStoryForm} />
+        </>
       )}
       {activeAddStoryForm && (
         <AddStoryForm />
       )}
     </div>
-
   );
 };
 
