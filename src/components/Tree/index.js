@@ -11,7 +11,7 @@ import data from './data.json';
 import './styles.scss';
 
 // == Composant
-const Tree = () => {
+const Tree = ({ noHelpButtons }) => {
   const [tree, setTree] = useState([]);
   // const loadTree = async () => {
   //   // test on an external API before connecting our API back
@@ -24,9 +24,10 @@ const Tree = () => {
   //   //   console.log(error);
   //   // }
   // };
-  // useEffect(() => {
-  //   loadTree();
-  // }, []);
+  useEffect(() => {
+    noHelpButtons();
+    // loadTree();
+  }, []);
   const WIDTH = 200;
   const HEIGHT = 200;
   return (

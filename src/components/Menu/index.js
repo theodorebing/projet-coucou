@@ -1,15 +1,19 @@
 // == Import
 import React, { useEffect } from 'react';
-import {
-  NavLink,
-} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from 'src/assets/Logo-Coucou-transparent.png';
 import './style.scss';
 import PropTypes from 'prop-types';
+import HelpButtons from './HelpButtons';
 
 // == Menu component
 const Menu = ({
-  handleLogout, email, checkConnection, familyId, isLogged,
+  handleLogout,
+  email,
+  checkConnection,
+  familyId,
+  isLogged,
+  showHelpButtons,
 }) => {
   useEffect(() => {
     checkConnection();
@@ -31,82 +35,49 @@ const Menu = ({
         )}
 
       </div>
-      <div className="menu-button-list">
-
-        {isLogged && (
-        <>
-          <NavLink to="/profile" activeClassName="menu-button-onPage">
-            <button type="button" className="menu-button">Mon profil</button>
-          </NavLink>
-        </>
-        )}
-
-        {!isLogged && (
+      <div className="spacearound">
+        {showHelpButtons && (
         <>
           <div className="menu-button-helplist">
-            <NavLink to="/" activeClassName="menu-button-onPage">
-              <button type="button" className="menu-button">
-                Accueil
-              </button>
-            </NavLink>
-            <NavLink to="/help" activeClassName="menu-button-onPage">
-              <button type="button" className="menu-button">
-                À propos
-              </button>
-            </NavLink>
-            <NavLink to="/help/usermanual" activeClassName="menu-button-onPage">
-              <button type="button" className="menu-button">
-                Mode d'emploi
-              </button>
-            </NavLink>
-            <NavLink to="/help/faq" activeClassName="menu-button-onPage">
-              <button type="button" className="menu-button">
-                FAQ
-              </button>
-            </NavLink>
-            <NavLink to="/help/newfeatures" activeClassName="menu-button-onPage">
-              <button type="button" className="menu-button">
-                À Venir!
-              </button>
-            </NavLink>
-            <NavLink to="/help/contact" activeClassName="menu-button-onPage">
-              <button type="button" className="menu-button">
-                Contact
-              </button>
-            </NavLink>
-            <NavLink to="/help/legalterms" activeClassName="menu-button-onPage">
-              <button type="button" className="menu-button">
-                Mentions légales
-              </button>
-            </NavLink>
+            <HelpButtons />
           </div>
         </>
         )}
-        { isLogged && (typeof familyId === 'number') && (
-        <>
-          <NavLink to="/family" activeClassName="menu-button-onPage">
-            <button type="button" className="menu-button">
-              Ma famille
-            </button>
-          </NavLink>
+        <div className="menu-button-list">
 
-          <NavLink to="/tree" activeClassName="menu-button-onPage">
-            <button type="button" className="menu-button">
-              Arbre
-            </button>
-          </NavLink>
+          {isLogged && (
+          <>
+            <NavLink to="/profile" activeClassName="menu-button-onPage">
+              <button type="button" className="menu-button">Mon profil</button>
+            </NavLink>
+          </>
+          )}
+          { isLogged && (typeof familyId === 'number') && (
+          <>
+            <NavLink to="/family" activeClassName="menu-button-onPage">
+              <button type="button" className="menu-button">
+                Ma famille
+              </button>
+            </NavLink>
 
-          <NavLink to="/stories" activeClassName="menu-button-onPage">
-            <button type="button" className="menu-button">
-              Histoires
-            </button>
-          </NavLink>
-        </>
-        )}
+            <NavLink to="/tree" activeClassName="menu-button-onPage">
+              <button type="button" className="menu-button">
+                Arbre
+              </button>
+            </NavLink>
+
+            <NavLink to="/stories" activeClassName="menu-button-onPage">
+              <button type="button" className="menu-button">
+                Histoires
+              </button>
+            </NavLink>
+          </>
+          )}
+        </div>
       </div>
-      {isLogged && (
-        <div className="menu-button-help">
-          <NavLink to="/help" activeClassName="menu-button-onPage">
+      {isLogged && !showHelpButtons && (
+        <div className="menu-button-helpdiv">
+          <NavLink to="/about" activeClassName="menu-button-onPage">
             <button type="button" className="menu-littleButton menu-littleButton-help">
               Aide
             </button>
@@ -123,13 +94,14 @@ Menu.propTypes = {
   email: PropTypes.string,
   familyId: PropTypes.number,
   isLogged: PropTypes.bool,
+  showHelpButtons: PropTypes.bool,
 };
 
 Menu.defaultProps = {
   email: '',
   familyId: null,
   isLogged: false,
+  showHelpButtons: false,
 };
 
-// == Export
 export default Menu;

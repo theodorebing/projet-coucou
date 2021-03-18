@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import WelcomePage from 'src/components/WelcomePage';
+import FAQ from 'src/components/Help/FAQ';
 import { onHelpPages } from 'src/actions/general';
 
 const mapStateToProps = () => ({
@@ -10,4 +10,4 @@ const mapDispatchToProps = (dispatch) => ({
   onHelpPages: () => dispatch(onHelpPages()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(WelcomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(FAQ);

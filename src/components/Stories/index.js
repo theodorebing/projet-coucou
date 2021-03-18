@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import PropTypes from 'prop-types';
 
 import PlusButton from 'src/components/PlusButton';
@@ -11,10 +11,11 @@ import './styles.scss';
 
 // == Composant
 const Stories = ({
-  stories, fetchStories, openAddStoryForm, activeAddStoryForm,
+  stories, fetchStories, openAddStoryForm, activeAddStoryForm, noHelpButtons,
 }) => {
   if (stories) {
     (useEffect(() => {
+      noHelpButtons();
       setTimeout(() => {
         fetchStories();
       }, 500);

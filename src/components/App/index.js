@@ -12,15 +12,16 @@ import Stories from 'src/containers/Stories';
 import StoryDetails from 'src/containers/Stories/StoryDetails';
 import Profile from 'src/containers/Profile';
 import AddPersonTree from 'src/components/Tree/TreeForm/AddPersonTree';
-import WelcomePage from '../WelcomePage';
-import UserManual from '../Help/UserManual';
-import Faq from '../Help/FAQ';
-import NewFeatures from '../Help/NewFeatures';
-import Contact from '../Help/Contact';
-import LegalTerms from '../Help/LegalTerms';
-import Tree from '../Tree';
-import Family from '../Family';
-import Help from '../Help';
+import About from 'src/containers/Help/About';
+import WelcomePage from 'src/containers/WelcomePage';
+import UserManual from 'src/containers/Help/UserManual';
+import Faq from 'src/containers/Help/FAQ';
+import NewFeatures from 'src/containers/Help/NewFeatures';
+import Contact from 'src/containers/Help/Contact';
+import LegalTerms from 'src/containers/Help/LegalTerms';
+import Tree from 'src/containers/Tree';
+import Family from 'src/containers/Family';
+
 // == Composant
 const App = ({ isLogged, checkConnection, familyId }) => {
   useEffect(() => {
@@ -29,27 +30,27 @@ const App = ({ isLogged, checkConnection, familyId }) => {
   return (
     <div className="app">
       <Switch>
-        <Route path="/help" exact>
+        <Route path="/about" exact>
           <Menu />
-          <Help />
+          <About />
         </Route>
-        <Route path="/help/UserManual" exact>
+        <Route path="/UserManual" exact>
           <Menu />
           <UserManual />
         </Route>
-        <Route path="/help/Faq" exact>
+        <Route path="/Faq" exact>
           <Menu />
           <Faq />
         </Route>
-        <Route path="/help/NewFeatures" exact>
+        <Route path="/NewFeatures" exact>
           <Menu />
           <NewFeatures />
         </Route>
-        <Route path="/help/Contact" exact>
+        <Route path="/Contact" exact>
           <Menu />
           <Contact />
         </Route>
-        <Route path="/help/LegalTerms" exact>
+        <Route path="/LegalTerms" exact>
           <Menu />
           <LegalTerms />
         </Route>

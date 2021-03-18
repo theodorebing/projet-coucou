@@ -8,9 +8,10 @@ import './styles.scss';
 import profileImg from 'src/assets/images/avatar.png';
 
 // == Composant
-const Profile = ({ email, name }) => {
+const Profile = ({ email, name, noHelpButtons }) => {
   const [family, setFamily] = useState({});
   (useEffect(() => {
+    noHelpButtons();
     axios.get(`${baseurl}family`).then((result) => {
       if (result && result.data) {
         setFamily(result.data.family);

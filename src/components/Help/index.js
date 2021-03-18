@@ -1,14 +1,15 @@
-import React from 'react';
-import Page from 'src/components/Page';
-import About from './About';
-import './styles.scss';
+// import React from 'react';
+// import './styles.scss';
+// import { BrowserRouter, Route } from 'react-router-dom';
+// import Menu from 'src/containers/Menu';
+// import About from './About';
+// import UserManual from './UserManual';
+// import Faq from './FAQ';
+// import NewFeatures from './NewFeatures';
+// import Contact from './Contact';
+// import LegalTerms from './LegalTerms';
 
-const Help = () => (
-  <Page>
-    <div className="help">
-      <About />
-    </div>
-  </Page>
-);
+// const Help = () => (
+// );
 
-export default Help;
+// export default Help;

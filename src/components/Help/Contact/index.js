@@ -1,13 +1,9 @@
-// == Import : npm
-import React from 'react';
-import HelpHeader from '../HelpHeader';
-
-// == Import : local
+import React, { useEffect } from 'react';
 import './styles.scss';
 
-// == Composant
-const Contact = ({ inputValue, onChangeInputValue, onSubmitForm }) => {
-
+const Contact = ({
+  inputValue, onChangeInputValue, onSubmitForm, onHelpPages,
+}) => {
   const handleOnChange = (event) => {
     onChangeInputValue(event.target.value);
   };
@@ -19,17 +15,21 @@ const Contact = ({ inputValue, onChangeInputValue, onSubmitForm }) => {
       onSubmitForm();
     }
   };
-
+  useEffect(() => {
+    onHelpPages();
+  });
   return (
-    <>
-      <HelpHeader />
-      <section className="contact-section">
-        <h1 className="contact-section-titre">Contact</h1>
-        <div className="contact-section-text">
-          <h2 className="contact-section-text-title">Veuillez utiliser le formulaire ci-dessous si vous désirez nous contacter</h2>
+    <section className="contact-section">
+      <h1 className="contact-section-titre">Contact</h1>
+      {/* <div className="contact-section-text">
+          <h2 className="contact-section-text-title">
+            Veuillez utiliser le formulaire ci-dessous si vous désirez nous contacter
+          </h2> */}
 
-          <form className="contact-section-text-form" onSubmit={handleOnSubmit}>
-            <label className="contact-section-text-form__input-label" htmlFor="email">Votre email</label>
+      {/* <form className="contact-section-text-form" onSubmit={handleOnSubmit}>
+            <label className="contact-section-text-form__input-label" htmlFor="email">
+              Votre email
+            </label>
             <input
               id="email"
               className="contact-section-text-form__input"
@@ -38,8 +38,9 @@ const Contact = ({ inputValue, onChangeInputValue, onSubmitForm }) => {
               value={inputValue}
               onChange={handleOnChange}
             />
-
-            <label className="contact-section-text-form__text-area-label" htmlFor="message">Saisissez votre message</label>
+            <label className="contact-section-text-form__text-area-label" htmlFor="message">
+              Saisissez votre message
+            </label>
             <textarea
               id="message"
               type="text"
@@ -54,14 +55,12 @@ const Contact = ({ inputValue, onChangeInputValue, onSubmitForm }) => {
               type="submit"
             >
               Envoyer
-      </button>
-          </form>
-        </div>
-      </section>
-    </>
-  )
-}
-
+            </button>
+          </form> */}
+      {/* </div> */}
+    </section>
+  );
+};
 
 // == Export
 export default Contact;

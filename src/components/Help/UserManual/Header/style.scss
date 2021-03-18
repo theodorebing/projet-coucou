@@ -1,13 +1,11 @@
 @use 'src/styles/vars';
 
 .userManual-header {
-  max-width: 90%;
-  margin: 0 auto;
+  margin: auto;
   margin-bottom: 5rem;
 
   &-title {
     text-align: center;
-    padding-top: 5rem;
     padding-bottom: 3rem;
     color: vars.$main-color;
     font-weight: bold;
@@ -16,6 +14,7 @@
 
   &-section {
     text-decoration: underline;
+    width: 30%;
 
     &-title {
       text-transform: uppercase;
