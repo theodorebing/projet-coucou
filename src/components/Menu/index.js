@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 // == Menu component
 const Menu = ({
-  handleLogout, email, checkConnection, familyId,
+  handleLogout, email, checkConnection, familyId, isLogged,
 }) => {
   useEffect(() => {
     checkConnection();
@@ -24,9 +24,12 @@ const Menu = ({
           </div>
         </NavLink>
         <div className="menu-username"> {email} </div>
-        <NavLink to="/">
-          <button type="button" className="menu-littleButton menu-littleButton-disconnect" onClick={handleLogout}> Me déconnecter </button>
-        </NavLink>
+        {isLogged && (
+          <NavLink to="/">
+            <button type="button" className="menu-littleButton menu-littleButton-disconnect" onClick={handleLogout}> Me déconnecter </button>
+          </NavLink>
+        )}
+
       </div>
 
       <div className="menu-button-list">
@@ -74,11 +77,13 @@ Menu.propTypes = {
   checkConnection: PropTypes.func.isRequired,
   email: PropTypes.string,
   familyId: PropTypes.number,
+  isLogged: PropTypes.bool,
 };
 
 Menu.defaultProps = {
   email: '',
   familyId: null,
+  isLogged: false,
 };
 
 // == Export
