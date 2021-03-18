@@ -13,7 +13,6 @@ import './styles.scss';
 
 // == Composant
 function UserManual() {
-
   return (
     <>
       <HelpHeader />
