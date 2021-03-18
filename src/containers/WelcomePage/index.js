@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import WelcomePage from 'src/components/WelcomePage';
-import { onHelpPages } from 'src/actions/general';
+import { noHelpButtons } from 'src/actions/general';
 
 const mapStateToProps = () => ({
 
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onHelpPages: () => dispatch(onHelpPages()),
+  noHelpButtons: () => dispatch(noHelpButtons()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WelcomePage);

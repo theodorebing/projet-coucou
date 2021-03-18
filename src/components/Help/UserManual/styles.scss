@@ -1,0 +1,6 @@
+@use 'src/styles/vars';
+.userManual {
+  display: flex;
+  flex-direction: column;
+  margin-left: vars.$content-margin-left;
+}

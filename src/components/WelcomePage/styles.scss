@@ -1,10 +1,12 @@
 @use 'src/styles/vars';
 
 .welcome__page{
-  position: absolute;
-  left: 40%;
-  top: 20%;
-
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: vars.$content-margin-left;
   h1 {
   margin: 5px;
   text-align: center;
@@ -17,10 +19,8 @@
   background-color: vars.$white-color;
   border: 1px solid black;
   border-radius: .5em;
-  margin: 40px;
   padding: 40px;
   width: 500px;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
