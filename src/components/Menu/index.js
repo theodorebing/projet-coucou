@@ -37,7 +37,7 @@ const Menu = ({
           <button type="button" className="menu-button">Mon profil</button>
         </NavLink>
 
-        {(typeof familyId === 'number') && (
+        { isLogged && (typeof familyId === 'number') && (
         <>
           <NavLink to="/family" activeClassName="menu-button-onPage">
             <button type="button" className="menu-button">
