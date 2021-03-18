@@ -99,7 +99,7 @@ const App = ({ isLogged, checkConnection, familyId }) => {
                 <Tree />
               </Route>
               <Route path="/tree/addperson" exact>
-            <AddPersonTree />
+                <AddPersonTree />
               </Route>
               <Route path="/family" exact>
                 <Family />

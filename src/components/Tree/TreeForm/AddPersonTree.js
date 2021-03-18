@@ -1,19 +1,21 @@
 // == Import : npm
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from 'src/api';
 import baseurl from 'src/middlewares/baseurl.js'
 
 // == Import : local
 import '../styles.scss';
 
+
 // == Composant
 const AddPersonTree = () => {
   const [lastName, setLastName] = useState("");
-  const [fistName, setFistname] = useState("");
+  const [firstName, setFirstname] = useState("");
   const [placeOfBirth, setPlaceOfBirth] = useState("");
   const [lastKnownLocation, setLastKnownLocation] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [dateOfDeath, setDateOfDeath] = useState("");
+  const [gender, setGender] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,8 +23,11 @@ const AddPersonTree = () => {
   }
   const loadTree = async () => {
     try {
-      // const response = await axios.get(`${baseurl}/tree`);
-      // console.log(response.data.bodies[0].id)
+      const newPerson = {
+        lastName: {lastName},
+        firstName: {firstname},
+      }
+      const response = await axios.post(`${baseurl}tree`, newPerson);
     }
     catch (error) {
       console.log(error);
@@ -47,8 +52,8 @@ const AddPersonTree = () => {
             type="text"
             className="join__family__form-input"
             placeholder="Prénom"
-            value={fistName}
-            onChange={e => setFistname(e.target.value)}
+            value={firstName}
+            onChange={e => setFirstname(e.target.value)}
             required
           />
           <input
