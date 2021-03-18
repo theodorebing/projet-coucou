@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 // == Menu component
 const Menu = ({
-  handleLogout, email, checkConnection, familyId,
+  handleLogout, email, checkConnection, familyId, isLogged,
 }) => {
   useEffect(() => {
     checkConnection();
@@ -23,36 +23,51 @@ const Menu = ({
             <span className="menu-logo-text">Coucou !</span>
           </div>
         </NavLink>
-        <div className="menu-username"> {email} </div>
-        <NavLink to="/">
-          <button type="button" className="menu-littleButton menu-littleButton-disconnect" onClick={handleLogout}> Me déconnecter </button>
-        </NavLink>
+        {/* <div className="menu-username"> {email} </div> */}
+        {isLogged && (
+          <NavLink to="/">
+            <button type="button" className="menu-littleButton menu-littleButton-disconnect" onClick={handleLogout}> Me déconnecter </button>
+          </NavLink>
+        )}
+
       </div>
 
       <div className="menu-button-list">
-        <button type="button" className="menu-button"><NavLink to="/profile" activeClassName="menu-button-onPage">Mon profil</NavLink> </button>
+        <NavLink to="/profile" activeClassName="menu-button-onPage">
+          <button type="button" className="menu-button">Mon profil</button>
+        </NavLink>
 
         {(typeof familyId === 'number') && (
         <>
-          <button type="button" className="menu-button">
-            <NavLink to="/family" activeClassName="menu-button-onPage">Ma famille</NavLink>
-          </button>
+          <NavLink to="/family" activeClassName="menu-button-onPage">
+            <button type="button" className="menu-button">
+              Ma famille
+            </button>
+          </NavLink>
 
-          <button type="button" className="menu-button">
-            <NavLink to="/tree" activeClassName="menu-button-onPage">Arbre</NavLink>
-          </button>
+          <NavLink to="/tree" activeClassName="menu-button-onPage">
+            <button type="button" className="menu-button">
+              Arbre
+            </button>
+          </NavLink>
 
-          <button type="button" className="menu-button">
-            <NavLink to="/stories" activeClassName="menu-button-onPage">Histoires</NavLink>
-          </button>
+          <NavLink to="/stories" activeClassName="menu-button-onPage">
+            <button type="button" className="menu-button">
+              Histoires
+            </button>
+          </NavLink>
         </>
         )}
       </div>
 
       <div className="menu-button-help">
-        <button type="button" className="menu-littleButton menu-littleButton-help"> <NavLink to="/help" activeClassName="menu-button-onPage">Aide</NavLink> </button>
-      </div>
 
+        <NavLink to="/help" activeClassName="menu-button-onPage">
+          <button type="button" className="menu-littleButton menu-littleButton-help">
+            Aide
+          </button>
+        </NavLink>
+      </div>
     </div>
   );
 };
@@ -62,11 +77,13 @@ Menu.propTypes = {
   checkConnection: PropTypes.func.isRequired,
   email: PropTypes.string,
   familyId: PropTypes.number,
+  isLogged: PropTypes.bool,
 };
 
 Menu.defaultProps = {
   email: '',
   familyId: null,
+  isLogged: false,
 };
 
 // == Export
