@@ -1,5 +1,6 @@
 // == Import : npm
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'src/api';
 import baseurl from 'src/middlewares/baseurl';
 import GenderOption from './GenderOption';
@@ -24,10 +25,7 @@ const AddPersonTree = () => {
   const [otherPersonId, setPersonId] = useState('');
   const [relationId, setRelationID] = useState('');
   console.log('date', dateOfBirth);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    sendFormTree();
-  };
+  const history = useHistory();
   const sendFormTree = () => {
     axios.post(`${baseurl}tree`, {
       firstName,
@@ -42,6 +40,9 @@ const AddPersonTree = () => {
     })
       .then((result) => {
         console.log('requète post', result);
+        if (result) {
+          history.push('/');
+        }
       })
       .catch((error) => {
         console.log('error', error);
@@ -69,6 +70,10 @@ const AddPersonTree = () => {
         setRelations(result.data);
       });
   }, []);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    sendFormTree();
+  };
   return (
     <div className="tree__add__page">
       {people && Object.keys(people).length ? (
@@ -129,6 +134,7 @@ const AddPersonTree = () => {
             </select>
             <h2>Date de naissance</h2>
             <input
+              type="date"
               className="join__family__form-input"
               placeholder="Date de naissance"
               value={dateOfBirth}
@@ -136,6 +142,7 @@ const AddPersonTree = () => {
             />
             <h2>Date de décès</h2>
             <input
+              type="date"
               className="join__family__form-input"
               placeholder="Date de décès"
               value={dateOfDeath}
