@@ -3,6 +3,8 @@ import {
   SEND_FIELD_VALUE_SIGNUP,
   CHECK_CONNECTION,
   SEND_LOGOUT,
+  openSignUpForm,
+  getSignupOk,
   setIsLogged,
   logout,
 } from 'src/actions/auth';
@@ -41,7 +43,11 @@ export default (store) => (next) => (action) => {
       axios.post(`${baseurl}subscription`, {
         email: store.getState().auth.email,
         password: store.getState().auth.password,
-      });
+      })
+        .then(() => {
+          store.dispatch(openSignUpForm());
+          store.dispatch(getSignupOk());
+        });
       return next(action);
     default:
       return next(action);
