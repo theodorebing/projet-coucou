@@ -5,8 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-
+  margin-left: vars.$content-margin-left;
+  height: 100vh;
     &-titre {
     color: vars.$main-color;
     font-weight: bold;

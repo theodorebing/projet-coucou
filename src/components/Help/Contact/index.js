@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
 import './styles.scss';
+import virginie from 'src/assets/images/virginie.jpeg';
+import sebastien from 'src/assets/images/sebastien.jpg';
+import theodore from 'src/assets/images/theodore.jpg';
+import chloe from 'src/assets/images/chloe.png';
+import florent from 'src/assets/images/florent.png';
 
 const Contact = ({
   inputValue, onChangeInputValue, onSubmitForm, onHelpPages,
@@ -21,6 +26,14 @@ const Contact = ({
   return (
     <section className="contact-section">
       <h1 className="contact-section-titre">Contact</h1>
+      <a href="" />
+      <div className="contact-section-faces">
+        <span className="contact-section-oneface">Virginie <img src={virginie} alt="Virginie" className="contact-picture" /><a href="virginielaborde.contact@gmail.com">virginielaborde.contact@gmail.com</a></span>
+        <span className="contact-section-oneface">Sébastien<img src={sebastien} alt="Sébastien" className="contact-picture" /><a href="gonzalez.sebastien66@gmail.com">gonzalez.sebastien66@gmail.com</a></span>
+        <span className="contact-section-oneface">Chloé <img src={chloe} alt="Chloé" className="contact-picture" /><a href="chloe.piperno94350@gmail.com">chloe.piperno94350@gmail.com</a></span>
+        <span className="contact-section-oneface">Théodore<img src={theodore} alt="Théodore" className="contact-picture" /><a href="theodorebing.dev@gmail.com">theodorebing.dev@gmail.com</a></span>
+        <span className="contact-section-oneface">Florent<img src={florent} alt="Florent" className="contact-picture" /><a href="florent@gmail.com">florent@gmail.com</a></span>
+      </div>
       {/* <div className="contact-section-text">
           <h2 className="contact-section-text-title">
             Veuillez utiliser le formulaire ci-dessous si vous désirez nous contacter
