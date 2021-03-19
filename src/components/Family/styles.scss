@@ -1,11 +1,11 @@
 @use 'src/styles/vars';
 
 .familyPage {
+  margin-left: vars.$content-margin-left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
 
   &-members {
     margin-top: 2rem;

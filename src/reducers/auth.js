@@ -39,12 +39,12 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
       };
-    default:
-      return state;
     case OPEN_SIGNUP_FORM:
       return {
         ...state,
         activeSignUpForm: !state.activeSignUpForm,
       };
+    default:
+      return state;
   }
 };

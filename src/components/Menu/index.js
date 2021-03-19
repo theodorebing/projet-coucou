@@ -1,15 +1,19 @@
 // == Import
 import React, { useEffect } from 'react';
-import {
-  NavLink,
-} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from 'src/assets/Logo-Coucou-transparent.png';
 import './style.scss';
 import PropTypes from 'prop-types';
+import HelpButtons from './HelpButtons';
 
 // == Menu component
 const Menu = ({
-  handleLogout, email, checkConnection, familyId, isLogged,
+  handleLogout,
+  email,
+  checkConnection,
+  familyId,
+  isLogged,
+  showHelpButtons,
 }) => {
   useEffect(() => {
     checkConnection();
@@ -31,43 +35,55 @@ const Menu = ({
         )}
 
       </div>
-
-      <div className="menu-button-list">
-        <NavLink to="/profile" activeClassName="menu-button-onPage">
-          <button type="button" className="menu-button">Mon profil</button>
-        </NavLink>
-
-        {(typeof familyId === 'number') && (
+      <div className="spacearound">
+        {showHelpButtons && (
         <>
-          <NavLink to="/family" activeClassName="menu-button-onPage">
-            <button type="button" className="menu-button">
-              Ma famille
-            </button>
-          </NavLink>
-
-          <NavLink to="/tree" activeClassName="menu-button-onPage">
-            <button type="button" className="menu-button">
-              Arbre
-            </button>
-          </NavLink>
-
-          <NavLink to="/stories" activeClassName="menu-button-onPage">
-            <button type="button" className="menu-button">
-              Histoires
-            </button>
-          </NavLink>
+          <div className="menu-button-helplist">
+            <HelpButtons />
+          </div>
         </>
         )}
-      </div>
+        <div className="menu-button-list">
 
-      <div className="menu-button-help">
+          {isLogged && (
+          <>
+            <NavLink to="/profile" activeClassName="menu-button-onPage">
+              <button type="button" className="menu-button">Mon profil</button>
+            </NavLink>
+          </>
+          )}
+          { isLogged && (typeof familyId === 'number') && (
+          <>
+            <NavLink to="/family" activeClassName="menu-button-onPage">
+              <button type="button" className="menu-button">
+                Ma famille
+              </button>
+            </NavLink>
 
-        <NavLink to="/help" activeClassName="menu-button-onPage">
-          <button type="button" className="menu-littleButton menu-littleButton-help">
-            Aide
-          </button>
-        </NavLink>
+            <NavLink to="/tree" activeClassName="menu-button-onPage">
+              <button type="button" className="menu-button">
+                Arbre
+              </button>
+            </NavLink>
+
+            <NavLink to="/stories" activeClassName="menu-button-onPage">
+              <button type="button" className="menu-button">
+                Histoires
+              </button>
+            </NavLink>
+          </>
+          )}
+        </div>
       </div>
+      {isLogged && !showHelpButtons && (
+        <div className="menu-button-helpdiv">
+          <NavLink to="/about" activeClassName="menu-button-onPage">
+            <button type="button" className="menu-littleButton menu-littleButton-help">
+              Aide
+            </button>
+          </NavLink>
+        </div>
+      )}
     </div>
   );
 };
@@ -78,13 +94,14 @@ Menu.propTypes = {
   email: PropTypes.string,
   familyId: PropTypes.number,
   isLogged: PropTypes.bool,
+  showHelpButtons: PropTypes.bool,
 };
 
 Menu.defaultProps = {
   email: '',
   familyId: null,
   isLogged: false,
+  showHelpButtons: false,
 };
 
-// == Export
 export default Menu;

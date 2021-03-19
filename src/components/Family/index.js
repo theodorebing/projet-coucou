@@ -7,9 +7,10 @@ import FamilyMember from 'src/components/Family/FamilyMember';
 import FamilyNameTitle from 'src/components/FamilyNameTitle';
 import FamilyCode from './FamilyCode';
 
-const Family = () => {
+const Family = ({ noHelpButtons }) => {
   const [familyMembers, setFamilyMembers] = useState([]);
   (useEffect(() => {
+    noHelpButtons();
     axios.get(`${baseurl}family`).then((result) => {
       if (result && result.data) {
         setFamilyMembers(result.data.members);

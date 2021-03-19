@@ -1,6 +1,7 @@
 @use 'src/styles/vars';
 
 .profile {
+  margin-left: vars.$content-margin-left;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

@@ -5,10 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // width: 100%;
-  // max-width: 900px;
-  margin: 0 auto;
-  margin-left: 15%;
+  margin-left: vars.$content-margin-left;
+  height: 100vh;
 
     &-titre {
     color: vars.$main-color;
@@ -84,7 +82,32 @@
     margin-right: 0;
     max-width: 600px;
   }
+
+  &-faces {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    height: 400px;
+    width: 100%;
+  }
+
+  &-oneface {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: vars.$grey-color;
+    font-size: 1.2rem;
+  }
 }
 
+.contact-picture {
+  object-fit: cover;
+  width: 220px;
+  height: 220px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1), 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
 
 

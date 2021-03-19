@@ -1,4 +1,7 @@
+@use 'src/styles/vars';
 .userManual {
-  max-width: 100%;
-  margin-left: 15%;
+  display: flex;
+  flex-direction: column;
+  margin-left: vars.$content-margin-left;
+  height: 100vh;
 }
