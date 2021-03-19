@@ -6,7 +6,6 @@ import axios from 'src/api';
 // import PinchZoomPan from './PinchZoomPan';
 import FamilyNode from './FamilyNode';
 import baseurl from 'src/middlewares/baseurl';
-import data from './data.json'
 
 // == Import : local
 import './styles.scss';
