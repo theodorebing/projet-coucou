@@ -28,8 +28,8 @@ const Tree = () => {
     // loadTree();
     axios.get(`${baseurl}9/tree`)
       .then((result) => {
-      console.log("result.data", result.data);
-      console.log('****',JSON.stringify(result.data))
+      // console.log("result.data", result.data);
+      // console.log('****',JSON.stringify(result.data))
       if (result && result.data) {
         setTree(result.data);
       }})
