@@ -1,21 +1,42 @@
 @use 'src/styles/vars';
 
 .tree {
-// position: fixed;
-// top: 5%;
-// left: 15%;
-overflow-x: hidden;
-margin-left: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  margin-left: 250px;
+
   .person__tree{
-    color: aliceblue;
-  
-}
-  .picture__person{
-    width: 100px;  
-    height: 100px;
-    position:absolute;
+    display: flex;
+    flex-direction: column;
     
+    &__picture{
+    width: 150px;  
+    height: 150px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.850);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    outline: none;
+    }
+    &__name {
+      font-family: vars.$font-button;
+      color: vars.$main-color;
+      padding: 0.8rem 0;
+      border: none;
+      border-radius: 50px;
+      background-color: rgb(255, 252, 249);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      outline: none;
+      width: 150px;
+      text-align: center;
+    }
   }
+
   .root {
     position: relative;
     transform: translateZ(0);
@@ -35,9 +56,9 @@ margin-left: 15%;
   }
   
   .add-person-button{
-    position: relative;
-    left: 50%;
-    top: 98%;
+    // position: relative;
+    // left: 50%;
+    // top: 98%;
     color: vars.$lightgrey-color;
     font-size: 0.8em;
     margin: 1rem auto;
@@ -64,6 +85,7 @@ margin-left: 15%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-left: 250px;
       h1 {
         margin: 5px;
         text-align: center;
@@ -135,4 +157,49 @@ margin-left: 15%;
   border: 1px solid vars.$border-color;
   border-radius: .3em;
   height: 2.5em;
+}
+
+.plusButton {
+
+  &-div {
+  position: fixed;
+  bottom: 0px;
+  // left: 150px;
+  display: flex;
+  // flex-direction: row;
+  // align-items: flex-end;
+  justify-content: center;
+  width: 90%;
+  }
+
+  &-button { 
+
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    background-color: vars.$white-color;
+    border: 0.5px solid grey;
+    padding: 0 1.5rem;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1) ;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    color: vars.$main-color;
+
+    &:hover {
+      background-color: #fffcf7;
+      box-shadow: 0px 10px 20px #f6b02d75;
+    }
+ 
+    &:active {
+        vertical-align: top;
+        padding: 0rem 1.3rem;
+      font-size: 4.5rem;
+      background-color: vars.$main-color;
+      color: vars.$white-color;
+      box-shadow: 0px 15px 20px #f6b02d71;
+      margin-bottom: 2.4rem;
+    }
+  }
 }
