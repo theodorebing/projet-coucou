@@ -10,9 +10,10 @@ import FamilyNode from './FamilyNode';
 
 import './styles.scss';
 
-const Tree = () => {
+const Tree = ({ noHelpButtons }) => {
   const [tree, setTree] = useState(null);
   useEffect(() => {
+    noHelpButtons();
     axios.get(`${baseurl}9/tree`)
       .then((result) => {
         if (result && result.data) {
