@@ -1,73 +1,67 @@
 // == Import : npm
 import ReactFamilyTree from 'react-family-tree';
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import axios from 'axios';
+import { NavLink, Route } from 'react-router-dom';
+import axios from 'src/api';
 // import PinchZoomPan from './PinchZoomPan';
+import baseurl from 'src/middlewares/baseurl';
+import FamilyNameTitle from 'src/components/FamilyNameTitle';
 import FamilyNode from './FamilyNode';
-import data from './data.json';
 
-// == Import : local
 import './styles.scss';
 
-// == Composant
-const Tree = ({ noHelpButtons }) => {
-  const [tree, setTree] = useState([]);
-  // const loadTree = async () => {
-  //   // test on an external API before connecting our API back
-  //   // try {
-  //   //   const response = await axios.get('https://api.le-systeme-solaire.net/rest/bodies/');
-  //   //   setTree(response.data.bodies[0].id);
-  //   //   console.log(response.data.bodies[0].id)
-  //   // }
-  //   // catch (error) {
-  //   //   console.log(error);
-  //   // }
-  // };
+const Tree = () => {
+  const [tree, setTree] = useState(null);
   useEffect(() => {
-    noHelpButtons();
-    // loadTree();
+    axios.get(`${baseurl}9/tree`)
+      .then((result) => {
+        if (result && result.data) {
+          setTree(result.data);
+        }
+      })
+      .catch((error) => {
+        (console.log('cath tree', error));
+      });
   }, []);
-  const WIDTH = 200;
-  const HEIGHT = 200;
+  const WIDTH = 300;
+  const HEIGHT = 300;
   return (
     <div className="tree">
-      {/* <PinchZoomPan
-          min={0.5}
-          max={2.5}
-          captureWheel
-          // className={styles.wrapper}
-        > */}
-      <ReactFamilyTree
-        nodes={data}
-        rootId={data[0].id}
-        width={WIDTH}
-        height={HEIGHT}
-        renderNode={(node) => (
-          <FamilyNode
-            key={node.id}
-            node={node}
-            style={{
-              height: '100%',
-              width: '100%',
-              position: 'absolute',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: WIDTH,
-              height: HEIGHT,
-              transform: `translate(${node.left * (WIDTH / 2)}px, ${node.top * (HEIGHT / 2)}px)`,
-            }}
+      {tree && Object.keys(tree).length ? (
+        <>
+          <FamilyNameTitle />
+          <ReactFamilyTree
+            nodes={tree.familyTree}
+            rootId={tree.rootId}
+            width={WIDTH}
+            height={HEIGHT}
+            renderNode={(node) => (
+              <FamilyNode
+                key={node.id}
+                node={node}
+                // name={node}
+                style={{
+                  position: 'absolute',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: WIDTH,
+                  height: HEIGHT,
+                  transform: `translate(${node.left * (WIDTH / 2)}px, ${node.top * (HEIGHT / 2)}px)`,
+                }}
+              />
+            )}
           />
-        )}
-      />
-      {/* </PinchZoomPan> */}
-      <button type="button" className="add-person-button"> <NavLink to="/tree/addperson" activeClassName="menu-button-onPage">+</NavLink>  </button>
+          <div className="plusButton-div">
+            <NavLink to="/tree/addperson"><button type="button" className="plusButton-button"> + </button></NavLink>
+          </div>
+        </>
+      ) : (
+        <h2 className="story-title">Loading</h2>
+      )}
     </div>
   );
-}
-
-  ;
+};
 
 // == Export
 export default Tree;
