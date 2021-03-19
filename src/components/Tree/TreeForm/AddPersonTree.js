@@ -15,15 +15,15 @@ const AddPersonTree = () => {
   const [firstName, setFirstname] = useState('');
   const [placeOfBirth, setPlaceOfBirth] = useState('');
   const [lastKnownLocation, setLastKnownLocation] = useState('');
-  const [dateOfBirth, setDateOfBirth] = useState('');
-  const [dateOfDeath, setDateOfDeath] = useState('');
+  const [dateOfBirth, setDateOfBirth] = useState();
+  const [dateOfDeath, setDateOfDeath] = useState();
   const [genders, setGenders] = useState('');
   const [people, setPeople] = useState([]);
   const [relations, setRelations] = useState();
   const [genderName, setGenderName] = useState('');
   const [otherPersonId, setPersonId] = useState('');
   const [relationId, setRelationID] = useState('');
-
+  console.log('date', dateOfBirth);
   const handleSubmit = (event) => {
     event.preventDefault();
     sendFormTree();
@@ -107,26 +107,28 @@ const AddPersonTree = () => {
               onChange={(e) => setLastKnownLocation(e.target.value)}
             />
             <h2>Genre</h2>
-            <select className="join__family__select">
+            <select className="join__family__select" onChange={(e) => setGenderName(e.target.value)}>
+              <GenderOption genderName="Sélectionnez un genre" />
               {genders.map((gender) => (
                 <GenderOption key={gender.id} {...gender} />
               ))}
             </select>
-            <h2>Selectionner un parent</h2>
-            <select className="join__family__select">
-              {people.map((person) => (
-                <PeopleOption key={person.id} {...person} />
-              ))}
-            </select>
             <h2>Selectionner une relation</h2>
-            <select className="join__family__select">
+            <select className="join__family__select" onChange={(e) => setRelationID(e.target.value)}>
+              <RelationOption id="null" type="Sélectionnez une relation" />
               {relations.map((relation) => (
                 <RelationOption key={relation.id} {...relation} />
               ))}
             </select>
-            <h2>Date de naiscance</h2>
+            <h2>Selectionner un parent</h2>
+            <select className="join__family__select" onChange={(e) => setPersonId(e.target.value)}>
+              <PeopleOption id="null" firstName="Sélectionnez" lastName="une personne" />
+              {people.map((person) => (
+                <PeopleOption key={person.id} {...person} />
+              ))}
+            </select>
+            <h2>Date de naissance</h2>
             <input
-              type="date"
               className="join__family__form-input"
               placeholder="Date de naissance"
               value={dateOfBirth}
@@ -134,7 +136,6 @@ const AddPersonTree = () => {
             />
             <h2>Date de décès</h2>
             <input
-              type="date"
               className="join__family__form-input"
               placeholder="Date de décès"
               value={dateOfDeath}
