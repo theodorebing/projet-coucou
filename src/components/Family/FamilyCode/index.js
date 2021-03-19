@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'src/api';
 import baseurl from 'src/middlewares/baseurl';
-
 import './styles.scss';
 
-// == Component
-const FamilyNameTitle = () => {
+const FamilyCode = () => {
   const [family, setFamily] = useState({});
   (useEffect(() => {
     axios.get(`${baseurl}family`).then((result) => {
       if (result && result.data) {
+        // setTimeout(() => {
         setFamily(result.data.family);
+        // }, 2000);
       }
     });
   }, []));
   return (
-    <>
-      <h1 className="familyNameTitle">{family.designation}</h1>
-    </>
+    <div className="familyCode">
+      <h2 className="familyCode-title">Code de ma famille</h2>
+      <h3 className="familyCode-code">{family.code}</h3>
+    </div>
   );
 };
 
-// == Export
-export default FamilyNameTitle;
+export default FamilyCode;

@@ -69,11 +69,8 @@ const Tree = () => {
                     
       <NavLink to="/tree/addperson" activeClassName="menu-button-onPage"><button type="button" className="add-person-button"> + </button></NavLink>
     </div>
-  )
-
+  );
 }
-
-
 
 
 // == Export

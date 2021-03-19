@@ -1,0 +1,32 @@
+@use 'src/styles/vars';
+
+.familyMember {
+  border: none;
+  border-radius: 45px;
+  width: 1000px;
+  height: 100px;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(104, 104, 104, 0.057);
+  padding: 0.8rem 1.5rem;
+  font-family: vars.$font-button;
+  font-weight: 500;
+  font-size: 1.1rem;  
+  color: vars.$lightblack-color;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
+  &-div {
+
+    margin-left: 1rem;
+
+    &-email {
+      margin-bottom: 1rem;
+    }
+
+    &-role {
+      letter-spacing: 2.5px;
+    }
+  }
+}

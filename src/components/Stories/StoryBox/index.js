@@ -18,7 +18,7 @@ const StoryBox = ({
 }) => (
   <>
     <Link to={`/stories/${id}`}>
-      <div className="storyBox">
+      <div className="story-box">
         <h2 className="story-title">{title}</h2>
         <StoryText text={text} />
       </div>
