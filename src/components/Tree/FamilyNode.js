@@ -40,7 +40,7 @@ const FamilyNode = ({ node, style }) => {
                 <li>{node.lastKnownLocation ? `Dernier lieu de vie: ${node.lastKnownLocation} ` : ''}</li>
                 <li>{node.dateOfDeath ? `Décédé le: ${formatDate} ` : ''}</li>
               </ul>
-              <NavLink to="/tree/editpersontree"><button className='edit__person__button' type="button"><AiFillEdit size='2em' /></button></NavLink>
+              {/* <NavLink to="/tree/editpersontree"><button className='edit__person__button' type="button"><AiFillEdit size='2em' /></button></NavLink> */}
               <button className='delete__person__button' type="button" onClick={deletePersonTree}><AiOutlineDelete size='2em' /></button>
             </figcaption>
           </figure>
@@ -60,7 +60,7 @@ const FamilyNode = ({ node, style }) => {
               <li>{node.lastKnownLocation ? `Dernier lieu de vie: ${node.lastKnownLocation} ` : ''}</li>
               <li>{node.dateOfDeath ? `Décédé le: ${formatDate} ` : ''}</li>
             </ul>
-            <NavLink to="/tree/editpersontree"><button className='edit__person__button' type="button"><AiFillEdit size='2em' /></button></NavLink>
+            {/* <NavLink to="/tree/editpersontree"><button className='edit__person__button' type="button"><AiFillEdit size='2em' /></button></NavLink> */}
             <button className='delete__person__button' type="button" onClick={deletePersonTree}><AiOutlineDelete size='2em' /></button>
           </figcaption>
         </figure>
