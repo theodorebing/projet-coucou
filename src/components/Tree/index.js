@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'src/api';
 // import PinchZoomPan from './PinchZoomPan';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import baseurl from 'src/middlewares/baseurl';
 import FamilyNameTitle from 'src/components/FamilyNameTitle';
 import FamilyNode from './FamilyNode';
@@ -31,30 +32,38 @@ const Tree = ({ noHelpButtons }) => {
       {tree && Object.keys(tree).length ? (
         <>
           <FamilyNameTitle />
-          <ReactFamilyTree
-            nodes={tree.familyTree}
-            rootId={tree.rootId}
-            width={WIDTH}
-            height={HEIGHT}
-            renderNode={(node) => (
-              <FamilyNode
-                key={node.id}
-                node={node}
-                // name={node}
-                style={{
-                  position: 'absolute',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: WIDTH,
-                  height: HEIGHT,
-                  transform: `translate(${node.left * (WIDTH / 2)}px, ${node.top * (HEIGHT / 2)}px)`,
-                }}
+          <TransformWrapper
+            defaultScale={1}
+            defaultPositionX={200}
+            defaultPositionY={150}
+          >
+            <TransformComponent>
+              <ReactFamilyTree
+                nodes={tree.familyTree}
+                rootId={tree.rootId}
+                width={WIDTH}
+                height={HEIGHT}
+                renderNode={(node) => (
+                  <FamilyNode
+                    key={node.id}
+                    node={node}
+                    // name={node}
+                    style={{
+                      position: 'absolute',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: WIDTH,
+                      height: HEIGHT,
+                      transform: `translate(${node.left * (WIDTH / 2)}px, ${node.top * (HEIGHT / 2)}px)`,
+                    }}
+                  />
+                )}
               />
-            )}
-          />
-          <div className="plusButton-div">
-          </div>
+              <div className="plusButton-div">
+              </div>
+            </TransformComponent>
+          </TransformWrapper>
         </>
       ) : (
         <h2 className="story-title">Loading</h2>
