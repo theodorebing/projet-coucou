@@ -38,7 +38,7 @@ const IndexLoginForm = ({
 
           <div className="buttons-div-login">
             <button type="submit" className="indexloginform-button-login button">Connexion</button>
-            <span className="indexloginform-link"><a href="#">Mot de passe oublié ?</a></span>
+            {/* <span className="indexloginform-link"><a href="#">Mot de passe oublié ?</a></span> */}
           </div>
         </div>
       </form>
