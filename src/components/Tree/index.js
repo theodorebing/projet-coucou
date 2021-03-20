@@ -1,7 +1,7 @@
 // == Import : npm
 import ReactFamilyTree from 'react-family-tree';
 import React, { useState, useEffect } from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import axios from 'src/api';
 // import PinchZoomPan from './PinchZoomPan';
 import baseurl from 'src/middlewares/baseurl';
@@ -24,8 +24,8 @@ const Tree = ({ noHelpButtons }) => {
         (console.log('cath tree', error));
       });
   }, []);
-  const WIDTH = 300;
-  const HEIGHT = 300;
+  const WIDTH = 350;
+  const HEIGHT = 350;
   return (
     <div className="tree">
       {tree && Object.keys(tree).length ? (
@@ -54,12 +54,12 @@ const Tree = ({ noHelpButtons }) => {
             )}
           />
           <div className="plusButton-div">
-            <NavLink to="/tree/addperson"><button type="button" className="plusButton-button"> + </button></NavLink>
           </div>
         </>
       ) : (
         <h2 className="story-title">Loading</h2>
       )}
+      <NavLink to="/tree/addpersontree"><button type="button" className="plusButton-button"> + </button></NavLink>
     </div>
   );
 };

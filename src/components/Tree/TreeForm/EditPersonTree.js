@@ -7,11 +7,11 @@ import GenderOption from './GenderOption';
 import PeopleOption from './PeopleOption';
 import RelationOption from './RelationOption';
 
+
 // == Import : local
 import '../styles.scss';
 
-// == Composant
-const AddPersonTree = () => {
+const EditPersonTree = ({}) => {
   const [lastName, setLastName] = useState('');
   const [firstName, setFirstname] = useState('');
   const [placeOfBirth, setPlaceOfBirth] = useState('');
@@ -26,7 +26,7 @@ const AddPersonTree = () => {
   const [relationId, setRelationID] = useState('');
   const history = useHistory();
   const sendFormTree = () => {
-    axios.post(`${baseurl}tree`, {
+    axios.patch(`${baseurl}tree`, {
       firstName,
       lastName,
       placeOfBirth,
@@ -39,7 +39,7 @@ const AddPersonTree = () => {
     })
       .then((result) => {
         if (result) {
-          history.push('/tree');
+          history.push('/');
         }
       })
       .catch((error) => {
@@ -73,8 +73,15 @@ const AddPersonTree = () => {
     <div className="tree__add__page">
       {people && Object.keys(people).length ? (
         <div className="form__add__tree">
-          <h1>Ajouter une personne à l'arbre</h1>
+          <h1>Modifier une personne de l'arbre</h1>
           <form className="form" onSubmit={handleSubmit}>
+          <h2>Selectionner une personne de l'arbre</h2>
+            <select className="join__family__select" onChange={(e) => setPersonId(e.target.value)}>
+              <PeopleOption id="null" firstName="Sélectionnez" lastName="une personne" />
+              {people.map((person) => (
+                <PeopleOption key={person.id} {...person} />
+              ))}
+            </select>
             <input
               type="text"
               className="join__family__form-input"
@@ -157,9 +164,7 @@ const AddPersonTree = () => {
         <h2 className="story-title">Loading</h2>
       )}
     </div>
-
   );
 };
+export default EditPersonTree;
 
-// == Export
-export default AddPersonTree;

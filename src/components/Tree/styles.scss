@@ -23,6 +23,7 @@
     cursor: pointer;
     outline: none;
     }
+
     &__name {
       font-family: vars.$font-button;
       color: vars.$main-color;
@@ -37,24 +38,62 @@
       text-align: center;
     }
   }
+  .figcaption {
+    font-family: vars.$font-coucou;
+    opacity:0;
+    position:absolute;
+    bottom: 100px;
+    right: 50px;
+    height: auto;
+    width: 250px;
+    background-color:rgba(255, 255, 255, 0.762);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    border:solid 1px vars.$border-color;
+    padding: 20px;
+    font-size: 1.5em;
+    border-radius: 25px;
+    }
+    
+    .person__tree :hover .figcaption {
+      transition-duration: 1s;
+        opacity:1;
+        transform: scale(1.2);
+      }
 
-  .root {
-    position: relative;
-    transform: translateZ(0);
-    overflow: hidden;
-  }
-  .point {
-    position: absolute;
-    width: 0;
-    height: 0;
-    transform: translate(0, 0) scale(1);
-    transform-origin: center;
-    will-change: transform;
-  }
-  .canvas {
-    position: absolute;
-    transform: translate(-50%, -50%);
-  }
+      .delete__person__button {
+        margin: 2px;
+        margin-top: 10px;
+        margin-left: 40%;
+        background-color:transparent;
+        color: rgba(255, 0, 0, 0.694);
+        opacity: 0.7;
+        border-radius: 3px;
+        border: none;
+      }
+      .delete__person__button:hover {
+        background-color: rgba(255, 0, 0, 0.694);
+        color: rgba(255, 255, 255, 0.879);
+        opacity: 2;
+      }
+
+      
+  // .root {
+  //   position: relative;
+  //   transform: translateZ(0);
+  //   overflow: hidden;
+  // }
+  // .point {
+  //   position: absolute;
+  //   width: 0;
+  //   height: 0;
+  //   transform: translate(0, 0) scale(1);
+  //   transform-origin: center;
+  //   will-change: transform;
+  // }
+  // .canvas {
+  //   position: absolute;
+  //   transform: translate(-50%, -50%);
+  // }
   
   .add-person-button{
     // position: relative;

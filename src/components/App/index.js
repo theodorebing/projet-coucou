@@ -12,6 +12,7 @@ import Stories from 'src/containers/Stories';
 import StoryDetails from 'src/containers/Stories/StoryDetails';
 import Profile from 'src/containers/Profile';
 import AddPersonTree from 'src/components/Tree/TreeForm/AddPersonTree';
+import EditPersonTree from 'src/components/Tree/TreeForm/EditPersonTree';
 import About from 'src/containers/Help/About';
 import WelcomePage from 'src/containers/WelcomePage';
 import UserManual from 'src/containers/Help/UserManual';
@@ -87,8 +88,11 @@ const App = ({ isLogged, checkConnection, familyId }) => {
               <Route path="/tree" exact>
                 <Tree />
               </Route>
-              <Route path="/tree/addperson" exact>
+              <Route path="/tree/addpersontree" exact>
                 <AddPersonTree />
+              </Route>
+              <Route path="/tree/editpersontree" exact>
+                <EditPersonTree />
               </Route>
               <Route path="/family" exact>
                 <Family />
