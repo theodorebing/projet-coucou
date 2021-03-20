@@ -46,7 +46,7 @@
     right: 50px;
     height: auto;
     width: 250px;
-    background-color:rgb(255, 252, 249);
+    background-color:rgba(255, 255, 255, 0.762);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     border:solid 1px vars.$border-color;
     padding: 20px;
@@ -64,15 +64,15 @@
         margin: 2px;
         margin-top: 10px;
         margin-left: 40%;
-        background-color:white;
-        color: red;
+        background-color:transparent;
+        color: rgba(255, 0, 0, 0.694);
         opacity: 0.7;
         border-radius: 3px;
         border: none;
       }
       .delete__person__button:hover {
-        background-color:red;
-        color: white;
+        background-color: rgba(255, 0, 0, 0.694);
+        color: rgba(255, 255, 255, 0.879);
         opacity: 2;
       }
 
