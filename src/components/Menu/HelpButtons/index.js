@@ -3,42 +3,28 @@ import { NavLink } from 'react-router-dom';
 
 const HelpButtons = ({ isLogged }) => (
   <>
-    {isLogged && (
-    <NavLink to="/" activeClassName="menu-button-onPage">
-      <button type="button" className="menu-button menu-button-help">
-        Accueil
-      </button>
+    {!isLogged && (
+    <NavLink exact to="/" activeClassName="menu-button-onPage" className="menu-button menu-button-help">
+      Accueil
     </NavLink>
     )}
-    <NavLink to="/about" activeClassName="menu-button-onPage">
-      <button type="button" className="menu-button menu-button-help">
-        À propos
-      </button>
+    <NavLink to="/about" className="menu-button menu-button-help" activeClassName="menu-button-onPage">
+      À propos
     </NavLink>
-    <NavLink to="/usermanual" activeClassName="menu-button-onPage">
-      <button type="button" className="menu-button menu-button-help">
-        Mode d'emploi
-      </button>
+    <NavLink to="/usermanual" activeClassName="menu-button-onPage" className="menu-button menu-button-help">
+      Mode d'emploi
     </NavLink>
-    <NavLink to="/faq" activeClassName="menu-button-onPage">
-      <button type="button" className="menu-button menu-button-help">
-        FAQ
-      </button>
+    <NavLink to="/faq" activeClassName="menu-button-onPage" className="menu-button menu-button-help">
+      FAQ
     </NavLink>
-    <NavLink to="/newfeatures" activeClassName="menu-button-onPage">
-      <button type="button" className="menu-button menu-button-help">
-        À Venir!
-      </button>
+    <NavLink to="/newfeatures" activeClassName="menu-button-onPage" className="menu-button menu-button-help">
+      À Venir!
     </NavLink>
-    <NavLink to="/contact" activeClassName="menu-button-onPage">
-      <button type="button" className="menu-button menu-button-help">
-        Contact
-      </button>
+    <NavLink to="/contact" activeClassName="menu-button-onPage" className="menu-button menu-button-help">
+      Contact
     </NavLink>
-    <NavLink to="/legalterms" activeClassName="menu-button-onPage">
-      <button type="button" className="menu-button menu-button-help">
-        Mentions lég.
-      </button>
+    <NavLink to="/legalterms" activeClassName="menu-button-onPage" className="menu-button menu-button-help">
+      Mentions lég.
     </NavLink>
   </>
 );

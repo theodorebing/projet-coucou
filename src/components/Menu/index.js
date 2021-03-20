@@ -47,40 +47,32 @@ const Menu = ({
 
           {isLogged && (
           <>
-            <NavLink to="/profile" activeClassName="menu-button-onPage">
-              <button type="button" className="menu-button">Mon profil</button>
+            <NavLink to="/profile" className="menu-button" activeClassName="menu-button-onPage">
+              Mon profil
             </NavLink>
           </>
           )}
           { isLogged && (typeof familyId === 'number') && (
           <>
-            <NavLink to="/family" activeClassName="menu-button-onPage">
-              <button type="button" className="menu-button">
-                Ma famille
-              </button>
+            <NavLink to="/family" className="menu-button" activeClassName="menu-button-onPage">
+              Ma famille
             </NavLink>
 
-            <NavLink to="/tree" activeClassName="menu-button-onPage">
-              <button type="button" className="menu-button">
-                Arbre
-              </button>
+            <NavLink to="/tree" className="menu-button" activeClassName="menu-button-onPage">
+              Arbre
             </NavLink>
 
-            <NavLink to="/stories" activeClassName="menu-button-onPage">
-              <button type="button" className="menu-button">
-                Histoires
-              </button>
+            <NavLink to="/stories" className="menu-button" activeClassName="menu-button-onPage">
+              Histoires
             </NavLink>
           </>
           )}
         </div>
       </div>
       {isLogged && !showHelpButtons && (
-        <div className="menu-button-helpdiv">
-          <NavLink to="/about" activeClassName="menu-button-onPage">
-            <button type="button" className="menu-littleButton menu-littleButton-help">
-              Aide
-            </button>
+        <div className="menu-littleButton-helpdiv">
+          <NavLink to="/about" className="menu-littleButton menu-littleButton-help" activeClassName="menu-button-onPage">
+            Aide
           </NavLink>
         </div>
       )}
