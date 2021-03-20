@@ -9,6 +9,18 @@ import profileImg from 'src/assets/images/avatar.png';
 
 // == Composant
 const Profile = ({ email, name, noHelpButtons }) => {
+  function translateRole(role) {
+    switch (role) {
+      case 'user':
+        return 'Membre de la famille';
+      case 'family_admin':
+        return 'Administrateur de la famille';
+      case 'site_admin':
+        return 'Administrateur du site';
+      default:
+        return 'Role inconnu';
+    }
+  }
   const [family, setFamily] = useState({});
   (useEffect(() => {
     noHelpButtons();
@@ -24,7 +36,7 @@ const Profile = ({ email, name, noHelpButtons }) => {
       <div className="profile-textPart">
         <div className="profile-textPart-email">Mon email : {email}</div>
         <div className="profile-textPart-family">Ma famille : {family.designation}</div>
-        <div className="profile-textPart-role">Mon rôle : {name}</div>
+        <div className="profile-textPart-role">Mon rôle : {translateRole(name)}</div>
       </div>
     </div>
   );

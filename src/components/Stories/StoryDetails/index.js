@@ -4,6 +4,7 @@ import { Link, useParams, useHistory } from 'react-router-dom';
 import FamilyNameTitle from 'src/components/FamilyNameTitle';
 import axios from 'src/api';
 import baseurl from 'src/middlewares/baseurl';
+import dayjs from 'dayjs';
 
 // == Component
 const StoryDetails = () => {
@@ -27,6 +28,9 @@ const StoryDetails = () => {
       }
     });
   }, []));
+  const createdAt = dayjs(story.createdAt).format('DD/MM/YYYY');
+  const startingDate = dayjs(story.startingDate).format('DD/MM/YYYY');
+  const endingDate = dayjs(story.endingDate).format('DD/MM/YYYY');
   return (
     <div className="storyDetails-page">
       <FamilyNameTitle />
@@ -35,12 +39,12 @@ const StoryDetails = () => {
           <>
             <h2 className="storyDetails-title">{story.title}</h2>
             <p className="storyDetails-text">{story.text}</p>
-            <span className="storyDetails-createdAt storyDetails-date">Date d'ajout: {story.created_at}</span>
+            <span className="storyDetails-createdAt storyDetails-date">Date d'ajout: {createdAt}</span>
             {/* {!story.updated_at &&
               (<span className="story-updatedAt storyDetails-date">{story.updated_at}</span>)}
             */}
-            <span className="storyDetails-startingDate storyDetails-date">Date de début de l'histoire: {story.starting_date}</span>
-            <span className="storyDetails-endingDate storyDetails-date">Date de fin de l'histoire: {story.ending_date}</span>
+            <span className="storyDetails-startingDate storyDetails-date">Date de début de l'histoire: {startingDate}</span>
+            <span className="storyDetails-endingDate storyDetails-date">Date de fin de l'histoire: {endingDate}</span>
             <span className="storyDetails-location storyDetails-date">Lieu(x) où se déroule l'histoire:  {story.location}</span>
             <div className="storyDetails-div-buttons">
               <button type="button" className="storyDetails-button">

@@ -78,8 +78,8 @@ const AddPersonTree = () => {
     <div className="tree__add__page">
       {people && Object.keys(people).length ? (
         <div className="form__add__tree">
-          <h1>Ajouter un personne à l'arbre</h1>
-          <h2>Ajouter un personne à l'arbre!</h2>
+          <h1>Ajouter une personne à l'arbre</h1>
+          <h2>Ajouter une personne à l'arbre!</h2>
           <form className="form" onSubmit={handleSubmit}>
             <input
               type="text"
