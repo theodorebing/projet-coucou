@@ -46,7 +46,6 @@ export default (store) => (next) => (action) => {
         password: store.getState().auth.password,
       })
         .then(() => {
-          store.dispatch(openSignUpForm());
           store.dispatch(getSignupOk());
         })
         .catch((error) => {

@@ -48,7 +48,8 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         activeSignUpForm: !state.activeSignUpForm,
-        signUpIsOk: !state.signupIsOk,
+        signUpIsOk: false,
+        signUpIsWrong: false,
       };
     case GET_SIGNUP_OK:
       return {

@@ -10,21 +10,17 @@ const IndexLoginForm = ({
   changeField,
   handleLogin,
   openSignUpForm,
-  signUpIsOk,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleLogin();
   };
-  console.log('signUpIsOk', signUpIsOk);
   return (
     <div className="indexloginform index-shadow">
       {changeField ? (
         <>
           <form method="post" className="form" onSubmit={handleSubmit}>
-            {signUpIsOk ? (
-              <h3 className="indexloginform-title indexloginform-title-green">Félicitations, vous êtes inscrit.e. <br /> Connectez-vous!</h3>
-            ) : (<h3 className="indexloginform-title">Connectez-vous!</h3>)}
+            <h3 className="indexloginform-title">Connectez-vous!</h3>
             <Field
               name="email"
               placeholder="Adresse e-mail"
@@ -60,10 +56,8 @@ IndexLoginForm.propTypes = {
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
   openSignUpForm: PropTypes.func.isRequired,
-  signUpIsOk: PropTypes.bool,
 };
 IndexLoginForm.defaultProps = {
-  signUpIsOk: false,
 };
 
 export default IndexLoginForm;
