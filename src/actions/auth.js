@@ -60,3 +60,10 @@ export const getSignupOk = (signupIsOk) => ({
   type: GET_SIGNUP_OK,
   signupIsOk,
 });
+
+export const GET_SIGNUP_WRONG = 'GET_SIGNUP_WRONG';
+
+export const getSignupWrong = (signupIsWrong) => ({
+  type: GET_SIGNUP_WRONG,
+  signupIsWrong,
+});

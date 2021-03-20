@@ -5,6 +5,7 @@ import {
   SEND_LOGOUT,
   openSignUpForm,
   getSignupOk,
+  getSignupWrong,
   setIsLogged,
   logout,
 } from 'src/actions/auth';
@@ -47,6 +48,10 @@ export default (store) => (next) => (action) => {
         .then(() => {
           store.dispatch(openSignUpForm());
           store.dispatch(getSignupOk());
+        })
+        .catch((error) => {
+          console.log('error', error);
+          store.dispatch(getSignupWrong());
         });
       return next(action);
     default:
