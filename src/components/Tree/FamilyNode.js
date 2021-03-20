@@ -15,8 +15,7 @@ const FamilyNode = ({ node, style }) => {
     axios.delete(`${baseurl}tree/${node.id}`)
     .then((result) => {
       if (result.status === 200) {
-        console.log('ok', result.status)
-        history.push('/');
+        history.location.pathname  === '/' ? history.push('/tree') : history.push('/') 
       }
     })
     .catch((error) => {
