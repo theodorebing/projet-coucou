@@ -25,14 +25,13 @@ const Contact = ({
   });
   return (
     <section className="contact-section">
-      <h1 className="contact-section-titre">Contact</h1>
-      <a href="" />
+      <h1 className="contact-section-title">Contact</h1>
       <div className="contact-section-faces">
-        <span className="contact-section-oneface">Virginie <img src={virginie} alt="Virginie" className="contact-picture" /><a href="virginielaborde.contact@gmail.com">virginielaborde.contact@gmail.com</a></span>
-        <span className="contact-section-oneface">Sébastien<img src={sebastien} alt="Sébastien" className="contact-picture" /><a href="gonzalez.sebastien66@gmail.com">gonzalez.sebastien66@gmail.com</a></span>
-        <span className="contact-section-oneface">Chloé <img src={chloe} alt="Chloé" className="contact-picture" /><a href="chloe.piperno94350@gmail.com">chloe.piperno94350@gmail.com</a></span>
-        <span className="contact-section-oneface">Théodore<img src={theodore} alt="Théodore" className="contact-picture" /><a href="theodorebing.dev@gmail.com">theodorebing.dev@gmail.com</a></span>
-        <span className="contact-section-oneface">Florent<img src={florent} alt="Florent" className="contact-picture" /><a href="florent@gmail.com">florent@gmail.com</a></span>
+        <span className="contact-section-oneface"><p className="contact-section-name">Virginie</p> <img src={virginie} alt="Virginie" className="contact-picture" /><a href="virginielaborde.contact@gmail.com" className="contact-section-link">virginielaborde.contact@gmail.com</a></span>
+        <span className="contact-section-oneface"><p className="contact-section-name">Sébastien</p><img src={sebastien} alt="Sébastien" className="contact-picture" /><a href="gonzalez.sebastien66@gmail.com" className="contact-section-link">gonzalez.sebastien66@gmail.com</a></span>
+        <span className="contact-section-oneface"><p className="contact-section-name">Chloé</p> <img src={chloe} alt="Chloé" className="contact-picture" /><a href="chloe.piperno94350@gmail.com" className="contact-section-link">chloe.piperno94350@gmail.com</a></span>
+        <span className="contact-section-oneface"><p className="contact-section-name">Théodore</p><img src={theodore} alt="Théodore" className="contact-picture" /><a href="theodorebing.dev@gmail.com" className="contact-section-link">theodorebing.dev@gmail.com</a></span>
+        <span className="contact-section-oneface"><p className="contact-section-name">Florent</p><img src={florent} alt="Florent" className="contact-picture" /><a href="florent@gmail.com" className="contact-section-link-null">florentnullnullnull@gmail.com</a></span>
       </div>
       {/* <div className="contact-section-text">
           <h2 className="contact-section-text-title">

@@ -4,16 +4,17 @@
 
   margin-left: vars.$content-margin-left;
   background-color: vars.$white-color;
-  height: 100vh;
+  height: 100%;
 
   &-feed {
     margin: 2em 3em;
+    height: 100%;
   }
 
   &-loading {
     text-align: center;
     margin-top: 20rem;
-    font-family: vars.$font-coucou;
+    font-family: vars.$font-text;
     font-size: 3rem;
     margin-bottom: 1rem;
   }
@@ -21,6 +22,7 @@
 }
 
 .center-addStoryForm {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

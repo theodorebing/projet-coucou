@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'src/api';
 import baseurl from 'src/middlewares/baseurl';
+import FamilyNameTitle from 'src/components/FamilyNameTitle';
 import GenderOption from './GenderOption';
 import PeopleOption from './PeopleOption';
 import RelationOption from './RelationOption';
@@ -71,6 +72,7 @@ const AddPersonTree = () => {
   };
   return (
     <div className="tree__add__page">
+      <FamilyNameTitle />
       {people && Object.keys(people).length ? (
         <div className="form__add__tree">
           <h1 className="form-title">Ajouter une personne à l'arbre</h1>
