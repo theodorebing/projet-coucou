@@ -12,22 +12,34 @@
     padding-top: 15rem;
 
     &-div {
-      width: 30%;
+      width: 20%;
       text-align: left;
 
       &-logo {
         font-family: vars.$font-coucou;
-        color: #fafafa;
+        color: rgb(232, 231, 231);
         font-size: 8rem;
-        text-shadow: 0 2px 200px rgba(184, 184, 184, 0.173), 0 -1px 01px rgba(181, 181, 181, 0.735), 0 3px 220px rgba(222, 222, 222);      }
+        text-shadow: 0 2px 200px rgba(184, 184, 184, 0.173), 0 -1.5px 01px rgba(181, 181, 181, 0.735), 0 3px 220px rgba(222, 222, 222);
+
+      }
 
       &-text {
+        margin-top: 2rem;
         width: 100%;
-        font-size: 1rem;
-        font-family: vars.$font-button;
+        font-size: 1.3rem;
+        font-weight: 300;
+        line-height: 1.5;
+        font-family: vars.$font-text;
+        color: rgb(79, 79, 79);
       }
     }
   }
+    &-img {
+      border-radius: 50px;
+      width: 30%;
+      padding: 1rem;
+      background-color: vars.$white-color;
+    }
 
   &-presentation1 {
     margin: 25rem 0 25rem;
@@ -35,15 +47,10 @@
     justify-content: space-evenly;
     align-items: center;
 
-    &-img {
-      width: 30%;
-      border-radius: 50px;
-    }
-
     &-span {
-      width: 30%;
+      width: 20%;
       text-align: right;
-      font-family: vars.$font-button;
+      font-family: vars.$font-text;
     }
   }
 
@@ -58,15 +65,10 @@
     align-items: center;
 
     &-span {
-      width: 30%;
+      width: 20%;
       text-align: left;
-      font-family: vars.$font-button;
+      font-family: vars.$font-text;
     }
-  }
-
-  &-img {
-    width: 30%;
-    border-radius: 50px;
   }
 
   &-shadow {
@@ -74,13 +76,19 @@
   }
       
   &-h2 {
-    font-family: vars.$font-coucou;
+    font-family: vars.$font-text;
     margin-bottom: 1rem;
     font-weight: 700;
     font-size: 3rem;
+    color: rgb(232, 231, 231);
+            text-shadow: 0 2px 200px rgba(184, 184, 184, 0.173), 0 -1.5px 01px rgba(181, 181, 181, 0.735), 0 3px 220px rgba(222, 222, 222);
+
   }
   &-presentation-text {
-    color: vars.$lightblack-color;
+    color: rgb(79, 79, 79);
+    font-size: 1.2rem;
+    font-weight: 300;
+        line-height: 1.5;
   }
 }
 

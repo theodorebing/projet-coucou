@@ -16,7 +16,7 @@
   &-title {
     font-size: 1.2rem;
     color: vars.$grey-color;
-    font-family: vars.$font-button;
+    font-family: vars.$font-text;
   }
 
   .form {
@@ -45,7 +45,7 @@
     letter-spacing: 2.5px;
     color: vars.$grey-color;
     padding: 0.8rem 1.5rem;
-    font-family: vars.$font-button;
+    font-family: vars.$font-text;
     letter-spacing: 2.5px;
     font-weight: 500;
     border: none;
@@ -78,7 +78,7 @@
     color: vars.$grey-color;
     background-color: white;
     padding: 0.8rem 1.5rem;
-    font-family: vars.$font-button;
+    font-family: vars.$font-text;
     letter-spacing: 2.5px;
     font-weight: 500;
     border: none;
