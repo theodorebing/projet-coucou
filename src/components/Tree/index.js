@@ -28,9 +28,9 @@ const Tree = ({ noHelpButtons }) => {
   const HEIGHT = 350;
   return (
     <div className="tree">
+      <FamilyNameTitle />
       {tree && Object.keys(tree).length ? (
         <>
-          <FamilyNameTitle />
           <ReactFamilyTree
             nodes={tree.familyTree}
             rootId={tree.rootId}
@@ -53,8 +53,7 @@ const Tree = ({ noHelpButtons }) => {
               />
             )}
           />
-          <div className="plusButton-div">
-          </div>
+          <div className="plusButton-div" />
         </>
       ) : (
         <h2 className="story-title">Loading</h2>

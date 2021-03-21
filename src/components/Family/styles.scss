@@ -4,8 +4,11 @@
   margin-left: vars.$content-margin-left;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  background-color: vars.$white-color;
+  height: 100%;
+  // background-image: vars.$background-image;
 
   &-members {
     margin-top: 2rem;

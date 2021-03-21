@@ -73,76 +73,77 @@ const AddPersonTree = () => {
     <div className="tree__add__page">
       {people && Object.keys(people).length ? (
         <div className="form__add__tree">
-          <h1>Ajouter une personne à l'arbre</h1>
+          <h1 className="form-title">Ajouter une personne à l'arbre</h1>
           <form className="form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              className="join__family__form-input"
-              placeholder="Prénom"
-              value={firstName}
-              onChange={(e) => setFirstname(e.target.value)}
-              required
-            />
-            <input
-              type="text"
-              className="join__family__form-input"
-              placeholder="Nom"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              required
-            />
-            <input
-              type="text"
-              className="join__family__form-input"
-              placeholder="Lieu de naissance"
-              value={placeOfBirth}
-              onChange={(e) => setPlaceOfBirth(e.target.value)}
-            />
-            <input
-              type="text"
-              className="join__family__form-input"
-              placeholder="Dernier Lieu de vie connu"
-              value={lastKnownLocation}
-              onChange={(e) => setLastKnownLocation(e.target.value)}
-            />
-            <h2>Genre</h2>
-            <select className="join__family__select" onChange={(e) => setGenderName(e.target.value)}>
-              <GenderOption genderName="Sélectionnez un genre" />
-              {genders.map((gender) => (
-                <GenderOption key={gender.id} {...gender} />
-              ))}
-            </select>
-            <h2>Selectionner une relation</h2>
-            <select className="join__family__select" onChange={(e) => setRelationID(e.target.value)}>
-              <RelationOption id="null" type="Sélectionnez une relation" />
-              {relations.map((relation) => (
-                <RelationOption key={relation.id} {...relation} />
-              ))}
-            </select>
-            <h2>Selectionner un parent</h2>
-            <select className="join__family__select" onChange={(e) => setPersonId(e.target.value)}>
-              <PeopleOption id="null" firstName="Sélectionnez" lastName="une personne" />
-              {people.map((person) => (
-                <PeopleOption key={person.id} {...person} />
-              ))}
-            </select>
-            <h2>Date de naissance</h2>
-            <input
-              type="date"
-              className="join__family__form-input"
-              placeholder="Date de naissance"
-              value={dateOfBirth}
-              onChange={(e) => setDateOfBirth(e.target.value)}
-            />
-            <h2>Date de décès</h2>
-            <input
-              type="date"
-              className="join__family__form-input"
-              placeholder="Date de décès"
-              value={dateOfDeath}
-              onChange={(e) => setDateOfDeath(e.target.value)}
-            />
-            {/* <h2>Ajouter une photo</h2>
+            <div className="input-div">
+              <input
+                type="text"
+                className="join__family__form-input"
+                placeholder="Prénom"
+                value={firstName}
+                onChange={(e) => setFirstname(e.target.value)}
+                required
+              />
+              <input
+                type="text"
+                className="join__family__form-input"
+                placeholder="Nom"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+              <input
+                type="text"
+                className="join__family__form-input"
+                placeholder="Lieu de naissance"
+                value={placeOfBirth}
+                onChange={(e) => setPlaceOfBirth(e.target.value)}
+              />
+              <input
+                type="text"
+                className="join__family__form-input"
+                placeholder="Dernier Lieu de vie connu"
+                value={lastKnownLocation}
+                onChange={(e) => setLastKnownLocation(e.target.value)}
+              />
+              <h2>Genre</h2>
+              <select className="join__family__select" onChange={(e) => setGenderName(e.target.value)}>
+                <GenderOption genderName="Sélectionnez un genre" />
+                {genders.map((gender) => (
+                  <GenderOption key={gender.id} {...gender} />
+                ))}
+              </select>
+              <h2>Selectionner une relation</h2>
+              <select className="join__family__select" onChange={(e) => setRelationID(e.target.value)}>
+                <RelationOption id="null" type="Sélectionnez une relation" />
+                {relations.map((relation) => (
+                  <RelationOption key={relation.id} {...relation} />
+                ))}
+              </select>
+              <h2>Selectionner un parent</h2>
+              <select className="join__family__select" onChange={(e) => setPersonId(e.target.value)}>
+                <PeopleOption id="null" firstName="Sélectionnez" lastName="une personne" />
+                {people.map((person) => (
+                  <PeopleOption key={person.id} {...person} />
+                ))}
+              </select>
+              <h2>Date de naissance</h2>
+              <input
+                type="date"
+                className="join__family__form-input"
+                placeholder="Date de naissance"
+                value={dateOfBirth}
+                onChange={(e) => setDateOfBirth(e.target.value)}
+              />
+              <h2>Date de décès</h2>
+              <input
+                type="date"
+                className="join__family__form-input"
+                placeholder="Date de décès"
+                value={dateOfDeath}
+                onChange={(e) => setDateOfDeath(e.target.value)}
+              />
+              {/* <h2>Ajouter une photo</h2>
             <input
               type="file"
               className="join__family__form-input"
@@ -150,6 +151,7 @@ const AddPersonTree = () => {
               name="avatar"
               accept="image/png, image/jpeg"
             /> */}
+            </div>
             <button type="submit" className="indexloginform-button-login">Valider</button>
           </form>
         </div>

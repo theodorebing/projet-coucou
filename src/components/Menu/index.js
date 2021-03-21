@@ -1,7 +1,7 @@
 // == Import
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from 'src/assets/Logo-Coucou-transparent.png';
+import logo from 'src/assets/images/Logo-Coucou-transparent.png';
 import './style.scss';
 import PropTypes from 'prop-types';
 import HelpButtons from './HelpButtons';
