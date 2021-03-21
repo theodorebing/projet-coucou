@@ -10,23 +10,18 @@ const Faq = ({ onHelpPages }) => {
     onHelpPages();
   });
   return (
-    <section className="faq-section">
-      <h1 className="faq-section-titre">Foire Aux Questions</h1>
-      <div className="faq-section-text">
-        <h2 className="faq-section-text-title">1. Pourquoi venir chez nous ?</h2>
-        <p className="faq-section-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, id. Officia dolores nesciunt assumenda! Nesciunt non quidem animi laborum voluptatibus laudantium sapiente neque, provident repellendus quasi inventore facere, veritatis expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quaes consequuntur hic est quae eos asperiores natus deserunt! Voluptates commodi aspernatur minus voluptas, quod numquam, atque fuga sit laborum est aut nam illo tenetur odio iste repellat accusantium, fugit id! Facere harum, sit incidunt fugit, et eius molestias, esse quas ratione perferendis ducimus cupiditate minus.</p>
-
-        <h2 className="faq-section-text-title">2. Où manger ce soir ?</h2>
-        <p className="faq-section-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, id. Officia dolores nesciunt assumenda! Nesciunt non quidem animi laborum voluptatibus laudantium sapiente neque, provident repellendus quasi inventore facere, veritatis expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique qua consequuntur hic est quae eos asperiores natus deserunt! Voluptates commodi aspernatur minus voluptas, quod numquam, atque fuga sit laborum est aut nam illo tenetur odio iste repellat accusantium, fugit id! Facere harum, sit incidunt fugit, et eius molestias, esse quas ratione perferendis ducimus cupiditate minus.</p>
-
-        <h2 className="faq-section-text-title">3. Comment dépensez tous vos sous ?</h2>
-        <p className="faq-section-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, id. Officia dolores nesciunt assumenda! Nesciunt non quidem animi laborum voluptatibus laudantium sapiente neque, provident repellendus quasi inventore facere, veritatis expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequuntur hic est quae eos asperiores natus deserunt! Voluptates commodi aspernatur minus voluptas, quod numquam, atque fuga sit laborum est aut nam illo tenetur odio iste repellat accusantium, fugit id! Facere harum, sit incidunt fugit, et eius molestias, esse quas ratione perferendis ducimus cupiditate minus.</p>
-
-        <h2 className="faq-section-text-title">4. Pourquoi faire ?</h2>
-        <p className="faq-section-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, id. Officia dolores nesciunt assumenda! Nesciunt non quidem animi laborum voluptatibus laudantium sapiente neque, provident repellendus quasi inventore facere, veritatis expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequuntur hic est quae eos asperiores natus deserunt! Voluptates commodi aspernatur minus voluptas, quod numquam, atque fuga sit laborum est aut nam illo tenetur odio iste repellat accusantium, fugit id! Facere harum, sit incidunt fugit, et eius molestias, esse quas ratione perferendis ducimus cupiditate minus.</p>
-
-        <h2 className="faq-section-text-title">5. Les boules de Noël ?</h2>
-        <p className="faq-section-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, id. Officia dolores nesciunt assumenda! Nesciunt non quidem animi laborum voluptatibus laudantium sapiente neque, provident repellendus quasi inventore facere, veritatis expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequuntur hic est quae eos asperiores natus deserunt! Voluptates commodi aspernatur minus voluptas, quod numquam, atque fuga sit laborum est aut nam illo tenetur odio iste repellat accusantium, fugit id! Facere harum, sit incidunt fugit, et eius molestias, esse quas ratione perferendis ducimus cupiditate minus.</p>
+    <section className="faq">
+      <h1 className="faq-title">Foire aux Questions</h1>
+      <div className="faq-text">
+        <h2 className="faq-text-subtitle">A quoi sert l’application ?</h2>
+        <p className="faq-text-content">L’application Coucou sert à conserver les histoires et anecdotes de sa famille ainsi que son arbre généalogique, tout cela gratuitement.
+        </p>
+        <h2 className="faq-text-subtitle">Les informations de ma famille sont-elles privées ?</h2>
+        <p className="faq-text-content"> Oui. Les membres du site n’appartenant pas à votre famille n’ont aucun droit d’accès à vos histoires et votre arbre !
+        </p>
+        <h2 className="faq-text-subtitle">Pouvons-nous ajouter des vidéos ? </h2>
+        <p className="faq-text-content">Ça sera bientôt possible! Rendez-vous dans les Futures fonctionnalités pour en savoir plus.
+        </p>
       </div>
     </section>
   );
