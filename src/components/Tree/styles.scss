@@ -76,27 +76,9 @@
         opacity: 2;
       }
 
-      
-  // .root {
-  //   position: relative;
-  //   transform: translateZ(0);
-  //   overflow: hidden;
-  // }
-  // .point {
-  //   position: absolute;
-  //   width: 0;
-  //   height: 0;
-  //   transform: translate(0, 0) scale(1);
-  //   transform-origin: center;
-  //   will-change: transform;
-  // }
-  // .canvas {
-  //   position: absolute;
-  //   transform: translate(-50%, -50%);
-  // }
   
   .add-person-button{
-    // position: relative;
+    // position: sticky;
     // left: 50%;
     // top: 98%;
     color: vars.$lightgrey-color;
@@ -126,12 +108,12 @@
     align-items: center;
     flex-direction: column;
     margin-left: 250px;
-      h1 {
-        margin: 5px;
-        text-align: center;
-        color: vars.$grey-color;
-        font-size: 3em;
-        }
+    h1 {
+      margin: 5px;
+      text-align: center;
+      color: vars.$grey-color;
+      font-size: 3em;
+      }
   
     h2 {
       margin: 5px;

@@ -3,12 +3,11 @@ import ReactFamilyTree from 'react-family-tree';
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'src/api';
-// import PinchZoomPan from './PinchZoomPan';
+
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import baseurl from 'src/middlewares/baseurl';
 import FamilyNameTitle from 'src/components/FamilyNameTitle';
 import FamilyNode from './FamilyNode';
-
 import './styles.scss';
 
 const Tree = ({ noHelpButtons }) => {
@@ -36,79 +35,86 @@ const Tree = ({ noHelpButtons }) => {
       {tree && Object.keys(tree).length ? (
         <>
           <FamilyNameTitle />
-          { sizeScreenX  < 800 ? (
-          <TransformWrapper
-            defaultScale={0.3}
-            options={{
-              minScale:0.3,
-              maxScale:2,
-              
-            }}
-            wheel={{ step: 50 }}
-          >
-            <TransformComponent>
-              <ReactFamilyTree
-                nodes={tree.familyTree}
-                rootId={tree.rootId}
-                width={WIDTH}
-                height={HEIGHT}
-                renderNode={(node) => (
-                  <FamilyNode
-                    key={node.id}
-                    node={node}
-                    // name={node}
-                    style={{
-                      position: 'absolute',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: WIDTH,
-                      height: HEIGHT,
-                      transform: `translate(${node.left * (WIDTH / 2)}px, ${node.top * (HEIGHT / 2)}px)`,
-                    }}
-                  />
-                )}
-              />
-              <div className="plusButton-div">
-              </div>
-            </TransformComponent>
-          </TransformWrapper>
+          { sizeScreenX < 800 ? (
+            <TransformWrapper
+              defaultScale={0.4}
+              options={{
+                minScale: 0.3,
+                maxScale: 2,
+                limitToBounds: false,
+              }}
+              zoomIn={{
+                animationType: 'easeInQuad'
+              }}
+              wheel={{ step: 50 }}
+            >
+              <TransformComponent>
+                <ReactFamilyTree
+                  nodes={tree.familyTree}
+                  rootId={tree.rootId}
+                  width={WIDTH}
+                  height={HEIGHT}
+                  renderNode={(node) => (
+                    <FamilyNode
+                      key={node.id}
+                      node={node}
+                      // name={node}
+                      style={{
+                        position: 'absolute',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: WIDTH,
+                        height: HEIGHT,
+                        transform: `translate(${node.left * (WIDTH / 2)}px, ${node.top * (HEIGHT / 2)}px)`,
+                      }}
+                    />
+                  )}
+                />
+                <div className="plusButton-div">
+                </div>
+              </TransformComponent>
+            </TransformWrapper>
           ) : (
             <TransformWrapper
-            defaultScale={1}
-            options={{
-              minScale:0.5,
-              maxScale:1.5
-            }}
-            wheel={{ step: 0.5 }}
-          >
-            <TransformComponent>
-              <ReactFamilyTree
-                nodes={tree.familyTree}
-                rootId={tree.rootId}
-                width={WIDTH}
-                height={HEIGHT}
-                renderNode={(node) => (
-                  <FamilyNode
-                    key={node.id}
-                    node={node}
-                    // name={node}
-                    style={{
-                      position: 'absolute',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: WIDTH,
-                      height: HEIGHT,
-                      transform: `translate(${node.left * (WIDTH / 2)}px, ${node.top * (HEIGHT / 2)}px)`,
-                    }}
-                  />
-                )}
-              />
-              <div className="plusButton-div">
-              </div>
-            </TransformComponent>
-          </TransformWrapper>
+              defaultScale={1}
+              options={{
+                minScale: 0.8,
+                maxScale: 1.5,
+                limitToBounds: false,
+              }}
+              doubleClick={{
+                mode: 'reset'
+              }}
+              wheel={{ step: 2 }}
+            >
+              <TransformComponent>
+                <ReactFamilyTree
+                  nodes={tree.familyTree}
+                  rootId={tree.rootId}
+                  width={WIDTH}
+                  height={HEIGHT}
+                  renderNode={(node) => (
+                    <FamilyNode
+                      key={node.id}
+                      node={node}
+                      // name={node}
+                      style={{
+                        position: 'absolute',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: WIDTH,
+                        height: HEIGHT,
+                        transform: `translate(${node.left * (WIDTH / 2)}px, ${node.top * (HEIGHT / 2)}px)`,
+                      }}
+                    />
+                  )}
+                />
+                <div className="plusButton-div">
+                </div>
+              </TransformComponent>
+            </TransformWrapper>
           )}
         </>
       ) : (
