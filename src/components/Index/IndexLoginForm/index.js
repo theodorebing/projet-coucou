@@ -15,9 +15,7 @@ const IndexLoginForm = ({
     evt.preventDefault();
     handleLogin();
   };
-
   return (
-
     <div className="indexloginform index-shadow">
       <form method="post" className="form" onSubmit={handleSubmit}>
         <h3 className="indexloginform-title">Connectez-vous!</h3>
@@ -40,13 +38,9 @@ const IndexLoginForm = ({
             <button type="submit" className="indexloginform-button-login button">Connexion</button>
             {/* <span className="indexloginform-link"><a href="#">Mot de passe oublié ?</a></span> */}
           </div>
-        </div>
-      </form>
-      <div className="buttons-div-signup">
-        <button type="submit" className="indexloginform-button-signup button" onClick={openSignUpForm}>Créer son compte</button>
-      </div>
+        </>
+      ) : (<h2 className="story-title">Loading</h2>)}
     </div>
-
   );
 };
 
