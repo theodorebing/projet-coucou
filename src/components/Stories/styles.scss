@@ -13,12 +13,12 @@
 
   &-loading {
     text-align: center;
-    margin-top: 20rem;
-    font-family: vars.$font-text;
     font-size: 3rem;
-    margin-bottom: 1rem;
+    color: lightgrey;
+    margin: 20% 225px;
+    padding-bottom: 30rem;
+    height: 100%;
   }
-
 }
 
 .center-addStoryForm {

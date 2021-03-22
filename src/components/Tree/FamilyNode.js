@@ -53,7 +53,7 @@ const FamilyNode = ({ node, style }) => {
             <figcaption className="figcaption">
               <ul className="information__person">
                 <li className="information__person__name">{node.firstName ? ` ${node.firstName} ${node.lastName}` : ''}</li>
-                <li>{node.placeOfBirth ? `Né.e à: ${node.placeOfBirth} ` : ''}</li>
+                <li>{node.placeOfBirth ? `Né à: ${node.placeOfBirth} ` : ''}</li>
                 <li>{node.dateOfBirth ? `Le: ${dateOfBirth} ` : ''}</li>
                 <li>{node.lastKnownLocation ? `Dernier lieu de vie: ${node.lastKnownLocation} ` : ''}</li>
                 <li>{node.dateOfDeath ? `Décédé le: ${dateOfDeath} ` : ''}</li>
@@ -79,14 +79,16 @@ const FamilyNode = ({ node, style }) => {
           />
           <figcaption className="figcaption">
             <ul className="information__person">
-              <li>{node.firstName ? ` ${node.firstName} ${node.lastName}` : ''}</li>
-              <li>{node.placeOfBirth ? `Née a: ${node.placeOfBirth} ` : ''}</li>
+              <li className="information__person__name">{node.firstName ? ` ${node.firstName} ${node.lastName}` : ''}</li>
+              <li>{node.placeOfBirth ? `Née à: ${node.placeOfBirth} ` : ''}</li>
               <li>{node.dateOfBirth ? `Le: ${dateOfBirth} ` : ''}</li>
               <li>{node.lastKnownLocation ? `Dernier lieu de vie: ${node.lastKnownLocation} ` : ''}</li>
               <li>{node.dateOfDeath ? `Décédé le: ${dateOfDeath} ` : ''}</li>
             </ul>
             {/* <NavLink to="/tree/editpersontree"><button className='edit__person__button' type="button"><AiFillEdit size='2em' /></button></NavLink> */}
-            <button className="delete__person__button" type="button" onClick={deletePersonTree}><AiOutlineDelete size="2em" /></button>
+            <button className="delete__person__button" type="button" onClick={deletePersonTree}>
+              <AiOutlineDelete size="2em" />
+            </button>
           </figcaption>
         </figure>
       )}
