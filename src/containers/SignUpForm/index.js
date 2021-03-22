@@ -5,6 +5,8 @@ import { setFieldValue, sendFieldValueSignup, openSignUpForm } from 'src/actions
 const mapStateToProps = (state) => ({
   email: state.auth.email,
   password: state.auth.password,
+  signUpIsOk: state.auth.signUpIsOk,
+  signUpIsWrong: state.auth.signUpIsWrong,
 });
 
 const mapDispatchToProps = (dispatch) => ({

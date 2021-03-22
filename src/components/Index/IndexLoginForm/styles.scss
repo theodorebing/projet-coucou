@@ -15,7 +15,13 @@
   &-title {
     font-size: 1.2rem;
     color: vars.$grey-color;
-    font-family: vars.$font-button;
+    font-family: vars.$font-text;
+    &-green {
+      font-family: vars.$font-text;
+      text-align: center;
+      color: #55a064;
+      text-shadow: 1px 1px 5px rgb(0 0 0 / 10%), -1px -1px 5px rgb(0 0 0 / 10%);
+    }
   }
 
   .form {

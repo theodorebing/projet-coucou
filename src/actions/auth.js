@@ -53,3 +53,17 @@ export const SEND_FIELD_VALUE_SIGNUP = 'SEND_FIELD_VALUE_SIGNUP';
 export const sendFieldValueSignup = () => ({
   type: SEND_FIELD_VALUE_SIGNUP,
 });
+
+export const GET_SIGNUP_OK = 'GET_SIGNUP_OK';
+
+export const getSignupOk = (signupIsOk) => ({
+  type: GET_SIGNUP_OK,
+  signupIsOk,
+});
+
+export const GET_SIGNUP_WRONG = 'GET_SIGNUP_WRONG';
+
+export const getSignupWrong = (signupIsWrong) => ({
+  type: GET_SIGNUP_WRONG,
+  signupIsWrong,
+});
