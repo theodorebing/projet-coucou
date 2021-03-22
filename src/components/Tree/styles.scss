@@ -10,6 +10,14 @@
   height: 100%;
   background-color: #fafafa;
 
+  &-loading {
+    display: flex;
+    font-size: 3rem;
+    color: lightgrey;
+    margin: 20%;
+    height: 100%;
+  }
+
   .person__tree{
     display: flex;
     flex-direction: column;

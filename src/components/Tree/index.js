@@ -56,7 +56,7 @@ const Tree = ({ noHelpButtons }) => {
           <div className="plusButton-div" />
         </>
       ) : (
-        <h2 className="story-title">Loading</h2>
+        <h2 className="tree-loading">Loading</h2>
       )}
       <NavLink to="/tree/addpersontree"><button type="button" className="plusButton-button"> + </button></NavLink>
     </div>
