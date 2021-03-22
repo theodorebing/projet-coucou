@@ -1,3 +1,7 @@
+@use 'src/styles/vars';
 .storyText {
   margin: 1rem; 
+  font-family: vars.$font-text;
+  letter-spacing: 1.2px;
+  line-height: 1.5;
 }

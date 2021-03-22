@@ -2,35 +2,29 @@
 
 .stories {
 
-    // display: flex;
-    // flex-direction: column;
-    // // justify-content: center;
-    // // align-items: center;
   margin-left: vars.$content-margin-left;
-
+  background-color: vars.$white-color;
+  height: 100%;
 
   &-feed {
     margin: 2em 3em;
-    // width: 100%;
-    // height: 100%;
-    // display: flex;
-    // flex-flow: column wrap;
-    // flex-basis: auto;
-    // display: grid;
-    // grid-gap: 1rem;
-    // grid-template-columns: repeat(4, 1fr);
-    // columns: 30rem auto;
-    // column-gap: 1em;
-    // column-fill: balance;
-
+    height: 100%;
   }
 
   &-loading {
     text-align: center;
     margin-top: 20rem;
-    font-family: vars.$font-coucou;
+    font-family: vars.$font-text;
     font-size: 3rem;
     margin-bottom: 1rem;
   }
 
+}
+
+.center-addStoryForm {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

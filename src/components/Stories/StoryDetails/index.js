@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './styles.scss';
+import '../styles.scss';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import FamilyNameTitle from 'src/components/FamilyNameTitle';
 import axios from 'src/api';
 import baseurl from 'src/middlewares/baseurl';
 import dayjs from 'dayjs';
+import { AiOutlineDelete } from 'react-icons/ai';
 
 // == Component
 const StoryDetails = () => {
@@ -37,8 +39,8 @@ const StoryDetails = () => {
       <div className="storyDetails-box">
         {Object.keys(story).length ? (
           <>
-            <h2 className="storyDetails-title">{story.title}</h2>
-            <p className="storyDetails-text">{story.text}</p>
+            <h2 className="story-title">{story.title}</h2>
+            <p className="story-box-text">{story.text}</p>
             <span className="storyDetails-createdAt storyDetails-date">Date d'ajout: {createdAt}</span>
             {/* {!story.updated_at &&
               (<span className="story-updatedAt storyDetails-date">{story.updated_at}</span>)}
@@ -47,15 +49,15 @@ const StoryDetails = () => {
             <span className="storyDetails-endingDate storyDetails-date">Date de fin de l'histoire: {endingDate}</span>
             <span className="storyDetails-location storyDetails-date">Lieu(x) où se déroule l'histoire:  {story.location}</span>
             <div className="storyDetails-div-buttons">
-              <button type="button" className="storyDetails-button">
+              {/* <button type="button" className="storyDetails-button">
                 Modifier
-              </button>
-              <button type="button" className="storyDetails-button" onClick={deleteStory}>
-                Supprimer l'histoire
+              </button> */}
+              <button className="storyDetails-delete-button" type="button" onClick={deleteStory}>
+                <AiOutlineDelete size="2em" />
               </button>
             </div>
             <Link to="/stories">
-              <button type="button" className="storyDetails-button"> Retour </button>
+              <button type="button" className="storyDetails-return-button"> Retour </button>
             </Link>
 
           </>

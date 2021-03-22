@@ -50,7 +50,9 @@ const Stories = ({
         </>
       )}
       {activeAddStoryForm && (
+      <div className="center-addStoryForm">
         <AddStoryForm />
+      </div>
       )}
     </div>
   );

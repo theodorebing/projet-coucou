@@ -17,32 +17,26 @@ const IndexLoginForm = ({
   };
   return (
     <div className="indexloginform index-shadow">
-      {changeField ? (
-        <>
-          <form method="post" className="form" onSubmit={handleSubmit}>
-            <h3 className="indexloginform-title">Connectez-vous!</h3>
-            <Field
-              name="email"
-              placeholder="Adresse e-mail"
-              onChange={changeField}
-              value={email}
-            />
-            <Field
-              name="password"
-              type="password"
-              placeholder="Mot de passe"
-              onChange={changeField}
-              value={password}
-            />
-            <div className="buttons-div">
-              <div className="buttons-div-login">
-                <button type="submit" className="indexloginform-button-login button">Connexion</button>
-                <span className="indexloginform-link"><a href="#">Mot de passe oublié ?</a></span>
-              </div>
-            </div>
-          </form>
-          <div className="buttons-div-signup">
-            <button type="submit" className="indexloginform-button-signup button" onClick={openSignUpForm}>Créer son compte</button>
+      <form method="post" className="form" onSubmit={handleSubmit}>
+        <h3 className="indexloginform-title">Connectez-vous!</h3>
+        <Field
+          name="email"
+          placeholder="Adresse e-mail"
+          onChange={changeField}
+          value={email}
+        />
+        <Field
+          name="password"
+          type="password"
+          placeholder="Mot de passe"
+          onChange={changeField}
+          value={password}
+        />
+        <div className="buttons-div">
+
+          <div className="buttons-div-login">
+            <button type="submit" className="indexloginform-button-login button">Connexion</button>
+            {/* <span className="indexloginform-link"><a href="#">Mot de passe oublié ?</a></span> */}
           </div>
         </>
       ) : (<h2 className="story-title">Loading</h2>)}

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-const Field = ({
+const TextArea = ({
   value,
   type,
   name,
@@ -14,16 +14,16 @@ const Field = ({
     onChange(evt.target.value, name);
   };
 
-  const inputId = `field-${name}`;
+  const inputId = `textarea-${name}`;
   return (
 
-    <div className="field">
-      <input
+    <div className="textarea">
+      <textarea
         id={inputId}
         value={value}
         onChange={handleChange}
         type={type}
-        className={`${className} indexloginform-input`}
+        className={`${className} indexloginform-textarea`}
         placeholder={placeholder}
         name={name}
       />
@@ -32,17 +32,19 @@ const Field = ({
   );
 };
 
-Field.propTypes = {
+TextArea.propTypes = {
   value: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
-Field.defaultProps = {
+TextArea.defaultProps = {
   value: '',
   type: 'text',
+  className: '',
 };
 
-export default Field;
+export default TextArea;

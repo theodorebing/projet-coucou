@@ -1,6 +1,5 @@
 // == Import : npm
 import React, { useEffect } from 'react';
-import img from 'src/assets/images/campagne_tranquille.jpg';
 
 // == Import : local
 import './styles.scss';
@@ -11,13 +10,19 @@ const About = ({ onHelpPages }) => {
     onHelpPages();
   });
   return (
-    <section className="about-section">
-      <h1 className="about-section-titre">A propos</h1>
-      <div className="about-section-text">
-        <h2 className="about-section-text-title">Laissez nous vous expliquer l'idée derrière ce projet</h2>
-        <p className="about-section-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, id. Officia dolores nesciunt assumenda! Nesciunt non quidem animi laborum voluptatibus laudantium sapiente neque, provident repellendus quasi inventore facere, veritatis expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quae deleniti optio natus asperiores perspiciatis reprehenderit omnis facilis repellendus, non dolore expedita blanditiis atque at aperiam saepe earum magnam quos, recusandae sed doloremque ad maxime assumenda. Error maxime minus voluptatum velit enim, molestiae aliquid praesentium sunt iusto qui aliquam aperiam tempora, eveniet animi itaque omnis consequuntur hic est quae eos asperiores natus deserunt! Voluptates commodi aspernatur minus voluptas, quod numquam, atque fuga sit laborum est aut nam illo tenetur odio iste repellat accusantium, fugit id! Facere harum, sit incidunt fugit, et eius molestias, esse quas ratione perferendis ducimus cupiditate minus.</p>
+    <section className="about">
+      <h1 className="about-title">A propos</h1>
+      <div className="about-text">
+        <h2 className="about-text-subtitle">Laissez nous vous expliquer l'idée derrière ce projet</h2>
+        <p className="about-text-content">Coucou est issue d’une idée de Théodore, notre Product Owner, soumise lors des propositions de projets de fin de formation au sein de l’école O’clock.
+        </p>
+        <p className="about-text-content"> L’idée de départ était de créer un espace de liberté, privé, pour que chaque famille puisse se réunir à un même endroit et partager son histoire,
+          <br /> avec le souhait d’en faire un espace accessible à toutes les générations.
+        </p>
+        <p className="about-text-content">Cinq développeurs juniors se sont alors associés pour donner vie à ce super projet !
+        </p>
+        <p className="about-text-content">Nous avions un temps imparti d'un mois pour créer une première version du site web fonctionnelle et prête à être mise en ligne. Si vous lisez cette page aujourd’hui, c’est que nous avons réussi. </p>
       </div>
-      <img className="about-section-img" src={img} alt="img section une" />
     </section>
   );
 };

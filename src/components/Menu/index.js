@@ -1,7 +1,7 @@
 // == Import
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from 'src/assets/Logo-Coucou-transparent.png';
+import logo from 'src/assets/images/Logo-Coucou-transparent.png';
 import './style.scss';
 import PropTypes from 'prop-types';
 import HelpButtons from './HelpButtons';
@@ -23,7 +23,7 @@ const Menu = ({
       <div className="menu-header">
         <NavLink to="/">
           <div className="menu-logo-div">
-            <img src={logo} alt="Logo" className="menu-logo" />
+            {/* <img src={logo} alt="Logo" className="menu-logo" /> */}
             <span className="menu-logo-text">Coucou !</span>
           </div>
         </NavLink>
@@ -44,7 +44,17 @@ const Menu = ({
         </>
         )}
         <div className="menu-button-list">
+          { isLogged && (typeof familyId === 'number') && (
+          <>
+            <NavLink to="/tree" className="menu-button" activeClassName="menu-button-onPage">
+              Arbre
+            </NavLink>
 
+            <NavLink to="/stories" className="menu-button" activeClassName="menu-button-onPage">
+              Histoires
+            </NavLink>
+          </>
+          )}
           {isLogged && (
           <>
             <NavLink to="/profile" className="menu-button" activeClassName="menu-button-onPage">
@@ -56,14 +66,6 @@ const Menu = ({
           <>
             <NavLink to="/family" className="menu-button" activeClassName="menu-button-onPage">
               Ma famille
-            </NavLink>
-
-            <NavLink to="/tree" className="menu-button" activeClassName="menu-button-onPage">
-              Arbre
-            </NavLink>
-
-            <NavLink to="/stories" className="menu-button" activeClassName="menu-button-onPage">
-              Histoires
             </NavLink>
           </>
           )}
