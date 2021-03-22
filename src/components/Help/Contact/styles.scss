@@ -101,17 +101,17 @@
     justify-content: space-evenly;
     align-items: center;
     color: vars.$grey-color;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   &-name {
     text-align: center;
     font-family: vars.$font-text;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: vars.$grey-color;
     text-shadow: 0 1px 3px rgba(181, 181, 181, 0.851);
     font-weight: 400;
-    margin: 1rem 1rem 2rem;
+    margin: 1rem 1rem 0rem;
   }
 
   &-link {
@@ -127,8 +127,8 @@
 
 .contact-picture {
   object-fit: cover;
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   border: none;
   border-radius: 50%;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1), 0px 0px 30px rgba(0, 0, 0, 0.1);
