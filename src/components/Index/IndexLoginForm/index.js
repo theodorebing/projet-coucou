@@ -38,9 +38,13 @@ const IndexLoginForm = ({
             <button type="submit" className="indexloginform-button-login button">Connexion</button>
             {/* <span className="indexloginform-link"><a href="#">Mot de passe oublié ?</a></span> */}
           </div>
-        </>
-      ) : (<h2 className="story-title">Loading</h2>)}
+        </div>
+      </form>
+      <div className="buttons-div-signup">
+        <button type="submit" className="indexloginform-button-signup button" onClick={openSignUpForm}>Créer son compte</button>
+      </div>
     </div>
+
   );
 };
 
