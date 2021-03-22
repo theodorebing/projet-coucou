@@ -7,15 +7,16 @@
   justify-content: space-between;
   align-items: center;
   background-color: vars.$white-color;
-  height: 100vh;
+  height: 100%;
   // background-image: vars.$background-image;
 
   &-members {
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   margin: 2rem 0 5rem;
+  padding-bottom: 10rem;
   }
 }
 
