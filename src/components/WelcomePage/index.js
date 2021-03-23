@@ -10,7 +10,9 @@ const WelcomePage = ({ noHelpButtons }) => {
   });
   return (
     <div className="welcome__page">
-      <h1>Bienvenue sur Coucou!</h1>
+      <span className="welcome__page__titleContainer">
+        <h1 className="welcome__page__title">Bienvenue sur </h1><h1 className="welcome__page__title welcome__page__title__coucou">Coucou!</h1>
+      </span>
       <JoinFamilyForm />
       <CreateFamilyForm />
     </div>

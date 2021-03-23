@@ -4,13 +4,29 @@
   margin-left: vars.$content-margin-left;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  background-color: vars.$white-color;
+  height: 100%;
+  // background-image: vars.$background-image;
 
   &-members {
-    margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0 5rem;
+  padding-bottom: 10rem;
   }
 }
+
+  .loading {
+    display: flex;
+    font-size: 3rem;
+    color: lightgrey;
+    margin: 20%;
+    height: 100vh;
+  }
 
 
 

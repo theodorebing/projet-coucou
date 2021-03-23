@@ -19,13 +19,19 @@ const Family = ({ noHelpButtons }) => {
   }, []));
   return (
     <div className="familyPage">
-      <FamilyNameTitle />
-      <FamilyCode />
-      <div className="familyPage-members">
-        {familyMembers.map((familyMember) => (
-          <FamilyMember key={familyMember.email} {...familyMember} />
-        ))}
-      </div>
+      {Object.keys(familyMembers).length ? (
+        <>
+          <FamilyNameTitle />
+          <FamilyCode />
+          <div className="familyPage-members">
+            {familyMembers.map((familyMember) => (
+              <FamilyMember key={familyMember.email} {...familyMember} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <h2 className="loading">Loading</h2>
+      )}
     </div>
   );
 };

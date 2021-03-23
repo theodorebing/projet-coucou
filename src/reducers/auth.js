@@ -4,6 +4,8 @@ import {
   LOGOUT,
   CHECK_CONNECTION,
   OPEN_SIGNUP_FORM,
+  GET_SIGNUP_OK,
+  GET_SIGNUP_WRONG,
 } from 'src/actions/auth';
 
 const initialState = {
@@ -12,6 +14,8 @@ const initialState = {
   name: '',
   isLogged: false,
   activeSignUpForm: false,
+  signUpIsOk: false,
+  signUpIsWrong: false,
 };
 
 export default (state = initialState, action = {}) => {
@@ -26,6 +30,7 @@ export default (state = initialState, action = {}) => {
         ...state,
         isLogged: !action.isLogged,
         email: action.email,
+        password: '',
         name: action.name,
       };
     case LOGOUT:
@@ -43,6 +48,20 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         activeSignUpForm: !state.activeSignUpForm,
+        signUpIsOk: false,
+        signUpIsWrong: false,
+      };
+    case GET_SIGNUP_OK:
+      return {
+        ...state,
+        signUpIsOk: true,
+        email: '',
+        password: '',
+      };
+    case GET_SIGNUP_WRONG:
+      return {
+        ...state,
+        signUpIsWrong: true,
       };
     default:
       return state;

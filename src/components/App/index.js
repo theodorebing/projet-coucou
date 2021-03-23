@@ -104,7 +104,7 @@ const App = ({ isLogged, checkConnection, familyId }) => {
                 <StoryDetails />
               </Route>
             </>
-            )};
+            )}
           </>
         )}
 

@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // == Import
-import './styles.scss';
+import 'src/components/PlusButton/styles.scss';
 
 // == Composant
 const PlusButton = ({ openAddForm }) => (

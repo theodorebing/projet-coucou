@@ -46,11 +46,15 @@ const Stories = ({
             )}
 
           </div>
-          <PlusButton openAddForm={openAddStoryForm} />
+          <div className="stories-plusButton">
+            <PlusButton openAddForm={openAddStoryForm} />
+          </div>
         </>
       )}
       {activeAddStoryForm && (
+      <div className="center-addStoryForm">
         <AddStoryForm />
+      </div>
       )}
     </div>
   );

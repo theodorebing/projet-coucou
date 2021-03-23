@@ -3,11 +3,13 @@
 .storyDetails {
 
   &-page {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+    margin-left: vars.$content-margin-left;
+    background-color: vars.$white-color;
   }
 
   &-box {
@@ -15,20 +17,20 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
-    margin: 1rem;
-    padding: 1rem;
+    width: 66.6%;
+    margin: 5% auto 30%;
+    padding: 1rem 1.2rem 2rem;
+    height: auto;
     overflow: hidden;
     text-overflow: ellipsis;
     border: none;
     border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.850);
+    background-color: vars.$white-color;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    background-color: #ffb32692;
   }
   &-title {
     text-align: center;
-    font-family: vars.$font-coucou;
+    font-family: vars.$font-text;
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
@@ -41,14 +43,61 @@
   }
   &-date {
     margin: 0.5rem 0;
+    color: vars.$grey-color;
+    font-family: vars.$font-text;
   }
-  &-button {
+  &-delete-button {
+        margin: 2px auto;
+        margin-top: 10px;
+        background-color:transparent;
+        color: rgba(255, 0, 0, 0.694);
+        opacity: 0.7;
+        border-radius: 3px;
+        border: none;
+      
+      &:hover {
+        background-color: rgba(255, 0, 0, 0.694);
+        color: rgba(255, 255, 255, 0.879);
+        opacity: 2;
+      }
+  }
+
+  &-return-button {
+    color: vars.$grey-color;
     margin: 0.5rem;
-  }
+    width: 12rem;
+    background-color: vars.$white-color;
+    padding: 0.8rem 1.5rem;
+    font-family: vars.$font-button;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      background-color: #fffcf7;
+      box-shadow: 0px 10px 20px #f6b02d75;
+    }
+
+    &:active {
+      vertical-align: top;
+      padding: 0.6rem 1rem;
+      background-color: vars.$main-color;
+      color: #fff;
+      box-shadow: 0px 15px 20px #f6b02d71;
+      margin: 0.7rem;
+      width: 11rem;
+    }
+    }
   &-loading {
     text-align: center;
     margin-top: 20%;
-    font-family: vars.$font-coucou;
+    font-family: vars.$font-text;
     font-size: 3rem;
     margin-bottom: 1rem;
   }
