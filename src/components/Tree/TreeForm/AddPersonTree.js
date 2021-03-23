@@ -19,10 +19,10 @@ const AddPersonTree = () => {
   const [lastKnownLocation, setLastKnownLocation] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState();
   const [dateOfDeath, setDateOfDeath] = useState();
-  const [genders, setGenders] = useState('');
+  const [genders, setGenders] = useState([]);
   const [people, setPeople] = useState([]);
-  const [relations, setRelations] = useState();
-  const [genderName, setGenderName] = useState('');
+  const [relations, setRelations] = useState([]);
+  const [genderName, setGenderName] = useState([]);
   const [otherPersonId, setPersonId] = useState('');
   const [relationId, setRelationID] = useState('');
   const history = useHistory();
@@ -111,21 +111,21 @@ const AddPersonTree = () => {
               <h2>Genre</h2>
               <select className="join__family__select" onChange={(e) => setGenderName(e.target.value)}>
                 <GenderOption genderName="Sélectionner un genre" />
-                {genders.map((gender) => (
+                {genders.length && genders.map((gender) => (
                   <GenderOption key={gender.id} {...gender} />
                 ))}
               </select>
               <h2>Sélectionner une relation</h2>
               <select className="join__family__select" onChange={(e) => setRelationID(e.target.value)}>
                 <RelationOption id="null" type="Sélectionner une relation" />
-                {relations.map((relation) => (
+                {relations.length && relations.map((relation) => (
                   <RelationOption key={relation.id} {...relation} />
                 ))}
               </select>
               <h2>Sélectionner la personne à laquelle vous lier</h2>
               <select className="join__family__select" onChange={(e) => setPersonId(e.target.value)}>
                 <PeopleOption id="null" firstName="Sélectionner" lastName="une personne" />
-                {people.map((person) => (
+                {people.length && people.map((person) => (
                   <PeopleOption key={person.id} {...person} />
                 ))}
               </select>
