@@ -20,7 +20,7 @@
   }
 
   .form {
-      margin:auto;
+      margin: auto;
       padding: 0 40px;
       width: 100%;
       height: 100%;
@@ -134,11 +134,12 @@
   color: red;
 }
 
-@media screen and (max-width: 500px) {
-  .indexloginform {
-
+@media screen and (max-width: 768px) {
+  .indexsignupform {
+    width: 90%;
     .form {
-        margin: 2rem auto;
+      margin: 2rem auto;
+      padding: 0 5%;
     }
 }
 }

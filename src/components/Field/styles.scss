@@ -25,3 +25,11 @@
 .addStoryForm-margin {
   margin-bottom: 1rem;
 }
+
+@media screen and (max-width: 768px) {
+  .indexloginform {
+    &-input {
+    padding: 1rem 0.8rem;
+    }
+  }
+}
