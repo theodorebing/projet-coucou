@@ -134,11 +134,12 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   .indexloginform {
-
+    width: 90%;
     .form {
-        margin: 2rem auto;
+      margin: 2rem auto;
+      padding: 0 5%;
     }
 }
 }
