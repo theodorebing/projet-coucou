@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 
 .stories {
-
+  
   margin-left: vars.$content-margin-left;
   background-color: vars.$white-color;
   height: 100%;
@@ -16,9 +16,21 @@
     text-align: center;
     font-size: 3rem;
     color: lightgrey;
-    margin: 20% 225px;
+    margin: 10% 225px 20%;
     padding-bottom: 30rem;
     height: 100%;
+  }
+
+  &-plusButton-div {
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+  }
+
+  &-plusButton {
+  position: fixed;
+  bottom: 0px;
   }
 }
 
