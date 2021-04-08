@@ -22,11 +22,13 @@ const Family = ({ noHelpButtons }) => {
       {Object.keys(familyMembers).length ? (
         <>
           <FamilyNameTitle />
-          <FamilyCode />
-          <div className="familyPage-members">
-            {familyMembers.map((familyMember) => (
-              <FamilyMember key={familyMember.email} {...familyMember} />
-            ))}
+          <div className="familyPage-content">
+            <FamilyCode />
+            <div className="familyPage-content-members">
+              {familyMembers.map((familyMember) => (
+                <FamilyMember key={familyMember.email} {...familyMember} />
+              ))}
+            </div>
           </div>
         </>
       ) : (

@@ -4,20 +4,27 @@
   margin-left: vars.$content-margin-left;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   background-color: vars.$white-color;
   height: 100%;
   min-height: 100vh;
-  // background-image: vars.$background-image;
 
-  &-members {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin: 2rem 0 5rem;
-  padding-bottom: 10rem;
+  &-content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    &-members {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 2rem 0 5rem;
+      // padding-bottom: 10rem;
+    }
   }
 }
 
