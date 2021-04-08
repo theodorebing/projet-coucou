@@ -19,6 +19,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         familyId: action.familyId,
+        code: '',
+        designation: '',
       };
     default:
       return state;
