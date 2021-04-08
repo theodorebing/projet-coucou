@@ -11,11 +11,11 @@ import PlusButton from '../PlusButton';
 
 import './styles.scss';
 
-const Tree = ({ noHelpButtons }) => {
+const Tree = ({ noHelpButtons, familyId }) => {
   const [tree, setTree] = useState(null);
   useEffect(() => {
     noHelpButtons();
-    axios.get(`${baseurl}9/tree`)
+    axios.get(`${baseurl}${familyId}/tree`)
       .then((result) => {
         if (result && result.data) {
           setTree(result.data);
@@ -55,6 +55,7 @@ const Tree = ({ noHelpButtons }) => {
                 />
               )}
             />
+            <div />
           </>
         ) : (
           <>

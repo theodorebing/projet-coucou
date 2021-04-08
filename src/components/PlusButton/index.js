@@ -11,11 +11,11 @@ const PlusButton = ({ openAddForm }) => (
 );
 
 PlusButton.propTypes = {
-  openAddForm: PropTypes.func.isRequired,
+  openAddForm: PropTypes.func,
 };
 
 PlusButton.defaultProps = {
-
+  openAddForm: null,
 };
 
 // == Export

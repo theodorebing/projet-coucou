@@ -1,6 +1,7 @@
 // == Import : npm
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import axios from 'src/api';
 import baseurl from 'src/middlewares/baseurl';
 import FamilyNameTitle from 'src/components/FamilyNameTitle';
@@ -12,7 +13,7 @@ import RelationOption from './RelationOption';
 import '../styles.scss';
 
 // == Composant
-const AddPersonTree = () => {
+const AddPersonTree = ({ familyId }) => {
   const [lastName, setLastName] = useState('');
   const [firstName, setFirstname] = useState('');
   const [placeOfBirth, setPlaceOfBirth] = useState('');
@@ -52,14 +53,14 @@ const AddPersonTree = () => {
       .then((result) => {
         setGenders(result.data);
       });
-    axios.get(`${baseurl}9/people`)
+    axios.get(`${baseurl}${familyId}/people`)
       .then((result) => {
-        if (result) {
+        if (result && result.data) {
           setPeople(result.data);
         }
       })
       .catch((error) => {
-        (console.log('cath tree', error));
+        (console.log('catch tree', error));
       });
     axios.get(`${baseurl}relations`)
       .then((result) => {
@@ -73,7 +74,7 @@ const AddPersonTree = () => {
   return (
     <div className="tree__add__page">
       <FamilyNameTitle />
-      {people && Object.keys(people).length ? (
+      {genders && Object.keys(genders).length ? (
         <div className="form__add__tree">
           <h1 className="form-title">Ajouter une personne à l'arbre</h1>
           <form className="form" onSubmit={handleSubmit}>
@@ -115,20 +116,24 @@ const AddPersonTree = () => {
                   <GenderOption key={gender.id} {...gender} />
                 ))}
               </select>
-              <h2>Sélectionner une relation</h2>
-              <select className="join__family__select" onChange={(e) => setRelationID(e.target.value)}>
-                <RelationOption id="null" type="Sélectionner une relation" />
-                {relations.length && relations.map((relation) => (
-                  <RelationOption key={relation.id} {...relation} />
-                ))}
-              </select>
-              <h2>Sélectionner la personne à laquelle vous lier</h2>
-              <select className="join__family__select" onChange={(e) => setPersonId(e.target.value)}>
-                <PeopleOption id="null" firstName="Sélectionner" lastName="une personne" />
-                {people.length && people.map((person) => (
-                  <PeopleOption key={person.id} {...person} />
-                ))}
-              </select>
+              {(Object.keys(people).length > 0) && (
+              <>
+                <h2>Sélectionner une relation</h2>
+                <select className="join__family__select" onChange={(e) => setRelationID(e.target.value)}>
+                  <RelationOption id="null" type="Sélectionner une relation" />
+                  {relations.length && relations.map((relation) => (
+                    <RelationOption key={relation.id} {...relation} />
+                  ))}
+                </select>
+                <h2>Sélectionner la personne à laquelle vous lier</h2>
+                <select className="join__family__select" onChange={(e) => setPersonId(e.target.value)}>
+                  <PeopleOption id="null" firstName="Sélectionner" lastName="une personne" />
+                  {people.length && people.map((person) => (
+                    <PeopleOption key={person.id} {...person} />
+                  ))}
+                </select>
+              </>
+              )}
               <h2>Date de naissance</h2>
               <input
                 type="date"
@@ -163,6 +168,10 @@ const AddPersonTree = () => {
     </div>
 
   );
+};
+
+AddPersonTree.propTypes = {
+  familyId: PropTypes.number.isRequired,
 };
 
 // == Export
