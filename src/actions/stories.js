@@ -30,3 +30,9 @@ export const ADD_STORY = 'ADD_STORY';
 export const addStory = () => ({
   type: ADD_STORY,
 });
+
+export const EMPTY_STORIES = 'EMPTY_STORIES';
+
+export const emptyStories = () => ({
+  type: EMPTY_STORIES,
+});

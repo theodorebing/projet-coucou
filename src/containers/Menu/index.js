@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Menu from 'src/components/Menu';
 import { sendLogout, checkConnection } from 'src/actions/auth';
+import { emptyStories } from 'src/actions/stories';
 
 const mapStateToProps = (state) => ({
   email: state.auth.email,
@@ -10,7 +11,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleLogout: () => dispatch(sendLogout()),
+  handleLogout: () => dispatch(sendLogout(), emptyStories()),
   checkConnection: () => dispatch(checkConnection()),
 });
 

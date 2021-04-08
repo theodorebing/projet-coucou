@@ -3,8 +3,8 @@ import React from 'react';
 const RelationOption = ({ id, type }) => {
   function translateRelationType(name) {
     switch (name) {
-      case 'Sélectionnez une relation':
-        return 'Sélectionnez une relation';
+      case 'Sélectionner une relation':
+        return 'Sélectionner une relation';
       case 'child of':
         return 'Enfant de';
       case 'parent of':

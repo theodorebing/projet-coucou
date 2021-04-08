@@ -3,6 +3,7 @@ import {
   FETCH_STORIES,
   OPEN_STORY_DETAILS,
   OPEN_ADD_STORY_FORM,
+  EMPTY_STORIES,
 } from 'src/actions/stories';
 import { SET_FIELD_VALUE } from 'src/actions/auth';
 
@@ -39,6 +40,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.name]: action.value,
+      };
+    case EMPTY_STORIES:
+      return {
+        ...state,
+        list: [],
       };
     default:
       return state;

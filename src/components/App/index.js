@@ -11,7 +11,7 @@ import Menu from 'src/containers/Menu';
 import Stories from 'src/containers/Stories';
 import StoryDetails from 'src/containers/Stories/StoryDetails';
 import Profile from 'src/containers/Profile';
-import AddPersonTree from 'src/components/Tree/TreeForm/AddPersonTree';
+import AddPersonTree from 'src/containers/Tree/AddPersonTree';
 import EditPersonTree from 'src/components/Tree/TreeForm/EditPersonTree';
 import About from 'src/containers/Help/About';
 import WelcomePage from 'src/containers/WelcomePage';

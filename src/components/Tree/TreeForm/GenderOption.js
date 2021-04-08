@@ -3,8 +3,8 @@ import React from 'react';
 const GenderOption = ({ genderName }) => {
   function translateGenderName(name) {
     switch (name) {
-      case 'Sélectionnez un genre':
-        return 'Sélectionnez un genre';
+      case 'Sélectionner un genre':
+        return 'Sélectionner un genre';
       case 'woman':
         return 'Femme';
       case 'man':

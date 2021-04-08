@@ -7,17 +7,15 @@ import './styles.scss';
 
 // == Composant
 const PlusButton = ({ openAddForm }) => (
-  <div className="plusButton-div">
-    <button type="button" className="plusButton-button" onClick={openAddForm}> + </button>
-  </div>
+  <button type="button" className="plusButton-button" onClick={openAddForm}> + </button>
 );
 
 PlusButton.propTypes = {
-  openAddForm: PropTypes.func.isRequired,
+  openAddForm: PropTypes.func,
 };
 
 PlusButton.defaultProps = {
-
+  openAddForm: null,
 };
 
 // == Export
