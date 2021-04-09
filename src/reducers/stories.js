@@ -3,6 +3,7 @@ import {
   FETCH_STORIES,
   OPEN_STORY_DETAILS,
   OPEN_ADD_STORY_FORM,
+  CLOSE_ADD_STORY_FORM,
   EMPTY_STORIES,
 } from 'src/actions/stories';
 import { SET_FIELD_VALUE } from 'src/actions/auth';
@@ -12,6 +13,11 @@ const initialState = {
   activeStoryDetails: false,
   activeAddStoryForm: false,
   id: null,
+  title: '',
+  text: '',
+  location: '',
+  startingDate: '',
+  endingDate: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -35,6 +41,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         activeAddStoryForm: !state.activeAddStoryForm,
+      };
+    case CLOSE_ADD_STORY_FORM:
+      return {
+        ...state,
+        activeAddStoryForm: false,
+        title: '',
+        text: '',
+        location: '',
+        startingDate: '',
+        endingDate: '',
       };
     case SET_FIELD_VALUE:
       return {

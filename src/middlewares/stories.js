@@ -4,6 +4,7 @@ import {
   setStories,
   ADD_STORY,
   openAddStoryForm,
+  closeAddStoryForm,
 } from 'src/actions/stories';
 import axios from 'src/api';
 import baseurl from './baseurl';
@@ -27,6 +28,7 @@ export default (store) => (next) => (action) => {
         .then(() => {
           store.dispatch(fetchStories());
           store.dispatch(openAddStoryForm());
+          store.dispatch(closeAddStoryForm());
         });
       return next(action);
     default:

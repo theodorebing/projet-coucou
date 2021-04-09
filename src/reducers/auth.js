@@ -43,6 +43,7 @@ export default (state = initialState, action = {}) => {
     case CHECK_CONNECTION:
       return {
         ...state,
+        password: '',
       };
     case OPEN_SIGNUP_FORM:
       return {
@@ -50,6 +51,8 @@ export default (state = initialState, action = {}) => {
         activeSignUpForm: !state.activeSignUpForm,
         signUpIsOk: false,
         signUpIsWrong: false,
+        email: '',
+        password: '',
       };
     case GET_SIGNUP_OK:
       return {

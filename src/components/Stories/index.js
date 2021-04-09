@@ -21,34 +21,33 @@ const Stories = ({
       }, 500);
     }, []));
   }
+
   return (
 
     <div className="stories">
       <FamilyNameTitle />
       {!activeAddStoryForm && (
-        <>
-          <div className="stories-div">
-            {Object.keys(stories).length ? (
+      <>
+        <div className="stories-div">
+          {Object.keys(stories).length ? (
+            <div className="stories-feed">
+              <ResponsiveMasonry columnsCountBreakPoints={{ 700: 1, 1200: 2, 1800: 3 }}>
+                <Masonry columnsCount={3}>
+                  {stories.map((story) => (
+                    <StoryBox key={story.id} {...story} />
+                  ))}
+                </Masonry>
+              </ResponsiveMasonry>
+            </div>
+          ) : (
+            <h2 className="stories-loading">Loading</h2>
+          )}
+        </div>
 
-              <div className="stories-feed">
-                <ResponsiveMasonry
-                  columnsCountBreakPoints={{ 700: 1, 1200: 2, 1800: 3 }}
-                >
-                  <Masonry columnsCount={3}>
-                    {stories.map((story) => (
-                      <StoryBox key={story.id} {...story} />
-                    ))}
-                  </Masonry>
-                </ResponsiveMasonry>
-              </div>
-            ) : (
-              <h2 className="stories-loading">Loading</h2>
-            )}
-          </div>
-          <div className="stories-plusButton-div">
-            <PlusButton className="stories-plusButton" openAddForm={openAddStoryForm} />
-          </div>
-        </>
+        <div className="stories-plusButton-div">
+          <PlusButton className="stories-plusButton" openAddForm={openAddStoryForm} />
+        </div>
+      </>
       )}
       {activeAddStoryForm && (
       <div className="center-addStoryForm">

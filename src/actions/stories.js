@@ -25,6 +25,12 @@ export const openAddStoryForm = () => ({
   type: OPEN_ADD_STORY_FORM,
 });
 
+export const CLOSE_ADD_STORY_FORM = 'CLOSE_ADD_STORY_FORM';
+
+export const closeAddStoryForm = () => ({
+  type: CLOSE_ADD_STORY_FORM,
+});
+
 export const ADD_STORY = 'ADD_STORY';
 
 export const addStory = () => ({
