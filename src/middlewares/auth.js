@@ -10,7 +10,7 @@ import {
   logout,
 } from 'src/actions/auth';
 import { setFamilyIdOk } from 'src/actions/family';
-import { emptyStories } from 'src/actions/stories';
+import { emptyStories, closeAddStoryForm } from 'src/actions/stories';
 import axios from 'src/api';
 import baseurl from './baseurl';
 
@@ -31,10 +31,12 @@ export default (store) => (next) => (action) => {
         .then((result) => {
           store.dispatch(setIsLogged(result.data.logged, result.data.email, result.data.name));
           store.dispatch(setFamilyIdOk(result.data.familyId));
+          store.dispatch(closeAddStoryForm());
         }).catch((error) => {
           console.log('error', error);
           store.dispatch(logout());
           store.dispatch(emptyStories());
+          store.dispatch(closeAddStoryForm());
         });
       return next(action);
 
