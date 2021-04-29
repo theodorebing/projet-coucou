@@ -1,7 +1,5 @@
 # Coucou!
 
-![alt text](https://drive.google.com/file/d/1UZ2dk7gIJTgQWvgVnzbdTLc3PmbFrElm/view?usp=sharing "Logo Title")
-
 ## Contexte
 
   A l’heure d’internet, des familles recomposées, de la perte de lien (confinements…) il nous est venu le besoin de se reconnecter les uns aux autres, ne serait-ce que virtuellement, afin de garder le lien.
