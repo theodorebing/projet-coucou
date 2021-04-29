@@ -1,0 +1,35 @@
+@use 'src/styles/vars';
+
+.field {
+    width: 100%;
+}
+.indexloginform {
+
+  &-input {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1em;
+    font-family: vars.$font-text;
+    border: 1px solid vars.$border-color;
+    border-radius: 45px;
+    height: 2.5em;
+    background-color: rgba(255, 255, 255, 0.829);
+
+    &-text {
+      min-height: 200px;
+    }
+
+  }
+}
+
+.addStoryForm-margin {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .indexloginform {
+    &-input {
+    padding: 1rem 0.8rem;
+    }
+  }
+}

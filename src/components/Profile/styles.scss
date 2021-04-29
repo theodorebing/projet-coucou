@@ -1,0 +1,33 @@
+@use 'src/styles/vars';
+
+.profile {
+  margin-left: vars.$content-margin-left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: vars.$lightblack-color;
+  font-family: vars.$font-button;
+  font-size: 1.3rem;
+  height: 100vh;
+  background-color: vars.$white-color;
+
+  &-picture {
+    width: 300px;
+    border: solid 2px vars.$main-color;
+    border-radius: 50%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  &-textPart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100px;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+

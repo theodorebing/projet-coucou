@@ -1,0 +1,29 @@
+@use 'src/styles/vars';
+
+.userManual-header {
+  margin: 5rem auto 5rem;
+
+  &-title {
+    text-align: center;
+    padding-bottom: 3rem;
+    color: vars.$main-color;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  &-section {
+    text-decoration: underline;
+    text-align: center;
+    width: 100%;
+
+    &-title {
+      text-transform: uppercase;
+      padding-bottom: 1rem;
+    }
+
+    &-content {
+      padding-bottom: 1rem;
+      display: block;
+    }
+  }
+}
