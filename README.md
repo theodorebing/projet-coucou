@@ -1,4 +1,8 @@
-# Coucou!
+<p align="center">
+  <img src="https://github.com/theodorebing/projet-coucou/blob/main/src/assets/images/Logo-Coucou-transparent.png" alt="logo" width="200" />
+</p>
+
+<h1 align="center" style="font-style:italic"><em>Coucou!</em></h1>
 
 ## Contexte
 
