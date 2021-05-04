@@ -30,13 +30,16 @@ Nous avons choisi un design épuré et un fonxtionnement qui reste toujours clai
 
 Concernant l’accessibilité de l’application pour les personnes en situation de handicap, la version initiale du projet ne sera sans doute pas optimisée. C’est prévu dans une version ultérieure.
 
-## Organisation de l’équipe projet
-
+## Organisation de l’équipe projet de départ
 
 Product owner / Lead Dev Front : Théodore
 Scrum master : Virginie
 Lead dev back : Chloé
 Git master : Sébastien
+
+## Avenir du projet
+
+Le projet va continué à être amélioré avec une équipe plus réduite de deux personnes (Virginie et Théodore). Il reste encore énormément d'améliorations à apporter au niveau des features et du code!
 
 ## Stack utilisé
 
