@@ -2,7 +2,11 @@
   <img src="https://github.com/theodorebing/projet-coucou/blob/main/src/assets/images/Logo-Coucou-transparent.png" alt="logo" width="200" />
 </p>
 
-<h1 align="center" style="font-style:italic"><em>Coucou!</em></h1>
+<h1 align="center"><em>Coucou!</em></h1>
+
+<h3 align="center">**********************************</h3>
+<h3 align="center">******** WORK IN PROGRESS ********</h3>
+<h3 align="center">**********************************</h3>
 
 ## Contexte
 
